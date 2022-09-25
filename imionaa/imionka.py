@@ -24,7 +24,7 @@ if imiona is not None:
         imie = st.text_input('Podaj imię: ','Martyna')
         imie = imie.upper()
         st.header('Wykres liniowy liczby dzieci o imieniu {} w zależnosci od czasu'.format(imie))
-        st.plotly_chart(px.line(im[im['Imię']==imie],x='Rok',y='Liczba',color='Płeć',markers=True,width=1100, height=600).update_layout(plot_bgcolor='white'))
+        st.plotly_chart(px.line(im[im['Imię']==imie],x='Rok',y='Liczba',color='Płeć',markers=True,width=1100, height=600))
     except Exception as e:
         st.write('Czekam na dane')
         st.write(e)
