@@ -14,7 +14,7 @@ import plotly.express as px
 st.set_page_config(page_title='Analiza imion dzieci', page_icon = ':family:', layout='wide')
 
 st.title(':baby: Analiza imion dzieci')
-
+st.write('elo')
 imiona = st.sidebar.file_uploader(label='Wprwadź plik z imionami', type=['xlsx'])
 
 
