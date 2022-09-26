@@ -15,7 +15,7 @@ st.set_page_config(page_title='Analiza imion dzieci', page_icon = ':family:', la
 
 st.title(':baby: Analiza imion dzieci')
 st.write('elo')
-st.error('This is an error', icon="🚨")
+st.error('This is an error')
 st.snow()
 imiona = st.sidebar.file_uploader(label='Wprwadź plik z imionami', type=['xlsx'])
 
