@@ -27,7 +27,7 @@ if imiona is not None:
         st.plotly_chart(px.line(im[im['Imię']==imie],x='Rok',y='Liczba',color='Płeć',markers=True,width=1100, height=600))
         
         st.header('Wykres liniowy proporcje dzieci o imieniu {} w zależnosci od czasu'.format(imie))
-        st.plotly_chart(px.line(im[im['Imię']==imie],x='Rok',y='Proporcja',color='Płeć',markers=True,width=1100, height=600))
+        st.plotly_chart(px.line(im[im['Imię']==imie],x='Rok',y='Proporcja'*100,color='Płeć',markers=True,width=1100, height=600))
         
         st.balloons()
     except Exception as e:
