@@ -20,7 +20,7 @@ imiona = st.sidebar.file_uploader(label='Wprwadź plik z imionami', type=['xlsx'
 
 if imiona is not None:
     try:
-        im = pd.read_excel(imiona1)
+        im = pd.read_excel(imiona)
         imie = st.text_input('Podaj imię: ','Martyna')
         imie = imie.upper()
         st.header('Wykres liniowy liczby dzieci o imieniu {} w zależnosci od czasu'.format(imie))
@@ -33,7 +33,7 @@ if imiona is not None:
 
 if imiona is not None:
     try:
-        im = pd.read_excel(imiona1)
+        im = pd.read_excel(imiona)
         imie = st.text_input('Podaj imię: ','Martyna')
         imie = imie.upper()
         st.header('Wykres liniowy liczby dzieci o imieniu {} w zależnosci od czasu'.format(imie))
