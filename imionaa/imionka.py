@@ -32,7 +32,7 @@ if imiona is not None:
         
 
 
-        st.header('Wykres liniowy liczby dzieci o imieniu {} w zależnosci od czasu'.format(imie))
+        st.header('Wykres liniowy proporcje dzieci o imieniu {} w zależnosci od czasu'.format(imie))
         st.plotly_chart(px.line(im[im['Imię']==imie],x='Rok',y='Proporcja',color='Płeć',markers=True,width=1100, height=600))
     except Exception as f:
         st.write('Czekam na dane')
