@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Sep 18 16:20:59 2022
-
-@author: User
-"""
-
 import os
 import openpyxl
 import streamlit as st
