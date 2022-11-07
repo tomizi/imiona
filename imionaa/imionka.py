@@ -8,16 +8,15 @@ import plotly.express as px
 st.set_page_config(page_title='Analiza imion nadanym dzieciom w latach 2000-2021', page_icon = ':family:', layout='wide')
 
 
-DF = pd.read_excel(io='imionaa/imiona.xlsx',engine='openpyxl',dtype={'Rok':str})
+im = pd.read_excel(io='imionaa/imiona.xlsx',engine='openpyxl',dtype={'Rok':str})
 
 st.title(':baby: Analiza imion nadanym dzieciom w latach 2000-2021')
 
-imiona = st.sidebar.file_uploader(label='Wprwadź plik z imionami', type=['xlsx'])
+
 
 st.dataframe(DF)
 if imiona is not None:
     try:        
-        im = pd.read_excel(imiona)
         imie = st.text_input('Podaj imię: ','Martyna')
         imie = imie.upper()
         st.header('Liczba dzieci o nadanym imieniu {} na przestrzeni lat 2000-2021'.format(imie))
