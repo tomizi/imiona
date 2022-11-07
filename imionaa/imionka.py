@@ -11,7 +11,7 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 
-st.set_page_config(page_title='Analiza imion dzieci', page_icon = ':family:', layout='wide')
+st.set_page_config(page_title='Analiza imion nadanym dzieciom w latach 2000-2021', page_icon = ':family:', layout='wide')
 
 st.title(':baby: Analiza imion dzieci')
 
