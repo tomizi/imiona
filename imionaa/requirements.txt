@@ -2,4 +2,6 @@ numpy==1.21.6
 pandas==1.4.2
 plotly==5.8.0
 streamlit==1.9.0
+protobuf~=3.19.0
+XlsxWriter==3.0.3
 openpyxl==3.0.10
