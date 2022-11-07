@@ -14,10 +14,9 @@ st.title(':baby: Analiza imion nadanym dzieciom w latach 2000-2021')
 
 imiona = st.sidebar.file_uploader(label='Wprwadź plik z imionami', type=['xlsx'])
 
-
+st.dataframe(DF)
 if imiona is not None:
-    try:
-        st.dataframe(DF)
+    try:        
         im = pd.read_excel(imiona)
         imie = st.text_input('Podaj imię: ','Martyna')
         imie = imie.upper()
