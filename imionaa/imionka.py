@@ -13,6 +13,9 @@ import plotly.express as px
 
 st.set_page_config(page_title='Analiza imion nadanym dzieciom w latach 2000-2021', page_icon = ':family:', layout='wide')
 
+
+DF = pd.read_excel(io='IMIONA.xlsx',engine='openpyxl',dtype={'Rok':str})
+
 st.title(':baby: Analiza imion nadanym dzieciom w latach 2000-2021')
 
 imiona = st.sidebar.file_uploader(label='Wprwadź plik z imionami', type=['xlsx'])
@@ -20,6 +23,7 @@ imiona = st.sidebar.file_uploader(label='Wprwadź plik z imionami', type=['xlsx'
 
 if imiona is not None:
     try:
+        st.dataframe(DF)
         im = pd.read_excel(imiona)
         imie = st.text_input('Podaj imię: ','Martyna')
         imie = imie.upper()
