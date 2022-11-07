@@ -13,7 +13,7 @@ import plotly.express as px
 
 st.set_page_config(page_title='Analiza imion nadanym dzieciom w latach 2000-2021', page_icon = ':family:', layout='wide')
 
-st.title(':baby: Analiza imion dzieci')
+st.title(':baby: Analiza imion nadanym dzieciom w latach 2000-2021')
 
 imiona = st.sidebar.file_uploader(label='Wprwadź plik z imionami', type=['xlsx'])
 
