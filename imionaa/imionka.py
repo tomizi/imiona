@@ -4,6 +4,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.express as px
+import plotly.graph_objects as go
 
 #st.set_page_config(page_title='Analiza imion nadanym dzieciom w latach 2000-2021', page_icon = ':family:', layout='wide')
 
@@ -42,7 +43,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.title('Wyniki analizy statystycznej')
     
     total_ur=im.pivot_table('Liczba', index='Rok', columns='Płeć', aggfunc=sum)
-    st.plotly_chart(px.line(total_ur, x='Rok', y='Liczba', color='PŁeć', markers=True, width = 1000, height=500))
+    #st.plotly_chart(px.line(total_ur, x='Rok', y='Liczba', color='PŁeć', markers=True, width = 1000, height=500))
 
 	
 
