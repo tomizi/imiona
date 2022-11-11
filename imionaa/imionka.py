@@ -49,7 +49,15 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.line_chart(total_ur)
  
     #top 100
-    
+    def the_top100(group):
+    	return group.sort_values(by='Liczba', ascending=False)[:100]
+    grouped=im.groupby(['Rok','Płeć'])
+    top100=grouped.apply(the_top100)
+    top100.reset_index(inplace=True, drop=True)
+	
+    tabelka=top100.pivot_table('Proporcja',index='Rok',columns='Płeć',aggfunc=sum)
+    tabelka=pd.DataFrame(tabelka, columns=['K','M'])
+    st.line_chart(tabelka)
 
     
 	
