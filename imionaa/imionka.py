@@ -36,28 +36,7 @@ if sekcja == 'Strona główna':
 	
 	
 	
-if sekcja == 'Wyniki analizy statystycznej':
-    new_title = '<b style="color:rgb(0, 80, 170); font-size: 62px;">Analiza imion nadanym dzieciom w latach 2000-2021</p>'
-    st.markdown(new_title, unsafe_allow_html=True)
-    st.markdown('---')
-    st.title('Wyniki analizy statystycznej')
-    
-    #łączna ilość urodzeń
-    total_ur=im.pivot_table('Liczba', index='Rok', columns='Płeć', aggfunc=sum)	
-    total_ur=pd.DataFrame(total_ur, columns=['K','M'])
-    st.header('Łączna liczba dzieci urodzonych w latach 2000-2021 z podziałem na płeć')
-    st.line_chart(total_ur)
- 
-    #top 100
-    def the_top100(group):
-    	return group.sort_values(by='Liczba', ascending=False)[:100]
-    grouped=im.groupby(['Rok','Płeć'])
-    top100=grouped.apply(the_top100)
-    top100.reset_index(inplace=True, drop=True)
-	
-    tabelka=top100.pivot_table('Proporcja',index='Rok',columns='Płeć',aggfunc=sum)
-    tabelka=pd.DataFrame(tabelka, columns=['K','M'])
-    st.line_chart(tabelka)
+
 
     
 	
