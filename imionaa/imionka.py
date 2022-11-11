@@ -18,9 +18,9 @@ if sekcja == 'Strona główna':
     new_title = '<b style="color:rgb(0, 80, 170); font-size: 62px;">Analiza imion nadanym dzieciom w latach 2000-2021</p>'
     st.markdown(new_title, unsafe_allow_html=True)
     st.markdown('---')
-    st.title('UNIWERSYTET MIKOIŁAJA KOPERNIKA W TORUNIU')
+    st.title('Strona główna')
 
-    st.title(':baby: Analiza imion nadanym dzieciom w latach 2000-2021')
+    #st.title(':baby: Analiza imion nadanym dzieciom w latach 2000-2021')
        
     imie = st.text_input('Podaj imię: ','Martyna')
     imie = imie.upper()
