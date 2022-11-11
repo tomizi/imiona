@@ -22,8 +22,6 @@ if sekcja == 'Strona główna':
     st.subheader('Wybór imienia dla dziecka to niełatwa decyzja. Powinna być świadomym wyborem obojga partnerów. ' +
 		 'Niektórzy rodzice kierują się modą, inni rodzinną tradycją, kolejni łatwością do zdrobnienia. ' +
 		 'Są też tacy, którzy zwracają uwagę na oryginalność lub po prostu brzmienie imienia.')
-
-    #st.title(':baby: Analiza imion nadanym dzieciom w latach 2000-2021')
        
     imie = st.text_input('Podaj imię: ','Martyna')
     imie = imie.upper()
@@ -32,6 +30,17 @@ if sekcja == 'Strona główna':
 
     st.header('Część dzieci o nadanym imieniu {} na przestrzeni lat 2000-2021'.format(imie))
     st.plotly_chart(px.line(im[im['Imię']==imie],x='Rok',y='Proporcja%',color='Płeć',markers=True,width=1100, height=600))
+	
+	
+	
+	
+	
+if sekcja == 'Wyniki analizy statystycznej':
+	new_title = '<b style="color:rgb(0, 80, 170); font-size: 62px;">Analiza imion nadanym dzieciom w latach 2000-2021</p>'
+    st.markdown(new_title, unsafe_allow_html=True)
+    st.markdown('---')
+    st.title('Wyniki analizy statystycznej')
+	
 
 
 st.balloons()
