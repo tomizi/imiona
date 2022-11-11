@@ -14,7 +14,7 @@ sekcja = st.sidebar.radio(
 
 im = pd.read_excel(io='imionaa/imiona.xlsx',engine='openpyxl',dtype={'Rok':str})
 
-if sekcja = 'Strona główna':
+if sekcja == 'Strona główna':
 
     st.title(':baby: Analiza imion nadanym dzieciom w latach 2000-2021')
        
