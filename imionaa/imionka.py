@@ -57,11 +57,6 @@ if sekcja == 'Wyniki analizy statystycznej':
     tabelka=pd.DataFrame(tabelka, columns=['K','M'])
     st.line_chart(tabelka)
 	
-	
-
-
-    
-	
 
 
 st.balloons()
