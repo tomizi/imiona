@@ -40,6 +40,8 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.markdown(new_title, unsafe_allow_html=True)
     st.markdown('---')
     st.title('Wyniki analizy statystycznej')
+    
+    im.groupby('Płeć').Liczba.sum()
 	
 
 
