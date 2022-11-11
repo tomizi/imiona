@@ -43,7 +43,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.title('Wyniki analizy statystycznej')
     
     total_ur=im.pivot_table('Liczba', index='Rok', columns='Płeć', aggfunc=sum)	
-    total_ur=pd.DataFrame(total_ur)
+    #total_ur=pd.DataFrame(total_ur,)
     st.line_chart(total_ur)
 	
 
