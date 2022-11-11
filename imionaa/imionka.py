@@ -7,6 +7,10 @@ import plotly.express as px
 
 st.set_page_config(page_title='Analiza imion nadanym dzieciom w latach 2000-2021', page_icon = ':family:', layout='wide')
 
+sekcja = st.sidebar.radio(
+    'Wybierz sekcję:',
+    ('Strona główna','Analiza korespondencji','Wyniki analizy statystycznej')
+ )
 
 im = pd.read_excel(io='imionaa/imiona.xlsx',engine='openpyxl',dtype={'Rok':str})
 
@@ -20,10 +24,6 @@ st.plotly_chart(px.line(im[im['Imię']==imie],x='Rok',y='Liczba',color='Płeć',
 st.header('Część dzieci o nadanym imieniu {} na przestrzeni lat 2000-2021'.format(imie))
 st.plotly_chart(px.line(im[im['Imię']==imie],x='Rok',y='Proporcja%',color='Płeć',markers=True,width=1100, height=600))
 
-sekcja = st.sidebar.radio(
-    'Wybierz sekcję:',
-    ('Strona główna','Analiza korespondencji','Wyniki analizy statystycznej')
- )
 
 st.balloons()
     
