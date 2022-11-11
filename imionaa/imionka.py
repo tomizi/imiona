@@ -9,12 +9,16 @@ st.set_page_config(page_title='Analiza imion nadanym dzieciom w latach 2000-2021
 
 sekcja = st.sidebar.radio(
     'Wybierz sekcję:',
-    ('Strona główna','Analiza korespondencji','Wyniki analizy statystycznej')
+    ('Strona główna','Wyniki analizy statystycznej','Analiza korespondencji')
  )
 
 im = pd.read_excel(io='imionaa/imiona.xlsx',engine='openpyxl',dtype={'Rok':str})
 
 if sekcja == 'Strona główna':
+    new_title = '<b style="color:rgb(0, 80, 170); font-size: 62px;">Strona główna</p>'
+    st.markdown(new_title, unsafe_allow_html=True)
+    st.markdown('---')
+    st.title('UNIWERSYTET MIKOIŁAJA KOPERNIKA W TORUNIU')
 
     st.title(':baby: Analiza imion nadanym dzieciom w latach 2000-2021')
        
