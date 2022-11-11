@@ -36,7 +36,7 @@ if sekcja == 'Strona główna':
 	
 	
 if sekcja == 'Wyniki analizy statystycznej':
-	new_title = '<b style="color:rgb(0, 80, 170); font-size: 62px;">Analiza imion nadanym dzieciom w latach 2000-2021</p>'
+    new_title = '<b style="color:rgb(0, 80, 170); font-size: 62px;">Analiza imion nadanym dzieciom w latach 2000-2021</p>'
     st.markdown(new_title, unsafe_allow_html=True)
     st.markdown('---')
     st.title('Wyniki analizy statystycznej')
