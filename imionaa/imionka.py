@@ -42,7 +42,8 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.markdown('---')
     st.title('Wyniki analizy statystycznej')
     
-    st.line_chart(data=im, x='Rok', y='Liczba', width=1000, height=5000)
+    total_ur=im.pivot_table('Liczba', index='Rok', columns='Płeć', aggfunc=sum)	
+    st.line_chart(total_ur)
 	
 
 
