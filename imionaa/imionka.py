@@ -15,7 +15,7 @@ sekcja = st.sidebar.radio(
 im = pd.read_excel(io='imionaa/imiona.xlsx',engine='openpyxl',dtype={'Rok':str})
 
 if sekcja == 'Strona główna':
-    #new_title = '<b style="color:rgb(0, 80, 170); font-size: 62px;">Analiza imion nadanym dzieciom w latach 2000-2021</p>'
+    new_title = '<b style="color:rgb(0, 80, 170); font-size: 62px;">Analiza imion nadanym dzieciom w latach 2000-2021</p>'
     st.markdown(new_title, unsafe_allow_html=True)
     st.markdown('---')
     st.title('UNIWERSYTET MIKOIŁAJA KOPERNIKA W TORUNIU')
