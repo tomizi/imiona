@@ -42,9 +42,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.markdown('---')
     st.title('Wyniki analizy statystycznej')
     
-    total_ur=im.pivot_table('Liczba', index='Rok', columns='Płeć', aggfunc=sum)
-    st.plotly_chart(px.line(total_ur, x='Rok', y='Liczba', color='PŁeć', markers=True, width = 1000, height=500))
-
+    st.line_chart(data=im, x='Rok', y='Liczba', width=1000, height=5000)
 	
 
 
