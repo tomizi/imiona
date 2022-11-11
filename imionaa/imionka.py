@@ -42,7 +42,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.title('Wyniki analizy statystycznej')
     
     total_ur=imiona.pivot_table('Liczba', index='Rok', columns='Płeć', aggfunc=sum)
-    total_ur.plot(title='Całkowita liczba urodzeń z podziałem na płeć i wiek')
+    st.plotly_chart(px.line(total_ur, x='Rok', y='Liczba', color='PŁeć', markers=True, width = 1000, height=500))
 
 	
 
