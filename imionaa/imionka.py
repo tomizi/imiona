@@ -41,7 +41,8 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.markdown('---')
     st.title('Wyniki analizy statystycznej')
     
-    im.groupby('Płeć').Liczba.sum()
+    st.im.groupby('Płeć').Liczba.sum()
+
 	
 
 
