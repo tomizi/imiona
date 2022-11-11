@@ -56,7 +56,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     top100.reset_index(inplace=True, drop=True)
 	
     tabelka=top100.pivot_table('Proporcja',index='Rok',columns='Płeć',aggfunc=sum)
-    tabelka=pd.DataFrame(tabelka, columns=['K','M']
+    tabelka=pd.DataFrame(tabelka, columns=['K','M'])
     st.line_chart(tabelka)
 
     
