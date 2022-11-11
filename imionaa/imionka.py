@@ -42,10 +42,20 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.markdown('---')
     st.title('Wyniki analizy statystycznej')
     
+    #łączna ilość urodzeń
     total_ur=im.pivot_table('Liczba', index='Rok', columns='Płeć', aggfunc=sum)	
     total_ur=pd.DataFrame(total_ur, columns=['K','M'])
-    st.header('Liczba dzieci urodzonych w latach 2000-2021 z podziałem na płeć')
+    st.header('Łączna liczba dzieci urodzonych w latach 2000-2021 z podziałem na płeć')
     st.line_chart(total_ur)
+ 
+    #top 100
+    def the_top100(group):
+    	return group.sort_values(by='Liczba', ascending=False)[:100]
+    grouped=im.groupby(['Rok','Płeć'])
+    top100=grouped.apply(the_top100)
+    top100.reset_index(inplace=True, drop=True)
+
+    
 	
 
 
