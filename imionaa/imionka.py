@@ -41,7 +41,8 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.markdown('---')
     st.title('Wyniki analizy statystycznej')
     
-    st.im.groupby('Płeć').Liczba.sum()
+    total_ur=imiona.pivot_table('Liczba', index='Rok', columns='Płeć', aggfunc=sum)
+    total_ur.plot(title='Całkowita liczba urodzeń z podziałem na płeć i wiek')
 
 	
 
