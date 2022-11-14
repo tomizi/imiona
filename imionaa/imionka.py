@@ -62,12 +62,12 @@ if sekcja == 'Wyniki analizy statystycznej':
 	
     #Ile imion wystarczy, żeby objąć 50% obserwacji (posortowane od najbardziej do najmnije popularnych)
     def dla_kazdego_roku(group,q=0.5):
-    group=group.sort_values(by='Proporcja',ascending=False)
-    return group.Proporcja.cumsum().values.searchsorted(q)+1
+    	group=group.sort_values(by='Proporcja',ascending=False)
+    	return group.Proporcja.cumsum().values.searchsorted(q)+1
 
-diversity = top500.groupby(['Rok','Płeć']).apply(dla_kazdego_roku)
-diversity = diversity.unstack('Płeć')
-st.line_chart(diversity)
+    diversity = top500.groupby(['Rok','Płeć']).apply(dla_kazdego_roku)
+    diversity = diversity.unstack('Płeć')
+    st.line_chart(diversity)
 
 
 st.balloons()
