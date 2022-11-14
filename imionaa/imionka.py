@@ -13,6 +13,20 @@ sekcja = st.sidebar.radio(
     ('Strona główna','Wyniki analizy statystycznej','Analiza korespondencji')
  )
 
+
+#top 500	
+    def the_top500(group):
+    	return group.sort_values(by='Liczba', ascending=False)[:500]
+    grouped=im.groupby(['Rok','Płeć'])
+    top500=grouped.apply(the_top500)
+    top500.reset_index(inplace=True, drop=True)
+	
+    #Ile imion wystarczy, żeby objąć 50% obserwacji (posortowane od najbardziej do najmnije popularnych)
+    def dla_kazdego_roku(group,q=0.5):
+    	group=group.sort_values(by='Proporcja',ascending=False)
+        return group.Proporcja.cumsum().values.searchsorted(q)+1
+
+
 im = pd.read_excel(io='imionaa/imiona.xlsx',engine='openpyxl',dtype={'Rok':str})
 
 if sekcja == 'Strona główna':
@@ -59,19 +73,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.line_chart(tabelka)
 	
 	
-    #top 500	
-    def the_top500(group):
-    	return group.sort_values(by='Liczba', ascending=False)[:500]
-    grouped=im.groupby(['Rok','Płeć'])
-    top500=grouped.apply(the_top500)
-    top500.reset_index(inplace=True, drop=True)
-	
-    #Ile imion wystarczy, żeby objąć 50% obserwacji (posortowane od najbardziej do najmnije popularnych)
-    def dla_kazdego_roku(group,q=0.5):
-    	group=group.sort_values(by='Proporcja',ascending=False)
-        return group.Proporcja.cumsum().values.searchsorted(q)+1
 
-    
     
     
 
