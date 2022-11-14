@@ -15,7 +15,7 @@ sekcja = st.sidebar.radio(
 
 
 #top 500	
-    def the_top500(group):
+def the_top500(group):
     	return group.sort_values(by='Liczba', ascending=False)[:500]
     grouped=im.groupby(['Rok','Płeć'])
     top500=grouped.apply(the_top500)
