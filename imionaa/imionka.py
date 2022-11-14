@@ -6,7 +6,7 @@ import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 
-#st.set_page_config(page_title='Analiza imion nadanym dzieciom w latach 2000-2021', page_icon = ':family:', layout='wide')
+st.set_page_config(page_title='Analiza imion nadanym dzieciom w latach 2000-2021', page_icon = ':family:', layout='wide')
 
 sekcja = st.sidebar.radio(
     'Wybierz sekcję:',
@@ -20,7 +20,7 @@ if sekcja == 'Strona główna':
     st.markdown(new_title, unsafe_allow_html=True)
     st.markdown('---')
     st.title('Strona główna')
-    st.header(str(5))
+    st.header(5)
     st.subheader('Wybór imienia dla dziecka to niełatwa decyzja. Powinna być świadomym wyborem obojga partnerów. ' +
 		 'Niektórzy rodzice kierują się modą, inni rodzinną tradycją, kolejni łatwością do zdrobnienia. ' +
 		 'Są też tacy, którzy zwracają uwagę na oryginalność lub po prostu brzmienie imienia.')
