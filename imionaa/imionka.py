@@ -81,6 +81,9 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.line_chart(tabelka)
 	
 	
+    diversity = pd.DataFrame(diversity, columns=['K','M']
+    st.line_chart(diversity)
+	
     
 	
 	
