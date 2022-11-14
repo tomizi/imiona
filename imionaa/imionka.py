@@ -18,6 +18,8 @@ sekcja = st.sidebar.radio(
 im = pd.read_excel(io='imionaa/imiona.xlsx',engine='openpyxl',dtype={'Rok':str})
 
 
+
+#PRZYDATNE FUNKCJE
 #top 500	
 def the_top500(group):
     	return group.sort_values(by='Liczba', ascending=False)[:500]
@@ -29,6 +31,9 @@ top500.reset_index(inplace=True, drop=True)
 def dla_kazdego_roku(group,q=0.5):
 	group=group.sort_values(by='Proporcja',ascending=False)
 	return group.Proporcja.cumsum().values.searchsorted(q)+1
+
+diversity = top500.groupby(['Rok','Płeć']).apply(dla_kazdego_roku)
+diversity = diversity.unstack('Płeć')
 	
 
 
@@ -74,6 +79,9 @@ if sekcja == 'Wyniki analizy statystycznej':
     tabelka=pd.DataFrame(tabelka, columns=['K','M'])
     st.subheader('Część urodzonych dzieci, którym nadaje się imiona należące do listy 100 najpopularnijeszych imion')
     st.line_chart(tabelka)
+	
+	
+    
 	
 	
 
