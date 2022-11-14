@@ -63,8 +63,8 @@ if sekcja == 'Wyniki analizy statystycznej':
     def the_top500(group):
     	return group.sort_values(by='Liczba', ascending=False)[:500]
     grouped=im.groupby(['Rok','Płeć'])
-    top100=grouped.apply(the_top500)
-    top100.reset_index(inplace=True, drop=True)
+    top500=grouped.apply(the_top500)
+    top500.reset_index(inplace=True, drop=True)
 	
     #Ile imion wystarczy, żeby objąć 50% obserwacji (posortowane od najbardziej do najmnije popularnych)
     def dla_kazdego_roku(group,q=0.5):
