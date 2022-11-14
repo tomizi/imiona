@@ -71,9 +71,10 @@ if sekcja == 'Wyniki analizy statystycznej':
     	group=group.sort_values(by='Proporcja',ascending=False)
         return group.Proporcja.cumsum().values.searchsorted(q)+1
 
-    	diversity = top500.groupby(['Rok','Płeć']).apply(dla_kazdego_roku)
-    	diversity = diversity.unstack('Płeć')
-    	st.line_chart(diversity)
+    diversity = top500.groupby(['Rok','Płeć']).apply(dla_kazdego_roku)
+    diversity = diversity.unstack('Płeć')
+    divertisity=pd.DataFrame(divertisity, columns=['K','M'])
+    st.line_chart(diversity)
 
 
 st.balloons()
