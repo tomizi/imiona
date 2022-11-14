@@ -27,7 +27,7 @@ top500.reset_index(inplace=True, drop=True)
 
 #Ile imion wystarczy, żeby objąć 50% obserwacji (posortowane od najbardziej do najmnije popularnych)
 def dla_kazdego_roku(group,q=0.5):
-    	group=group.sort_values(by='Proporcja',ascending=False)
+    	group=group.sort_values(by='Proporcja%',ascending=False)
         return group.Proporcja.cumsum().values.searchsorted(q)+1
 
 
