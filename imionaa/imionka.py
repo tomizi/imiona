@@ -72,6 +72,9 @@ if sekcja == 'Wyniki analizy statystycznej':
         return group.Proporcja.cumsum().values.searchsorted(q)+1
 
     
+    
+
+    
 
 
 st.balloons()
