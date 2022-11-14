@@ -26,7 +26,6 @@ if sekcja == 'Strona główna':
        
     imie = st.text_input('Podaj imię: ','Martyna')
     imie = imie.upper()
-    st.write(type(imie))
     #st.header('Liczba dzieci o nadanym imieniu {i} na przestrzeni lat 2000-2021'.format(i=str(imie)))
     st.plotly_chart(px.line(im[im['Imię']==imie],x='Rok',y='Liczba',color='Płeć',markers=True,width=1100, height=600))
 
@@ -44,7 +43,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     #łączna ilość urodzeń
     total_ur=im.pivot_table('Liczba', index='Rok', columns='Płeć', aggfunc=sum)	
     total_ur=pd.DataFrame(total_ur, columns=['K','M'])
-    st.header('Łączna liczba dzieci urodzonych w latach 2000-2021 z podziałem na płeć')
+    st.subheader('Łączna liczba dzieci urodzonych w latach 2000-2021 z podziałem na płeć')
     st.line_chart(total_ur)
  
     #top 100
