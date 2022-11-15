@@ -44,7 +44,7 @@ tabelka1= im.pivot_table('Liczba', index=pierwsza_litera, columns=['Płeć','Rok
 
 
 #wybierzmy 3 roczniki i wyświetlmy kilka pierwszych linii zagregowanych danych
-tab1=tabelka1.reindex(columns=[2000,2010,2021],level='Rok')
+tab1=tabelka1.reindex(columns=[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021],level='Rok')
 
 litera_ulamek = tab1/tab1.sum()
 
@@ -99,9 +99,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.subheader('Liczba imion tworzących 50% zbioru najpopularniejeszych imion')
     st.line_chart(diversity)
 	
-    litera_ulamek_k = pd.DataFrame(litera_ulamek, columns=['2000'])
-    st.bar_chart(litera_ulamek_k)
-	
+    
 	
 
     
