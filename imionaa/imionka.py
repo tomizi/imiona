@@ -35,6 +35,20 @@ def dla_kazdego_roku(group,q=0.5):
 diversity = top500.groupby(['Rok','Płeć']).apply(dla_kazdego_roku)
 diversity = diversity.unstack('Płeć')
 	
+#pierwsza litera imienia
+#Wyciągamy ostatnią literę z kolumny imion
+wyciagam_pierwsza_litere = lambda x: x[1]
+pierwsza_litera = imiona.Imię.map(wyciagam_pierwsza_litere)
+
+tabelka1= imiona.pivot_table('Liczba', index=pierwsza_litera, columns=['Płeć','Rok'], aggfunc=sum)
+
+
+#wybierzmy 3 roczniki i wyświetlmy kilka pierwszych linii zagregowanych danych
+tab1=tabelka1.reindex(columns=[2000,2010,2021],level='Rok')
+
+litera_ulamek = tab1/tab1.sum()
+
+
 
 
 if sekcja == 'Strona główna':
@@ -85,7 +99,8 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.subheader('Liczba imion tworzących 50% zbioru najpopularniejeszych imion')
     st.line_chart(diversity)
 	
-    
+    litera_ulamek_k = pd.DataFrame(litera_ulamek, columns=['K'])
+    st.bar_chart(litera_ulamek_k)
 	
 	
 
