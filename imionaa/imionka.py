@@ -99,7 +99,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.subheader('Liczba imion tworzących 50% zbioru najpopularniejeszych imion')
     st.line_chart(diversity)
 	
-    litera_ulamek_k = pd.DataFrame(litera_ulamek, columns=['K'])
+    litera_ulamek_k = pd.DataFrame(litera_ulamek['K'], columns=['K'])
     st.bar_chart(litera_ulamek_k)
 	
 	
