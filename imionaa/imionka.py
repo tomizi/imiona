@@ -38,9 +38,9 @@ diversity = diversity.unstack('Płeć')
 #pierwsza litera imienia
 #Wyciągamy ostatnią literę z kolumny imion
 wyciagam_pierwsza_litere = lambda x: x[1]
-pierwsza_litera = imiona.Imię.map(wyciagam_pierwsza_litere)
+pierwsza_litera = im.Imię.map(wyciagam_pierwsza_litere)
 
-tabelka1= imiona.pivot_table('Liczba', index=pierwsza_litera, columns=['Płeć','Rok'], aggfunc=sum)
+tabelka1= im.pivot_table('Liczba', index=pierwsza_litera, columns=['Płeć','Rok'], aggfunc=sum)
 
 
 #wybierzmy 3 roczniki i wyświetlmy kilka pierwszych linii zagregowanych danych
