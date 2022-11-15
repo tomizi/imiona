@@ -37,18 +37,14 @@ diversity = diversity.unstack('Płeć')
 	
 #pierwsza litera imienia
 #Wyciągamy pierwszą literę z kolumny imion
+imiona_k=im[imiona.Płeć=='K']
+imiona_m=im[imiona.Płeć=='M']
 wyciagam_pierwsza_litere = lambda x: x[1]
-pierwsza_litera = im.Imię.map(wyciagam_pierwsza_litere)
+pierwsza_litera_k = imiona_k.Imię.map(wyciagam_pierwsza_litere)
+pierwsza_litera_m = imiona_m.Imię.map(wyciagam_pierwsza_litere)
 
-tabelka1= im.pivot_table('Liczba', index=pierwsza_litera, columns=['Płeć','Rok'], aggfunc=sum)
-
-
-#wybierzmy 3 roczniki i wyświetlmy kilka pierwszych linii zagregowanych danych
-tab1=tabelka1.reindex(columns=[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021],level='Rok')
-
-litera_ulamek = tab1/tab1.sum()
-
-
+tabelka_k= imiona.pivot_table('Liczba', index=pierwsza_litera, columns=['Rok'], aggfunc=sum)
+tabelka_m= imiona.pivot_table('Liczba', index=pierwsza_litera, columns=['Rok'], aggfunc=sum)
 
 
 if sekcja == 'Strona główna':
@@ -100,9 +96,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.line_chart(diversity)
 	
     
-	
-
-    
+ 
     
 
     
