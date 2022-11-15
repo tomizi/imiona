@@ -37,8 +37,8 @@ diversity = diversity.unstack('Płeć')
 	
 #pierwsza litera imienia
 #Wyciągamy pierwszą literę z kolumny imion
-imiona_k=im[imiona.Płeć=='K']
-imiona_m=im[imiona.Płeć=='M']
+imiona_k=im[im.Płeć=='K']
+imiona_m=im[im.Płeć=='M']
 wyciagam_pierwsza_litere = lambda x: x[1]
 pierwsza_litera_k = imiona_k.Imię.map(wyciagam_pierwsza_litere)
 pierwsza_litera_m = imiona_m.Imię.map(wyciagam_pierwsza_litere)
