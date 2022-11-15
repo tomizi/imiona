@@ -52,6 +52,7 @@ litera_ulamek_m = tabelka_m/tabelka_m.sum()
 
 
 
+
 if sekcja == 'Strona główna':
     new_title = '<b style="color:rgb(0, 80, 170); font-size: 62px;">Analiza imion nadanym dzieciom w latach 2000-2021</p>'
     st.markdown(new_title, unsafe_allow_html=True)
@@ -101,6 +102,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.line_chart(diversity)
 	
     
+    litera_ulamek_k=pd.DataFrame(litera_ulamek_k, columns=[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021])
     rok = st.text_input('Podaj rok: ',2000)
     st.subheader('Liczba dzieci o nadanym imieniu {i} na przestrzeni lat 2000-2021'.format(i=str(rok)))
     st.bar_chart(litera_ulamek_k)
