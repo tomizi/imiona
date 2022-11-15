@@ -43,8 +43,8 @@ wyciagam_pierwsza_litere = lambda x: x[1]
 pierwsza_litera_k = imiona_k.Imię.map(wyciagam_pierwsza_litere)
 pierwsza_litera_m = imiona_m.Imię.map(wyciagam_pierwsza_litere)
 
-tabelka_k= imiona.pivot_table('Liczba', index=pierwsza_litera, columns=['Rok'], aggfunc=sum)
-tabelka_m= imiona.pivot_table('Liczba', index=pierwsza_litera, columns=['Rok'], aggfunc=sum)
+tabelka_k= im.pivot_table('Liczba', index=pierwsza_litera_k, columns=['Rok'], aggfunc=sum)
+tabelka_m= im.pivot_table('Liczba', index=pierwsza_litera_m, columns=['Rok'], aggfunc=sum)
 
 
 if sekcja == 'Strona główna':
