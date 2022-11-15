@@ -101,10 +101,9 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.line_chart(diversity)
 	
     
-    rok = st.text_input('Podaj rok: ','Martyna')
+    rok = st.text_input('Podaj rok: ',2000)
     st.subheader('Liczba dzieci o nadanym imieniu {i} na przestrzeni lat 2000-2021'.format(i=str(rok)))
-    st.plotly_chart(px.bar(tabelka_k[tabelka_k['Rok']==rok], x='Imię',y='Liczba',color='Płeć',markers=True,width=1100, height=600))
-
+    st.bar_chart(litera_ulamek_k)
     
 
     
