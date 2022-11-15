@@ -36,7 +36,7 @@ diversity = top500.groupby(['Rok','Płeć']).apply(dla_kazdego_roku)
 diversity = diversity.unstack('Płeć')
 	
 #pierwsza litera imienia
-#Wyciągamy ostatnią literę z kolumny imion
+#Wyciągamy pierwszą literę z kolumny imion
 wyciagam_pierwsza_litere = lambda x: x[1]
 pierwsza_litera = im.Imię.map(wyciagam_pierwsza_litere)
 
@@ -99,7 +99,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.subheader('Liczba imion tworzących 50% zbioru najpopularniejeszych imion')
     st.line_chart(diversity)
 	
-    litera_ulamek_k = pd.DataFrame(litera_ulamek['K'], columns=['K'])
+    litera_ulamek_k = pd.DataFrame(litera_ulamek, columns=['K','M'])
     st.bar_chart(litera_ulamek_k)
 	
 	
