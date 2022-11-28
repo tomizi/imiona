@@ -102,10 +102,10 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.subheader('Liczba imion tworzących 50% zbioru najpopularniejeszych imion')
     st.line_chart(diversity)
 	
-    st.dataframe(litera_ulamek_k)
+   
     rok=st.selectbox("Wybierz rok", list(range(2000,2022)))
-    st.dataframe(litera_ulamek_k[str(rok)])
-    st.plotly_chart(px.bar(litera_ulamek_k[str(rok)],y=str(rok)).update_xaxes(title_text='Pierwsza litera').update_yaxes(title_text='czesc'))
+    st.plotly_chart(px.bar(litera_ulamek_k[str(rok)],y=str(rok)).update_xaxes(title_text='Pierwsza litera').update_yaxes(title_text='czesc'
+		).update_layout(plotbgcolor='white'))
     
     
 
