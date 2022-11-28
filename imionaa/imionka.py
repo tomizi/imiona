@@ -104,6 +104,8 @@ if sekcja == 'Wyniki analizy statystycznej':
 	
     st.dataframe(litera_ulamek_k)
     rok=st.selectbox("Wybierz rok", list(range(2000,2022)))
+    st.dataframe(litera_ulamek_k.iloc[str(rok)])
+    st.plotly_chart(px.bar(litera_ulamek_k.iloc[str(rok)]))
     
     
 
