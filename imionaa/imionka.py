@@ -103,6 +103,7 @@ if sekcja == 'Wyniki analizy statystycznej':
 	
     
     
+    
 
     
 
