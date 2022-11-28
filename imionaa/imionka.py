@@ -48,6 +48,7 @@ tabelka_m= im.pivot_table('Liczba', index=pierwsza_litera_m, columns=['Rok'], ag
 
 litera_ulamek_k = tabelka_k/tabelka_k.sum()
 
+
 litera_ulamek_m = tabelka_m/tabelka_m.sum()
 
 
@@ -101,7 +102,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.subheader('Liczba imion tworzących 50% zbioru najpopularniejeszych imion')
     st.line_chart(diversity)
 	
-    
+    st.dataframe(litera_ulamek_k)
     
     
 
