@@ -108,7 +108,8 @@ if sekcja == 'Wyniki analizy statystycznej':
 		).update_layout(plot_bgcolor='white'))
     
     uni=pd.DataFrame({'litera':list(map(lambda x: x[0],im[im['Rok']==str(rok)].sort_values(by='Imię')['Imię'].unique()))}).groupby(['litera'])['litera'].count()
-    st.plotly_chart(px.bar(uni,y='litera'))
+    st.plotly_chart(px.bar(uni,y='litera').update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba imion'
+		).update_layout(plot_bgcolor='white'))
     
 
 
