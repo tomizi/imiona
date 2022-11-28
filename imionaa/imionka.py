@@ -108,7 +108,7 @@ if sekcja == 'Wyniki analizy statystycznej':
 		).update_layout(plot_bgcolor='white'))
     
     
-    st.dataframe(pd.dataframe('litera'=map(lambda x: x[0],im[im['Rok']==str(rok)].sort_values(by='Imię')['Imię'].unique())))
+    st.dataframe(pd.dataframe('litera'=list(map(lambda x: x[0],im[im['Rok']==str(rok)].sort_values(by='Imię')['Imię'].unique()))))
     
 
 
