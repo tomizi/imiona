@@ -108,7 +108,7 @@ if sekcja == 'Wyniki analizy statystycznej':
 		).update_layout(plot_bgcolor='white'))
     
     
-    st.dataframe(im['Imię'].unique().sorted(by='Imię'))
+    st.dataframe(im['Imię'].unique().sort_values(by='Imię'))
     
 
 
