@@ -103,7 +103,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.line_chart(diversity)
 	
     st.dataframe(litera_ulamek_k)
-    rok=st.selectbox(list(range(2000,2021)))
+    rok=st.selectbox("Wybierz rok", list(range(2000,2021)))
     
     
 
