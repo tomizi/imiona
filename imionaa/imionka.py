@@ -108,7 +108,7 @@ if sekcja == 'Wyniki analizy statystycznej':
 		).update_layout(plot_bgcolor='white'))
     
     
-    st.dataframe(wyciagam_pierwsza_litere(im[im['Rok']==str(rok)].sort_values(by='Imię')['Imię'].unique()))
+    st.write(wyciagam_pierwsza_litere(im[im['Rok']==str(rok)].sort_values(by='Imię')['Imię'].unique()))
     
 
 
