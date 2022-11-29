@@ -105,6 +105,7 @@ if sekcja == 'Wyniki analizy statystycznej':
    
     # PIERWSZA LITERA
 	#liczba dziewczynek
+    st.header('Pierwsza litera - imiona żeńskie')
     c1, c2 = st.columns(2)
     with c1:
     	rok=st.selectbox("Wybierz rok", list(range(2000,2022)))
