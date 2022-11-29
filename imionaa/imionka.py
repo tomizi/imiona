@@ -161,9 +161,6 @@ if sekcja == 'Wyniki analizy statystycznej':
     imie1 = imie1.upper()
     imie2 = st.text_input('Podaj drugie imię: ','Joanna')
     imie2 = imie2.upper()
-    st.plotly_chart(px.line(im[im['Imię']==imie1 or im['Imię']==imie2],x='Rok',y='Liczba',color='Płeć',markers=True,width=1100, height=600))
-
-
 
 
     
