@@ -112,9 +112,10 @@ if sekcja == 'Wyniki analizy statystycznej':
     
 	#liczba imion żeńskich
     uni=pd.DataFrame({'litera':list(map(lambda x: x[0],im[(im['Rok']==str(rok)) & (im['Płeć']=='K')].sort_values(by='Imię')['Imię'].unique()))}).groupby(['litera'])['litera'].count()
+    st.subheader('Liczba imion żeńskich rozpoczynających się na daną literę')
     st.plotly_chart(px.bar(uni,y='litera').update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba imion'
 		).update_layout(plot_bgcolor='white'))
-    st.subheader('Liczba imion żeńskich rozpoczynających się na daną literę')
+    
 	
 	
 	#liczba chłopców
@@ -124,9 +125,10 @@ if sekcja == 'Wyniki analizy statystycznej':
     
 	#liczba imion męskich
     uni=pd.DataFrame({'litera':list(map(lambda x: x[0],im[(im['Rok']==str(rok)) & (im['Płeć']=='M')].sort_values(by='Imię')['Imię'].unique()))}).groupby(['litera'])['litera'].count()
+    st.subheader('Liczba imion męskich rozpoczynających się na daną literę')
     st.plotly_chart(px.bar(uni,y='litera').update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba imion'
 		).update_layout(plot_bgcolor='white'))
-    st.subheader('Liczba imion męskich rozpoczynających się na daną literę')
+    
 
 
     
