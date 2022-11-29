@@ -161,9 +161,9 @@ if sekcja == 'Wyniki analizy statystycznej':
     imie1 = imie1.upper()
     imie2 = st.text_input('Podaj drugie imię: ','Joanna')
     imie2 = imie2.upper()
-    imionka2 = pd.im("Imię" in [imie1,imie2])
+    imionka2 = im(im.Imię in [imie1,imie2])
  
-    
+
 
     
     
