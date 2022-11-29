@@ -163,7 +163,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     imie2 = imie2.upper()
     imionka2 = [imie1, imie2]
     st.subheader('Porównanie trendu dla dwóch imion: {i} i {j}'.format(i=str(imie1), j=str(imie2)))
-    st.plotly_chart(px.line(im[im['Imię']==imionka2],im[im['Imię']==imie2],x='Rok',y='Liczba',color='Płeć',markers=True,width=1100, height=600))
+    st.plotly_chart(px.line(im[im['Imię']==imionka2],x='Rok',y='Liczba',color='Płeć',markers=True,width=1100, height=600))
 
     
     
