@@ -48,9 +48,15 @@ tabelka_m= im.pivot_table('Liczba', index=pierwsza_litera_m, columns=['Rok'], ag
 
 litera_ulamek_k = tabelka_k/tabelka_k.sum()
 
-
 litera_ulamek_m = tabelka_m/tabelka_m.sum()
 
+#ostatnia litera imienia
+wyciagam_ostatnia_litere = lambda x: x[-1]
+ostatnia_litera_k = imiona_k.Imię.map(wyciagam_ostatnia_litere)
+ostatnia_litera_m = imiona_m.Imię.map(wyciagam_ostatnia_litere)
+
+tabelka_k1=im.pivot_table('Liczba', index=ostatnia_litera_k,columns=['Rok'], aggfunc=sum)
+tabelka_m1=im.pivot_table('Liczba', index=ostatnia_litera_m,columns=['Rok'], aggfunc=sum)
 
 
 
@@ -134,6 +140,9 @@ if sekcja == 'Wyniki analizy statystycznej':
     	st.subheader('Liczba imion męskich rozpoczynających się na daną literę')
     	st.plotly_chart(px.bar(uni,y='litera').update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
+	
+    st.header('Ostatnia litera - imiona męskie')
+
     
 
 
