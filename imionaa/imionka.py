@@ -105,15 +105,18 @@ if sekcja == 'Wyniki analizy statystycznej':
    
     # PIERWSZA LITERA
 	#liczba dziewczynek
-    rok=st.selectbox("Wybierz rok", list(range(2000,2022)))
-    st.subheader('Liczba dziewczynek o imionach rozpoczynających się na daną literę')
-    st.plotly_chart(px.bar(tabelka_k[str(rok)],y=str(rok)).update_xaxes(title_text='Pierwsza litera').update_yaxes(title_text='Liczba'
+    c1, c2 = st.columns(2)
+    with c1:
+    	rok=st.selectbox("Wybierz rok", list(range(2000,2022)))
+    	st.subheader('Liczba dziewczynek o imionach rozpoczynających się na daną literę')
+    	st.plotly_chart(px.bar(tabelka_k[str(rok)],y=str(rok)).update_xaxes(title_text='Pierwsza litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
     
 	#liczba imion żeńskich
-    uni=pd.DataFrame({'litera':list(map(lambda x: x[0],im[(im['Rok']==str(rok)) & (im['Płeć']=='K')].sort_values(by='Imię')['Imię'].unique()))}).groupby(['litera'])['litera'].count()
-    st.subheader('Liczba imion żeńskich rozpoczynających się na daną literę')
-    st.plotly_chart(px.bar(uni,y='litera').update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
+    with c2:
+    	uni=pd.DataFrame({'litera':list(map(lambda x: x[0],im[(im['Rok']==str(rok)) & (im['Płeć']=='K')].sort_values(by='Imię')['Imię'].unique()))}).groupby(['litera'])['litera'].count()
+    	st.subheader('Liczba imion żeńskich rozpoczynających się na daną literę')
+    	st.plotly_chart(px.bar(uni,y='litera').update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
     
 	
