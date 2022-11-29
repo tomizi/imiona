@@ -124,7 +124,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     	uni=pd.DataFrame({'litera':list(map(lambda x: x[0],im[(im['Rok']==str(rok)) & (im['Płeć']=='K')].sort_values(by='Imię')['Imię'].unique()))}).groupby(['litera'])['litera'].count()
     	st.subheader('Liczba imion żeńskich rozpoczynających się na daną literę')
     	st.plotly_chart(px.bar(uni,y='litera').update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
-		).update_layout(plot_bgcolor='white'))
+		).update_lyout(plot_bgcolor='white'))
     
 	#liczba chłopców
     st.header('Pierwsza litera - imiona męskie')
@@ -161,11 +161,11 @@ if sekcja == 'Wyniki analizy statystycznej':
     imie1 = imie1.upper()
     imie2 = st.text_input('Podaj drugie imię: ','Joanna')
     imie2 = imie2.upper()
-    imionka2 = im[im.Imię in [imie1, imie2]]
+    imionka2 = im[im['Imię' in [imie1, imie2]]
  
 
 
-    
+    im[im['Imię']==imie
     
 
 
