@@ -105,7 +105,7 @@ if sekcja == 'Wyniki analizy statystycznej':
    
     rok=st.selectbox("Wybierz rok", list(range(2000,2022)))
     st.subheader('Ułamek imion żeńskich rozpoczynających się na daną literę')
-    st.plotly_chart(px.bar(litera_ulamek_k[str(rok)],y=str(rok)).update_xaxes(title_text='Pierwsza litera').update_yaxes(title_text='czesc'
+    st.plotly_chart(px.bar(tabelka_k[str(rok)],y=str(rok)).update_xaxes(title_text='Pierwsza litera').update_yaxes(title_text='czesc'
 		).update_layout(plot_bgcolor='white'))
     
     uni=pd.DataFrame({'litera':list(map(lambda x: x[0],im[(im['Rok']==str(rok)) & (im['Płeć']=='K')].sort_values(by='Imię')['Imię'].unique()))}).groupby(['litera'])['litera'].count()
