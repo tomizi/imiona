@@ -159,7 +159,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     #PORÓWNANIE TRENDÓW DLA DWÓCH IMION
     imie1 = st.text_input('Podaj pierwsze imię: ','Martyna')
     imie1 = imie1.upper()
-    imie2 = st.text_input('Podaj drugie imię: ','Martyna')
+    imie2 = st.text_input('Podaj drugie imię: ','Joanna')
     imie2 = imie2.upper()
     imionka2 = pd.DataFrame(imie1, imie2)
  
