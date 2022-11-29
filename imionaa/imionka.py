@@ -144,7 +144,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.header('Ostatnia litera - imiona męskie')
     c5, c6 = st.columns(2)
     with c5:
-    	st.subheader('Liczba chłopców o imieniu rozpoczynającym się na daną literę')
+    	st.subheader('Liczba chłopców o imieniu kończącym się na daną literę')
     	st.plotly_chart(px.bar(tabelka_m1[str(rok)],y=str(rok)).update_xaxes(title_text='Ostatnia litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
     
