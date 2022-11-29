@@ -119,7 +119,7 @@ if sekcja == 'Wyniki analizy statystycznej':
 	
 	
 	#liczba chłopców
-    st.subheader('Liczba dziewczynek o imionach rozpoczynających się na daną literę')
+    st.subheader('Liczba chłopców o imionach rozpoczynających się na daną literę')
     st.plotly_chart(px.bar(tabelka_m[str(rok)],y=str(rok)).update_xaxes(title_text='Pierwsza litera').update_yaxes(title_text='czesc'
 		).update_layout(plot_bgcolor='white'))
     
