@@ -99,11 +99,12 @@ if sekcja == 'Wyniki analizy statystycznej':
 	
 	
     diversity = pd.DataFrame(diversity, columns=['K','M'])
-    st.subheader('Liczba imion tworzących 50% zbioru najpopularniejeszych imion')
+    st.subheader('Liczba imion tworzących 50% zbioru najpopularnijeszych imion')
     st.line_chart(diversity)
 	
    
     rok=st.selectbox("Wybierz rok", list(range(2000,2022)))
+    st.subheader('Ułamek imion żeńskich rozpoczynających się na daną literę')
     st.plotly_chart(px.bar(litera_ulamek_k[str(rok)],y=str(rok)).update_xaxes(title_text='Pierwsza litera').update_yaxes(title_text='czesc'
 		).update_layout(plot_bgcolor='white'))
     
