@@ -164,7 +164,8 @@ if sekcja == 'Wyniki analizy statystycznej':
 
     imionka1=im[im.Imię==str(imie1)]
     imionka2=im[im.Imię==str(imie2)]
-    st.dataframe(imionka2)
+    imionka=pd.concat([imionka1,imionka2], ignore_index=True, sort=False)
+    st.dataframe(imionka)
 
     
 
