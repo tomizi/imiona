@@ -105,7 +105,7 @@ if sekcja == 'Wyniki analizy statystycznej':
 	
 	
     diversity = pd.DataFrame(diversity, columns=['K','M'])
-    st.subheader('Liczba imion tworzących 50% zbioru najpopularnijeszych imion')
+    st.subheader('Liczba imion tworzących 50% zbioru najpopularniejszych imion')
     st.line_chart(diversity)
 	
    
