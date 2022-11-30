@@ -173,7 +173,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     #IMIONA JEDNOCZEŚNIE MĘSKIE I ŻEŃSKIE
     chłopcy=im[im.Płeć=='M']
     dziewczynki=im[im.Płeć=='K']
-    dziwne=chłopcy[chłopcy.Imię]==dziewczynki[dziewczynki.Imię]
+    dziwne=['Luiza']
     st.dataframe(dziwne)
 
 st.balloons()
