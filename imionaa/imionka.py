@@ -163,7 +163,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     imie2 = imie2.upper()
 
     imionka2=im[im.Imię==str(imie1)]
-    st.DataFrame(imionka2)
+    st.dataframe(imionka2)
 
     
 
