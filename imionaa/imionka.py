@@ -115,7 +115,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.header('Pierwsza litera - imiona żeńskie')
     c1, c2 = st.columns(2)
     with c1:
-    	st.subheader('Liczba dziewczynek o imionach rozpoczynających się na daną literę')
+    	st.subheader('Liczba dziewczynek o imieniu rozpoczynającym się na daną literę')
     	st.plotly_chart(px.bar(tabelka_k[str(rok)],y=str(rok)).update_xaxes(title_text='Pierwsza litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
     
@@ -130,7 +130,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.header('Pierwsza litera - imiona męskie')
     c3, c4 = st.columns(2)
     with c3:
-    	st.subheader('Liczba chłopców o imionach rozpoczynających się na daną literę')
+    	st.subheader('Liczba chłopców o imieniu rozpoczynającym się na daną literę')
     	st.plotly_chart(px.bar(tabelka_m[str(rok)],y=str(rok)).update_xaxes(title_text='Pierwsza litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
     
