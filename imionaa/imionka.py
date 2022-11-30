@@ -170,7 +170,11 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.plotly_chart(px.line(imionka,x='Rok',y='Liczba',color='Imię',markers=True,width=1100, height=600))
 
     
-
+    #IMIONA JEDNOCZEŚNIE MĘSKIE I ŻEŃSKIE
+    chłopcy=im[im.Płeć=='M']
+    dziewczynki=im[im.Płeć=='K']
+    dziwne=chłopcy[chłopcy.Imię]==dziewczynki[dziewczynki.Imię]
+    st.dataframe(dziwne)
 
 st.balloons()
     
