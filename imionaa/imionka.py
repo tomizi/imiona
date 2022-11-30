@@ -162,8 +162,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     imie2 = st.text_input('Podaj drugie imię: ','Joanna')
     imie2 = imie2.upper()
 
-
-    
+    imionka2=im[im.Imię==str(imie1)]
 
 
     
