@@ -6,7 +6,7 @@ import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 
-st.set_page_config(page_title='Analiza imion nadanym dzieciom w latach 2000-2021', page_icon = ':family:', layout='wide')
+st.set_page_config(page_title='Analiza imion nadanych dzieciom w latach 2000-2021', page_icon = ':family:', layout='wide')
 
 sekcja = st.sidebar.radio(
     'Wybierz sekcję:',
