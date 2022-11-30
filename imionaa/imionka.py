@@ -176,6 +176,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     dziwne=['ADEL','ADI','ALEX','ALEXIS','AMAL','AMIT','ANDREA','ANGEL','ARIEL','BAO AN','CHEN','DANIEL','EDEN','ELI','ELIA','EZRA','FABIAN','GIA',
 	    'IGOR','ILIA','IMAN','ISA','KAREN','LAUREN','LILIAN','MICHAL','MIKA','MILENA','MINH','MINH ANH','MORGAN','NICOLA','NIKITA','NIKOLA',
 	    'NOA','NOAM','OMER','ORI','PARIS','RILEY','RONI','SASHA','SIMONE','SZYMON','TAL','THIEN AN','YARDEN','YUVAL']
+    st.subheader('Imiona dla dzieci, które były nadawane zarówno chłopcom jak i dziewczynkom')
     st.dataframe(dziwne)
 
 st.balloons()
