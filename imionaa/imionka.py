@@ -157,6 +157,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     
 	
     #PORÓWNANIE TRENDÓW DLA DWÓCH IMION
+    
     imie1 = st.text_input('Podaj pierwsze imię: ','Martyna')
     imie1 = imie1.upper()
     imie2 = st.text_input('Podaj drugie imię: ','Joanna')
@@ -166,6 +167,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     imionka2=im[im.Imię==str(imie2)]
     imionka=pd.concat([imionka1,imionka2], ignore_index=True, sort=False)
     #st.dataframe(imionka)
+    st.subheader('Porównanie trendów dla dwóch imion')
     st.plotly_chart(px.line(imionka,x='Rok',y='Liczba',color='Imię',markers=True,width=1100, height=600))
 
     
