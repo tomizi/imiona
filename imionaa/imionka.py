@@ -203,6 +203,8 @@ if sekcja == 'Wyniki analizy statystycznej':
     fig.update_layout(height=600,showlegend=False)
     col1, col2 = st.columns(2)
     col1.plotly_chart(fig)
+    col2.plotly_chart(fig)
+
   
    
  
