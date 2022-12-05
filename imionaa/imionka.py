@@ -180,7 +180,7 @@ if sekcja == 'Wyniki analizy statystycznej':
 	    'NOA','NOAM','OMER','ORI','PARIS','RILEY','RONI','SASHA','SIMONE','SZYMON','TAL','THIEN AN','YARDEN','YUVAL']
     st.subheader('Imiona dla dzieci, które były nadawane zarówno chłopcom jak i dziewczynkom')
     st.dataframe(dziwne)
-	
+	#Mapka polski
     with urlopen('https://raw.githubusercontent.com/ppatrzyk/polska-geojson/master/wojewodztwa/wojewodztwa-min.geojson') as response:
         counties = json.load(response)
     dff = pd.DataFrame({"Województwo":['dolnośląskie','kujawsko-pomorskie','lubelskie','lubuskie','łódzkie','małopolskie','mazowieckie',
@@ -203,6 +203,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     fig.update_layout(height=650,showlegend=False,title="Mapa Polski",title_x=0.5)
     col1, col2 = st.columns(2)
     col1.plotly_chart(fig)
+    # top 10
     DF = pd.DataFrame({"Województwo":['dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie',
 				      'kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie',
 				      'lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie',
