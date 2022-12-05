@@ -5,6 +5,8 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
+from urllib.request import urlopen
+import json
 
 st.set_page_config(page_title='Analiza imion nadanych dzieciom w latach 2000-2021', page_icon = ':family:', layout='wide')
 
@@ -178,6 +180,25 @@ if sekcja == 'Wyniki analizy statystycznej':
 	    'NOA','NOAM','OMER','ORI','PARIS','RILEY','RONI','SASHA','SIMONE','SZYMON','TAL','THIEN AN','YARDEN','YUVAL']
     st.subheader('Imiona dla dzieci, które były nadawane zarówno chłopcom jak i dziewczynkom')
     st.dataframe(dziwne)
+	
+    with urlopen('https://raw.githubusercontent.com/ppatrzyk/polska-geojson/master/wojewodztwa/wojewodztwa-min.geojson') as response:
+        counties = json.load(response)
+    dff = pd.DataFrame({"Województwo":['dolnośląskie','kujawsko-pomorskie','lubelskie','lubuskie','łódzkie','małopolskie','mazowieckie',
+                                   'opolskie','podkarpackie','podlaskie','pomorskie','śląskie','świętokrzyskie','warmińsko-mazurskie',
+                                   'wielkopolskie','zachodniopomorskie'],'Imię':['Martyna']*16,'Liczba':list(range(400,2000,100)),'kolor':['blue']*16})
+    dff['kolor']=dff['kolor'].where(dff['Województwo']!='opolskie','lightgray')
+    fig = px.choropleth(dff,
+                    locations="Województwo",
+                    geojson=counties,
+                    featureidkey="properties.nazwa",
+                    color='Województwo',
+                    color_discrete_sequence=dff['kolor'],
+                    range_color=(400, 1900),
+                   projection="mercator")
+    
+    fig.update_geos(fitbounds="locations", visible=False)
+    fig.update_layout(height=600)
+    st.plotly_chart(fig)
 
 st.balloons()
     
