@@ -254,7 +254,8 @@ if sekcja == 'Wyniki analizy statystycznej':
 				       
 		     )
     col2.plotly_chart(px.bar(x=DF[DF['Województwo']==mies]['Liczba imion'][::-1],y=DF[DF['Województwo']==mies]['Imię'][::-1],
-			     orientation='h',text=DF[DF['Województwo']==mies]['Liczba imion'][::-1],color_discrete_sequence='red',
+			     orientation='h',text=DF[DF['Województwo']==mies]['Liczba imion'][::-1],color=DF[DF['Województwo']==mies]['Liczba imion'][::-1],y=DF[DF['Województwo']==mies]['Imię'][::-1],
+			     color_discrete_sequence='red',
 			     title='Top 10 imon żeńskich').update_xaxes(title_text='Liczba imion').update_yaxes(title_text='Imię').update_layout(plot_bgcolor='white',title_x=0.5))
 
   
