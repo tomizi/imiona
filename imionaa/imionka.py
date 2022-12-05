@@ -200,7 +200,7 @@ if sekcja == 'Wyniki analizy statystycznej':
                    projection="mercator")
     
     fig.update_geos(fitbounds="locations", visible=False)
-    fig.update_layout(height=600,showlegend=False)
+    fig.update_layout(height=600,showlegend=False,title="Mapa Polski",title_x=0.5)
     col1, col2 = st.columns(2)
     col1.plotly_chart(fig)
     DF = pd.DataFrame({"Województwo":['dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie',
