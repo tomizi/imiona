@@ -202,8 +202,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     fig.update_geos(fitbounds="locations", visible=False)
     fig.update_layout(height=600,showlegend=False)
     col1, col2 = st.columns(2)
-    with col1:
-	st.write('ksakdk')
+  
    
  
 
