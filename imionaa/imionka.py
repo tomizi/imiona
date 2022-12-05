@@ -204,9 +204,9 @@ if sekcja == 'Wyniki analizy statystycznej':
     col1, col2 = st.columns(2)
     with col1:
 	st.plotly_chart(fig)
-    with col2:
-	st.plotly_chart(fig)
+ 
 
+    
 st.balloons()
     
         
