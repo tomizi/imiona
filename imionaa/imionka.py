@@ -200,7 +200,7 @@ if sekcja == 'Wyniki analizy statystycznej':
                    projection="mercator")
     
     fig.update_geos(fitbounds="locations", visible=False)
-    fig.update_layout(height=600)
+    fig.update_layout(height=600,showlegend=False)
     st.plotly_chart(fig)
 
 st.balloons()
