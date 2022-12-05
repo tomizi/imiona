@@ -253,7 +253,7 @@ if sekcja == 'Wyniki analizy statystycznej':
 				       414,403,386,374,362,355,329,315,279,275]}
 				       
 		     )
-    col2.plotly_chart(px.bar(DF['Województwo']==mies,x='Liczba imion',y='Imię',orientation='h',text='Imię'))
+    col2.plotly_chart(px.bar(DF[DF['Województwo']==mies],x='Liczba imion',y='Imię',orientation='h',text='Imię'))
 
   
    
