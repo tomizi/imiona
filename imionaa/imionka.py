@@ -186,7 +186,10 @@ if sekcja == 'Wyniki analizy statystycznej':
     dff = pd.DataFrame({"Województwo":['dolnośląskie','kujawsko-pomorskie','lubelskie','lubuskie','łódzkie','małopolskie','mazowieckie',
                                    'opolskie','podkarpackie','podlaskie','pomorskie','śląskie','świętokrzyskie','warmińsko-mazurskie',
                                    'wielkopolskie','zachodniopomorskie'],'Imię':['Martyna']*16,'Liczba':list(range(400,2000,100)),'kolor':['blue']*16})
-    dff['kolor']=dff['kolor'].where(dff['Województwo']!='opolskie','lightgray')
+    mies = st.selectbox('Wybierz województwo: ',['dolnośląskie','kujawsko-pomorskie','lubelskie','lubuskie','łódzkie','małopolskie','mazowieckie',
+                                   'opolskie','podkarpackie','podlaskie','pomorskie','śląskie','świętokrzyskie','warmińsko-mazurskie',
+                                   'wielkopolskie','zachodniopomorskie'])
+    dff['kolor']=dff['kolor'].where(dff['Województwo']!=mies,'lightgray')
     fig = px.choropleth(dff,
                     locations="Województwo",
                     geojson=counties,
