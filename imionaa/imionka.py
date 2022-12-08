@@ -224,7 +224,7 @@ if sekcja == 'Wyniki analizy statystycznej':
 		       'Imię':['Zuzanna','Hanna','Zofia','Maja','Julia','Laura','Oliwia','Pola','Alicja','Lena',
 			       'Zofia','Zuzanna','Maja','Julia','Laura','Pola','Alicja','Lena','Oliwia','Hanna',
 			       'Zuzanna','Julia','Hanna','Laura','Alicja','Zofia','Oliwia','Lena','Maja','Pola',
-			       'Hanna';'Zuzanna';'Maja';'Pola';'Julia';'Zofia';'Laura';'Lena';'Oliwia';'Maria',
+			       'Hanna','Zuzanna','Maja','Pola','Julia','Zofia','Laura','Lena','Oliwia','Maria',
 			       'Zofia','Alicja','Zuzanna','Julia','Hanna','Laura','Maja','Maria','Oliwia','Pola',
 			       'Zuzanna','Julia','Zofia','Emilia','Hanna','Laura','Maja','Alicja','Oliwia','Lena',
 			       'Hanna','Zofia','Zuzanna','Julia','Lena','Maja','Laura','Pola','Emilia','Oliwia',
