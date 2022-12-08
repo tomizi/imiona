@@ -269,7 +269,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     dff = pd.DataFrame({"Województwo":['dolnośląskie','kujawsko-pomorskie','lubelskie','lubuskie','łódzkie','małopolskie','mazowieckie',
                                    'opolskie','podkarpackie','podlaskie','pomorskie','śląskie','świętokrzyskie','warmińsko-mazurskie',
                                    'wielkopolskie','zachodniopomorskie'],'kolor':['lightgray']*16})
-    mies = st.selectbox('Wybierz województwo: ',['dolnośląskie','kujawsko-pomorskie','lubelskie','lubuskie','łódzkie','małopolskie','mazowieckie',
+    woj = st.selectbox('Wybierz województwo: ',['dolnośląskie','kujawsko-pomorskie','lubelskie','lubuskie','łódzkie','małopolskie','mazowieckie',
                                    'opolskie','podkarpackie','podlaskie','pomorskie','śląskie','świętokrzyskie','warmińsko-mazurskie',
                                    'wielkopolskie','zachodniopomorskie'])
     dff['kolor']=dff['kolor'].where(dff['Województwo']!=mies,'red')
