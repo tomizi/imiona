@@ -316,25 +316,7 @@ if sekcja == 'Wyniki analizy statystycznej':
 				       279,223,200,198,172,142,139,130,127,122]}
 				       
 		     )
-    dff = pd.DataFrame({"Województwo":['dolnośląskie','kujawsko-pomorskie','lubelskie','lubuskie','łódzkie','małopolskie','mazowieckie',
-                                   'opolskie','podkarpackie','podlaskie','pomorskie','śląskie','świętokrzyskie','warmińsko-mazurskie',
-                                   'wielkopolskie','zachodniopomorskie'],'kolor':['lightgray']*16})
-    woj = st.selectbox('Wybierz województwo: ',['dolnośląskie','kujawsko-pomorskie','lubelskie','lubuskie','łódzkie','małopolskie','mazowieckie',
-                                   'opolskie','podkarpackie','podlaskie','pomorskie','śląskie','świętokrzyskie','warmińsko-mazurskie',
-                                   'wielkopolskie','zachodniopomorskie'])
-    dff['kolor']=dff['kolor'].where(dff['Województwo']!=woj,'red')
-    fig = px.choropleth(dff,
-                    locations="Województwo",
-                    geojson=counties,
-                    featureidkey="properties.nazwa",
-                    color='Województwo',
-                    color_discrete_sequence=dff['kolor'],
-                    range_color=(400, 1900),
-                   projection="mercator")
-    
-    fig.update_geos(fitbounds="locations", visible=False)
-    fig.update_layout(height=650,showlegend=False,title="Mapa Polski",title_x=0.5)
-
+   
     col1.plotly_chart(fig)
     col2.plotly_chart(px.bar(x=DF_c[DF_c['Województwo']==woj]['Liczba imion'][::-1],y=DF_c[DF_c['Województwo']==woj]['Imię'][::-1],
 			     orientation='h',text=DF_c[DF_c['Województwo']==woj]['Liczba imion'][::-1],color=["red"]*10,
