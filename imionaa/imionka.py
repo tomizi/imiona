@@ -180,6 +180,7 @@ if sekcja == 'Wyniki analizy statystycznej':
 	    'NOA','NOAM','OMER','ORI','PARIS','RILEY','RONI','SASHA','SIMONE','SZYMON','TAL','THIEN AN','YARDEN','YUVAL']
     st.subheader('Imiona dla dzieci, które były nadawane zarówno chłopcom jak i dziewczynkom')
     st.dataframe(dziwne)
+	
 	#Mapka polski
     with urlopen('https://raw.githubusercontent.com/ppatrzyk/polska-geojson/master/wojewodztwa/wojewodztwa-min.geojson') as response:
         counties = json.load(response)
@@ -261,7 +262,86 @@ if sekcja == 'Wyniki analizy statystycznej':
 				).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
 
   
-   
+
+      #chłopcy
+    with urlopen('https://raw.githubusercontent.com/ppatrzyk/polska-geojson/master/wojewodztwa/wojewodztwa-min.geojson') as response:
+        counties = json.load(response)
+    dff = pd.DataFrame({"Województwo":['dolnośląskie','kujawsko-pomorskie','lubelskie','lubuskie','łódzkie','małopolskie','mazowieckie',
+                                   'opolskie','podkarpackie','podlaskie','pomorskie','śląskie','świętokrzyskie','warmińsko-mazurskie',
+                                   'wielkopolskie','zachodniopomorskie'],'kolor':['lightgray']*16})
+    mies = st.selectbox('Wybierz województwo: ',['dolnośląskie','kujawsko-pomorskie','lubelskie','lubuskie','łódzkie','małopolskie','mazowieckie',
+                                   'opolskie','podkarpackie','podlaskie','pomorskie','śląskie','świętokrzyskie','warmińsko-mazurskie',
+                                   'wielkopolskie','zachodniopomorskie'])
+    dff['kolor']=dff['kolor'].where(dff['Województwo']!=mies,'red')
+    fig = px.choropleth(dff,
+                    locations="Województwo",
+                    geojson=counties,
+                    featureidkey="properties.nazwa",
+                    color='Województwo',
+                    color_discrete_sequence=dff['kolor'],
+                    range_color=(400, 1900),
+                   projection="mercator")
+    
+    fig.update_geos(fitbounds="locations", visible=False)
+    fig.update_layout(height=650,showlegend=False,title="Mapa Polski",title_x=0.5)
+    col1, col2 = st.columns(2)
+    col1.plotly_chart(fig)
+    # top 10
+    DF = pd.DataFrame({"Województwo":['dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie',
+				      'kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie',
+				      'lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie',
+				      'lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie',
+				      'małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie',
+				      'mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie',
+				      'opolskie','opolskie','opolskie','opolskie','opolskie','opolskie','opolskie','opolskie','opolskie','opolskie',
+				      'podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie',
+				      'podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie',
+				      'pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie',
+				      'śląskie','śląskie','śląskie','śląskie','śląskie','śląskie','śląskie','śląskie','śląskie','śląskie',
+				      'świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie',
+				      'warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie',
+				      'wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie',
+				      'zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie',
+				     'łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie'],
+		       'Imię':['ZUZANNA','HANNA','ZOFIA','MAJA','JULIA','LAURA','OLIWIA','POLA','ALICJA','LENA',
+			       'ZOFIA','ZUZANNA','MAJA','JULIA','LAURA','POLA','ALICJA','LENA','OLIWIA','HANNA',
+			       'ZUZANNA','JULIA','HANNA','LAURA','ALICJA','ZOFIA','OLIWIA','LENA','MAJA','POLA',
+			       'HANNA','ZUZANNA','MAJA','POLA','JULIA','ZOFIA','LAURA','LENA','OLIWIA','MARIA',
+			       'ZUZANNA','JULIA','ZOFIA','EMILIA','HANNA','LAURA','MAJA','ALICJA','OLIWIA','LENA',
+			       'ZOFIA','ALICJA','ZUZANNA','JULIA','HANNA','LAURA','MAJA','MARIA','OLIWIA','POLA',
+			       'HANNA','ZOFIA','ZUZANNA','JULIA','LENA','MAJA','LAURA','POLA','EMILIA','OLIWIA',
+			       'JULIA','LAURA','HANNA','ZUZANNA','ZOFIA','MAJA','EMILIA','LENA','OLIWIA','ALEKSANDRA',
+			       'ZUZANNA','HANNA','LAURA','ZOFIA','JULIA','OLIWIA','MAJA','MARIA','MARCELINA','ALICJA',
+			       'ZUZANNA','ZOFIA','LAURA','HANNA','MAJA','JULIA','POLA','OLIWIA','LENA','MARIA',
+			       'ZUZANNA','HANNA','JULIA','MAJA','EMILIA','ZOFIA','LAURA','ALICJA','LENA','OLIWIA',
+			       'HANNA','ZUZANNA','ZOFIA','LENA','LAURA','JULIA','MAJA','MARIA','ALICJA','OLIWIA',
+			       'ZUZANNA','HANNA','ZOFIA','JULIA','MAJA','LAURA','MARIA','POLA','OLIWIA','ALICJA',
+			       'ZOFIA','ZUZANNA','MAJA','JULIA','LAURA','HANNA','LENA','POLA','OLIWIA','MARIA',
+			       'MAJA','ZUZANNA','HANNA','JULIA','ZOFIA','POLA','LAURA','LENA','MARIA','OLIWIA',
+			       'HANNA','ZUZANNA','ZOFIA','MAJA','JULIA','LAURA','OLIWIA','ALICJA','LENA','MARIA'],
+		       'Liczba imion':[497,489,428,416,405,365,362,346,309,301,
+				       363,326,286,285,276,273,263,258,230,227,
+				       330,316,287,282,277,258,247,245,238,219,
+				       167,161,141,137,132,124,120,100,100,90,
+				       686,670,660,591,586,573,554,512,510,444,
+				       1136,983,983,938,909,901,828,767,758,714,
+				       145,134,128,128,118,115,111,109,99,86,
+				       353,353,352,346,316,313,300,286,272,230,
+				       226,219,201,185,180,167,159,153,152,137,
+				       454,438,398,369,363,350,339,286,279,273,
+				       730,706,677,618,597,585,581,559,538,531,
+				       189,182,178,172,157,157,156,135,124,124,
+				       268,237,229,192,191,166,160,159,152,144,
+				       675,581,570,559,521,519,480,454,454,450,
+				       263,258,249,248,230,228,203,180,177,161,
+				       414,403,386,374,362,355,329,315,279,275]}
+				       
+		     )
+    col2.plotly_chart(px.bar(x=DF[DF['Województwo']==mies]['Liczba imion'][::-1],y=DF[DF['Województwo']==mies]['Imię'][::-1],
+			     orientation='h',text=DF[DF['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
+			     color_discrete_map="identity",
+			     title='Top 10 imon żeńskich').update_xaxes(title_text='Liczba imion').update_yaxes(title_text='Imię'
+				).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
  
 
     
