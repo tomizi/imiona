@@ -202,6 +202,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     
     fig.update_geos(fitbounds="locations", visible=False)
     fig.update_layout(height=650,showlegend=False,title="Mapa Polski",title_x=0.5)
+    st.subheader('Najczęściej nadawane imiona żeńskie w 2021 roku w podziale na województwa")
     col1, col2 = st.columns(2)
     col1.plotly_chart(fig)
     # top 10
