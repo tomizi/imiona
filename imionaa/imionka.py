@@ -182,7 +182,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.dataframe(dziwne)
 	
 	#Mapka Polski
-    st.subheader('Najczęściej nadawane imiona dzieciom w 2021 roku w podziale na województwa')
+    st.subheader('Najczęściej nadawane dzieciom imiona w 2021 roku w podziale na województwa')
     with urlopen('https://raw.githubusercontent.com/ppatrzyk/polska-geojson/master/wojewodztwa/wojewodztwa-min.geojson') as response:
         counties = json.load(response)
     dff = pd.DataFrame({"Województwo":['dolnośląskie','kujawsko-pomorskie','lubelskie','lubuskie','łódzkie','małopolskie','mazowieckie',
@@ -203,7 +203,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     
     fig.update_geos(fitbounds="locations", visible=False)
     fig.update_layout(height=650,showlegend=False,title="Mapa Polski",title_x=0.5)
-    st.subheader('Najczęściej nadawane imiona żeńskie w 2021 roku w podziale na województwa')
+    st.subheader('Imiona żeńskie')
     col1, col2 = st.columns(2)
     col1.plotly_chart(fig)
     # top 10
@@ -285,7 +285,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     
     fig.update_geos(fitbounds="locations", visible=False)
     fig.update_layout(height=650,showlegend=False,title="Mapa Polski",title_x=0.5)
-    st.subheader('Najczęściej nadawane imiona męskie w 2021 roku w podziale na województwa')
+    st.subheader('Imiona męskie')
 
     col1, col2 = st.columns(2)
     col1.plotly_chart(fig)
