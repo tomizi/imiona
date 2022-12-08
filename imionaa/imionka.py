@@ -203,7 +203,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     fig.update_geos(fitbounds="locations", visible=False)
     fig.update_layout(height=650,showlegend=False,title="Mapa Polski",title_x=0.5)
     col1, col2 = st.columns(2)
-    st.plotly_chart(fig)
+    col1.plotly_chart(fig)
     # top 10
     DF = pd.DataFrame({"Województwo":['dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie',
 				      'kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie',
@@ -264,7 +264,28 @@ if sekcja == 'Wyniki analizy statystycznej':
   
 
       #chłopcy
-  
+    with urlopen('https://raw.githubusercontent.com/ppatrzyk/polska-geojson/master/wojewodztwa/wojewodztwa-min.geojson') as response:
+        counties = json.load(response)
+    dff = pd.DataFrame({"Województwo":['dolnośląskie','kujawsko-pomorskie','lubelskie','lubuskie','łódzkie','małopolskie','mazowieckie',
+                                   'opolskie','podkarpackie','podlaskie','pomorskie','śląskie','świętokrzyskie','warmińsko-mazurskie',
+                                   'wielkopolskie','zachodniopomorskie'],'kolor':['lightgray']*16})
+    mies = st.selectbox('Wybierz województwo: ',['dolnośląskie','kujawsko-pomorskie','lubelskie','lubuskie','łódzkie','małopolskie','mazowieckie',
+                                   'opolskie','podkarpackie','podlaskie','pomorskie','śląskie','świętokrzyskie','warmińsko-mazurskie',
+                                   'wielkopolskie','zachodniopomorskie'])
+    dff['kolor']=dff['kolor'].where(dff['Województwo']!=mies,'red')
+    fig = px.choropleth(dff,
+                    locations="Województwo",
+                    geojson=counties,
+                    featureidkey="properties.nazwa",
+                    color='Województwo',
+                    color_discrete_sequence=dff['kolor'],
+                    range_color=(400, 1900),
+                   projection="mercator")
+    
+    fig.update_geos(fitbounds="locations", visible=False)
+    fig.update_layout(height=650,showlegend=False,title="Mapa Polski",title_x=0.5)
+    col1, col2 = st.columns(2)
+    col1.plotly_chart(fig)
     # top 10
     DF_c = pd.DataFrame({"Województwo":['dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie',
 				      'kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie',
