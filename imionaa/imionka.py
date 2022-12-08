@@ -182,6 +182,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.dataframe(dziwne)
 	
 	#Mapka Polski
+    st.subheader('Najczęściej nadawane imiona dzieciom w 2021 roku w podziale na województwa')
     with urlopen('https://raw.githubusercontent.com/ppatrzyk/polska-geojson/master/wojewodztwa/wojewodztwa-min.geojson') as response:
         counties = json.load(response)
     dff = pd.DataFrame({"Województwo":['dolnośląskie','kujawsko-pomorskie','lubelskie','lubuskie','łódzkie','małopolskie','mazowieckie',
