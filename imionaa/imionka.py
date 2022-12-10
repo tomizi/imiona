@@ -356,7 +356,7 @@ if sekcja == 'Analiza korespondencji':
     st.markdown(new_title, unsafe_allow_html=True)
     st.markdown('---')
     st.title('Analiza korespondencji')
-    st.image('imionaa/thumbnail.jpg',caption='Próba wstawienia zdjęcia zakończona sukcesem')
+    st.image('imionaa/PI/zk1.png')
     
     
 st.balloons()
