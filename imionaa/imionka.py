@@ -356,7 +356,10 @@ if sekcja == 'Analiza korespondencji':
     st.markdown(new_title, unsafe_allow_html=True)
     st.markdown('---')
     st.title('Analiza korespondencji')
-    st.image('C:/Users/mgroblica/Pictures/thumbnail.jpg')
+    from PIL import Image
+    image = Image.open('sunrise.jpg')
+
+    st.image(image, caption='Sunrise by the mountains')
     
 st.balloons()
     
