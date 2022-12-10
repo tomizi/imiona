@@ -356,7 +356,7 @@ if sekcja == 'Analiza korespondencji':
     st.markdown(new_title, unsafe_allow_html=True)
     st.markdown('---')
     st.title('Analiza korespondencji')
-    st.image('https://www.umk.pl/siw/galeria_inspiracje/UMKins8.jpg')
+    #st.image()
     
 st.balloons()
     
