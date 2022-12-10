@@ -7,6 +7,8 @@ import plotly.express as px
 import plotly.graph_objects as go
 from urllib.request import urlopen
 import json
+from PIL import Image
+
 
 st.set_page_config(page_title='Analiza imion nadanych dzieciom w latach 2000-2021', page_icon = ':family:', layout='wide')
 
@@ -348,7 +350,12 @@ if sekcja == 'Wyniki analizy statystycznej':
 			     title='Top 10 imon męskich').update_xaxes(title_text='Liczba imion').update_yaxes(title_text='Imię'
 				).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
  
-
+if sekcja == 'Analiza korespondencji':
+    new_title = '<b style="color:rgb(0, 80, 170); font-size: 62px;">Analiza imion nadanym dzieciom w latach 2000-2021</p>'
+    st.markdown(new_title, unsafe_allow_html=True)
+    st.markdown('---')
+    st.title('Analiza korespondecji')
+	
     
 st.balloons()
     
