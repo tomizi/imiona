@@ -356,7 +356,7 @@ if sekcja == 'Analiza korespondencji':
     st.markdown('---')
     st.title('Analiza korespondencji')
 
-    image = Image.open('thumbnail .jpg')
+    image = Image.open('thumbnail.jpg')
     st.image(image, caption='Sunrise by the mountains')
     
 st.balloons()
