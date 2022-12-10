@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 from urllib.request import urlopen
 import json
 from PIL import Image
-image = Image.open('thumbnail.jpg')
+
 
 
 st.set_page_config(page_title='Analiza imion nadanych dzieciom w latach 2000-2021', page_icon = ':family:', layout='wide')
@@ -356,6 +356,7 @@ if sekcja == 'Analiza korespondencji':
     st.markdown(new_title, unsafe_allow_html=True)
     st.markdown('---')
     st.title('Analiza korespondencji')
+    image = Image.open('C:/Users/mgroblica/Pictures/thumbnail.jpg')
     st.image(image, caption='Sunrise by the mountains')
     
 st.balloons()
