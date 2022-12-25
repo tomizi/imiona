@@ -216,7 +216,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     fig.update_layout(height=650,showlegend=False,title="Mapa Polski",title_x=0.5)
     st.subheader('Imiona żeńskie')
     col1, col2 = st.columns(2)
-    col1.plotly_chart(fig)
+    
 	
 	
      #chłopcy
@@ -239,7 +239,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     fig.update_geos(fitbounds="locations", visible=False)
     fig.update_layout(height=650,showlegend=False,title="Mapa Polski",title_x=0.5)
     st.subheader('Imiona męskie')
-    col1.plotly_chart(fig)
+    #col1.plotly_chart(fig)
     # top 10
     DF = pd.DataFrame({"Województwo":['dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie',
 				      'kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie',
