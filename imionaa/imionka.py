@@ -217,6 +217,29 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.subheader('Imiona żeńskie')
     col1, col2 = st.columns(2)
     col1.plotly_chart(fig)
+	
+	
+     #chłopcy
+    with urlopen('https://raw.githubusercontent.com/ppatrzyk/polska-geojson/master/wojewodztwa/wojewodztwa-min.geojson') as response:
+        counties = json.load(response)
+    dff = pd.DataFrame({"Województwo":['dolnośląskie','kujawsko-pomorskie','lubelskie','lubuskie','łódzkie','małopolskie','mazowieckie',
+                                   'opolskie','podkarpackie','podlaskie','pomorskie','śląskie','świętokrzyskie','warmińsko-mazurskie',
+                                   'wielkopolskie','zachodniopomorskie'],'kolor':['lightgray']*16})
+    
+    dff['kolor']=dff['kolor'].where(dff['Województwo']!=mies,'red')
+    fig = px.choropleth(dff,
+                    locations="Województwo",
+                    geojson=counties,
+                    featureidkey="properties.nazwa",
+                    color='Województwo',
+                    color_discrete_sequence=dff['kolor'],
+                    range_color=(400, 1900),
+                   projection="mercator")
+    
+    fig.update_geos(fitbounds="locations", visible=False)
+    fig.update_layout(height=650,showlegend=False,title="Mapa Polski",title_x=0.5)
+    st.subheader('Imiona męskie')
+    col1.plotly_chart(fig)
     # top 10
     DF = pd.DataFrame({"Województwo":['dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie',
 				      'kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie',
@@ -324,7 +347,211 @@ if sekcja == 'Wyniki analizy statystycznej':
 	
 
 	
-	
+    DF_2020_z=pd.DataFrame({"Województwo":['dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie',
+				      'kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie',
+				      'lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie',
+				      'lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie',
+				      'mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie',
+				      'małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie',
+				      'opolskie','opolskie','opolskie','opolskie','opolskie','opolskie','opolskie','opolskie','opolskie','opolskie',
+				      'podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie',
+				      'podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie',
+				      'pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie',
+				      'warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie',
+				      'wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie',
+				      'zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie',
+				      'łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie',
+				      'śląskie','śląskie','śląskie','śląskie','śląskie','śląskie','śląskie','śląskie','śląskie','śląskie',
+				     'świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie'],
+				    
+		       'Imię':['Hanna','Julia','Zofia','Zuzanna','Maja','Oliwia','Lena','Alicja','Pola','Laura',
+			       'Zuzanna','Zofia','Julia','Lena','Maja','Hanna','Alicja','Laura','Oliwia','Maria',
+			       'Zuzanna','Hanna','Julia','Alicja','Maja','Zofia','Lena','Laura','Oliwia','Maria',
+			       'Maja','Zuzanna','Hanna','Julia','Zofia','Lena','Oliwia','Pola','Maria','Wiktoria',
+			       'Zofia','Julia','Zuzanna','Hanna','Alicja','Maja','Maria','Oliwia','Laura','Marcelina',
+			       'Julia','Zuzanna','Zofia','Emilia','Hanna','Maja','Lena','Laura','Oliwia','Alicja',
+			       'Zuzanna','Hanna','Julia','Zofia','Maja','Emilia','Lena','Alicja','Amelia','Maria',
+			       'Julia','Zuzanna','Emilia','Maja','Hanna','Zofia','Lena','Oliwia','Aleksandra','Laura',
+			       'Zofia','Julia','Zuzanna','Hanna','Maja','Laura','Lena','Oliwia','Aleksandra','Maria',
+			       'Zuzanna','Zofia','Maja','Julia','Hanna','Lena','Laura','Pola','Oliwia','Antonina',
+			       'Zuzanna','Zofia','Hanna','Julia','Maja','Pola','Lena','Oliwia','Alicja','Maria',
+			       'Zofia','Zuzanna','Maja','Julia','Hanna','Lena','Maria','Laura','Oliwia','Antonina',
+			       'Zofia','Zuzanna','Hanna','Julia','Maja','Pola','Lena','Maria','Laura','Oliwia',
+			       'Julia','Hanna','Maja','Zuzanna','Zofia','Lena','Alicja','Maria','Oliwia','Laura',
+			       'Julia','Zuzanna','Hanna','Maja','Emilia','Alicja','Zofia','Lena','Laura','Oliwia',
+			       'Zuzanna','Hanna','Maja','Julia','Zofia','Lena','Alicja','Oliwia','Maria','Laura'],
+		       'Liczba imion':[572,548,529,506,465,378,369,360,329,322,
+				       403,385,361,352,318,296,276,268,247,238,
+				       409,356,339,325,302,298,287,259,245,215,
+				       179,168,168,166,157,126,120,115,111,94,
+				       1207,1180,1121,1004,985,965,884,820,800,724,
+				       810,736,664,644,627,624,532,503,501,499,
+				       185,166,161,156,146,132,114,103,96,95,
+				       480,421,363,351,337,330,328,320,293,293,
+				       239,238,222,205,181,174,167,166,165,164,
+				       503,481,481,431,376,354,353,318,295,294,
+				       276,268,253,248,237,175,171,171,167,165,
+				       809,655,642,633,579,548,516,473,460,442,
+				       301,288,285,284,274,246,212,211,196,177,
+				       456,443,428,425,411,388,361,323,321,303,
+				       829,817,775,705,685,669,666,645,545,523,
+				      215,214,210,186,166,158,154,144,125,125]}
+			   
+    DF_2020_m=pd.DataFrame({"Województwo":['dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie',
+				      'kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie',
+				      'lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie',
+				      'lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie',
+				      'mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie',
+				      'małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie',
+				      'opolskie','opolskie','opolskie','opolskie','opolskie','opolskie','opolskie','opolskie','opolskie','opolskie',
+				      'podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie',
+				      'podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie',
+				      'pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie',
+				      'warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie',
+				      'wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie',
+				      'zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie',
+				      'łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie',
+				      'śląskie','śląskie','śląskie','śląskie','śląskie','śląskie','śląskie','śląskie','śląskie','śląskie',
+				     'świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie'],
+				    
+		       'Imię':['Antoni','Jakub','Jan','Aleksander','Franciszek','Szymon','Mikołaj','Filip','Leon','Stanisław',
+			       'Antoni','Jan','Aleksander','Jakub','Franciszek','Szymon','Mikołaj','Stanisław','Tymon','Marcel',
+			       'Antoni','Szymon','Jan','Aleksander','Franciszek','Jakub','Mikołaj','Filip','Wojciech','Nikodem',
+			       'Antoni','Jan','Aleksander','Jakub','Leon','Franciszek','Szymon','Mikołaj','Filip','Nikodem',
+			       'Antoni','Jan','Aleksander','Franciszek','Jakub','Stanisław','Szymon','Mikołaj','Adam','Filip',
+			       'Antoni';'Jan';'Jakub';'Franciszek';'Szymon';'Aleksander';'Filip';'Mikołaj';'Adam';'Leon',
+			       'Antoni','Jakub','Filip','Szymon','Franciszek','Jan','Adam','Leon','Michał','Aleksander',
+			       'Antoni','Szymon','Jakub','Franciszek','Aleksander','Jan','Filip','Mikołaj','Kacper','Nikodem',
+			       'Jakub','Aleksander','Jan','Antoni','Szymon','Filip','Marcel','Franciszek','Mikołaj','Kacper',
+			       'Antoni','Jan','Jakub','Franciszek','Aleksander','Leon','Stanisław','Szymon','Filip','Nikodem',
+			       'Aleksander','Antoni','Franciszek','Jan','Jakub','Szymon','Mikołaj','Stanisław','Filip','Nikodem',
+			       'Antoni','Franciszek','Jan','Stanisław','Aleksander','Leon','Wojciech','Jakub','Marcel','Filip',
+			       'Antoni','Jan','Aleksander','Franciszek','Jakub','Leon','Filip','Mikołaj','Szymon','Tymon',
+			       'Jan','Antoni','Aleksander','Franciszek','Jakub','Szymon','Mikołaj','Wojciech','Stanisław','Filip',
+			       'Jakub','Antoni','Franciszek','Jan','Filip','Szymon','Wojciech','Aleksander','Leon','Mikołaj',
+			       'Antoni','Aleksander','Jan','Franciszek','Jakub','Szymon','Tymon','Adam','Filip','Mikołaj'],
+		       'Liczba imion':[543,506,482,457,437,424,421,393,392,353,
+				       404,398,389,366,344,316,291,278,265,261,
+				       462,393,390,377,363,353,315,277,232,231,
+				       159,158,152,149,132,131,124,122,122,110,
+				       1413,1384,1337,1255,1055,963,907,856,819,802,
+				       847,843,819,720,673,654,569,552,531,513,
+				       181,159,158,140,138,121,119,114,105,104,
+				       530,483,440,423,396,381,335,316,283,279,
+				       267,249,236,223,211,195,160,160,148,145,
+				       510,494,457,434,422,417,386,350,337,326,
+				       327,319,249,243,234,225,201,177,176,172,
+				       857,794,791,674,671,619,618,588,498,462,
+				       338,290,287,287,262,224,218,217,194,184,
+				       529,511,509,457,457,358,342,328,327,323,
+				       851,800,730,707,702,667,621,592,578,563,
+				      269,240,210,199,198,159,157,155,148,147]}
+
+
+    DF_2019_z=pd.DataFrame({"Województwo":['dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie',
+				      'kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie',
+				      'lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie',
+				      'lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie',
+				      'mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie',
+				      'małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie',
+				      'opolskie','opolskie','opolskie','opolskie','opolskie','opolskie','opolskie','opolskie','opolskie','opolskie',
+				      'podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie',
+				      'podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie',
+				      'pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie',
+				      'warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie',
+				      'wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie',
+				      'zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie',
+				      'łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie',
+				      'śląskie','śląskie','śląskie','śląskie','śląskie','śląskie','śląskie','śląskie','śląskie','śląskie',
+				     'świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie'],
+				    
+		       'Imię':['Zuzanna','Hanna','Julia','Maja','Zofia','Lena','Maria','Amelia','Alicja','Oliwia',
+			       'Zuzanna','Lena','Maja','Julia','Zofia','Hanna','Alicja','Amelia','Maria','Oliwia',
+			       'Zuzanna','Hanna','Julia','Maja','Zofia','Lena','Alicja','Aleksandra','Maria','Oliwia',
+			       'Zuzanna','Hanna','Maja','Zofia','Julia','Lena','Maria','Alicja','Laura','Oliwia',
+			       'Zofia','Julia','Zuzanna','Hanna','Maja','Alicja','Maria','Lena','Oliwia','Helena',
+			       'Julia','Zuzanna','Zofia','Hanna','Maja','Emilia','Lena','Aleksandra','Oliwia','Alicja',
+			       'Hanna','Zuzanna','Maja','Julia','Zofia','Lena','Emilia','Wiktoria','Amelia','Alicja',
+			       'Zuzanna','Julia','Maja','Lena','Hanna','Emilia','Zofia','Aleksandra','Oliwia','Wiktoria',
+			       'Julia','Zofia','Zuzanna','Lena','Hanna','Maja','Aleksandra','Maria','Oliwia','Amelia',
+			       'Zofia','Zuzanna','Julia','Maja','Lena','Hanna','Maria','Oliwia','Antonina','Amelia',
+			       'Zuzanna','Zofia','Hanna','Maja','Lena','Julia','Maria','Alicja','Pola','Wiktoria',
+			       'Zofia','Julia','Maja','Zuzanna','Lena','Hanna','Maria','Oliwia','Antonina','Amelia',
+			       'Hanna','Zuzanna','Julia','Zofia','Maja','Lena','Alicja','Maria','Antonina','Pola',
+			       'Julia','Zuzanna','Maja','Zofia','Hanna','Lena','Alicja','Maria','Amelia','Oliwia',
+			       'Zuzanna','Hanna','Julia','Maja','Zofia','Lena','Alicja','Emilia','Amelia','Oliwia',
+			       'Zuzanna','Julia','Lena','Maja','Zofia','Hanna','Maria','Oliwia','Alicja','Amelia'],
+		       'Liczba imion':[602,594,571,521,505,400,338,331,329,326,
+				       474,435,430,427,424,317,283,259,256,253,
+				       489,380,378,368,343,332,328,245,242,241,
+				       216,208,207,199,197,171,117,106,106,101,
+				       1384,1310,1266,1098,1083,1024,977,932,768,689,
+				       876,790,695,685,680,636,610,541,531,496,
+				       218,194,186,180,173,148,126,117,113,109,
+				       556,497,442,427,360,346,343,306,289,270,
+				       283,261,250,228,220,206,197,191,161,159, 
+				       511,510,506,491,427,424,369,323,318,305,
+				       316,308,288,288,282,254,201,186,176,175,
+				       818,746,738,706,699,674,571,484,480,470,
+				       378,349,326,320,319,291,206,196,192,180,
+				       547,510,460,460,459,438,337,337,301,297,
+				       944,880,856,797,793,759,687,686,599,523,
+				      280,235,234,215,197,195,146,143,141,138]}
+			  
+			   
+			   
+    DF_2019_m=pd.DataFrame({"Województwo":['dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie',
+				      'kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie',
+				      'lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie',
+				      'lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie',
+				      'mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie','mazowieckie',
+				      'małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie','małopolskie',
+				      'opolskie','opolskie','opolskie','opolskie','opolskie','opolskie','opolskie','opolskie','opolskie','opolskie',
+				      'podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie','podkarpackie',
+				      'podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie','podlaskie',
+				      'pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie','pomorskie',
+				      'warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie','warmińsko-mazurskie',
+				      'wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie','wielkopolskie',
+				      'zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie','zachodniopomorskie',
+				      'łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie','łódzkie',
+				      'śląskie','śląskie','śląskie','śląskie','śląskie','śląskie','śląskie','śląskie','śląskie','śląskie',
+				     'świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie','świętokrzyskie'],
+				    
+		       'Imię':['Antoni','Jakub','Jan','Filip','Szymon','Aleksander','Franciszek','Mikołaj','Wojciech','Michał',
+			       'Aleksander','Jakub','Antoni','Jan','Szymon','Franciszek','Mikołaj','Filip','Wojciech','Adam',
+			       'Antoni','Szymon','Jakub','Aleksander','Jan','Mikołaj','Franciszek','Filip','Marcel','Wojciech',
+			       'Antoni','Szymon','Jakub','Jan','Aleksander','Filip','Michał','Franciszek','Marcel','Leon',
+			       'Jan','Aleksander','Antoni','Jakub','Franciszek','Szymon','Mikołaj','Stanisław','Adam','Filip',
+			       'Jakub','Antoni','Szymon','Jan','Franciszek','Filip','Aleksander','Mikołaj','Kacper','Adam',
+			       'Jakub','Antoni','Wojciech','Szymon','Jan','Franciszek','Filip','Adam','Aleksander','Kacper',
+			       'Antoni','Szymon','Jakub','Aleksander','Jan','Filip','Mikołaj','Franciszek','Kacper','Michał',
+			       'Jakub','Szymon','Jan','Aleksander','Antoni','Filip','Franciszek','Kacper','Michał','Mikołaj',
+			       'Jan','Aleksander','Jakub','Franciszek','Antoni','Leon','Szymon','Mikołaj','Stanisław','Filip',
+			       'Antoni','Aleksander','Jan','Jakub','Szymon','Franciszek','Filip','Nikodem','Mikołaj','Kacper',
+			       'Antoni','Jan','Wojciech','Franciszek','Aleksander','Jakub','Stanisław','Leon','Filip','Mikołaj',
+			       'Antoni','Jakub','Aleksander','Jan','Filip','Szymon','Franciszek','Mikołaj','Nikodem','Leon',
+			       'Antoni','Jan','Aleksander','Jakub','Szymon','Franciszek','Filip','Wojciech','Mikołaj','Stanisław',
+			       'Jakub','Antoni','Franciszek','Filip','Szymon','Jan','Wojciech','Mikołaj','Aleksander','Kacper',
+			       'Antoni','Aleksander','Jakub','Jan','Franciszek','Szymon','Filip','Wojciech','Marcel','Mikołaj'],
+		       'Liczba imion':[637,551,519,477,475,465,415,396,377,359,
+				       448,429,425,377,374,364,339,333,292,268,
+				       464,464,448,393,362,331,330,300,288,267,
+				       199,183,171,162,161,155,123,122,113,110,
+				       1629,1439,1419,1175,1161,1117,959,957,934,871,
+				       890,802,798,783,661,624,597,583,546,534,
+				       201,176,165,162,158,139,134,127,127,118,
+				       544,544,505,414,401,388,382,371,322,295,
+				       263,253,235,230,219,188,186,178,173,160, 
+				       556,503,487,473,465,377,377,370,363,353,
+				       324,317,279,249,243,233,218,201,182,178,
+				       868,818,741,740,702,678,678,596,585,575,
+				       350,321,303,282,251,250,227,227,216,215,
+				       583,533,494,441,421,411,358,358,321,307,
+				       921,793,766,757,756,713,628,582,579,544,
+				      280,257,233,224,203,189,175,174,166,158]}
+
+				       
+				       
 
 	
     col2.plotly_chart(px.bar(x=DF[DF['Województwo']==mies]['Liczba imion'][::-1],y=DF[DF['Województwo']==mies]['Imię'][::-1],
@@ -335,26 +562,7 @@ if sekcja == 'Wyniki analizy statystycznej':
 
   
 
-      #chłopcy
-    with urlopen('https://raw.githubusercontent.com/ppatrzyk/polska-geojson/master/wojewodztwa/wojewodztwa-min.geojson') as response:
-        counties = json.load(response)
-    dff = pd.DataFrame({"Województwo":['dolnośląskie','kujawsko-pomorskie','lubelskie','lubuskie','łódzkie','małopolskie','mazowieckie',
-                                   'opolskie','podkarpackie','podlaskie','pomorskie','śląskie','świętokrzyskie','warmińsko-mazurskie',
-                                   'wielkopolskie','zachodniopomorskie'],'kolor':['lightgray']*16})
-    
-    dff['kolor']=dff['kolor'].where(dff['Województwo']!=mies,'red')
-    fig = px.choropleth(dff,
-                    locations="Województwo",
-                    geojson=counties,
-                    featureidkey="properties.nazwa",
-                    color='Województwo',
-                    color_discrete_sequence=dff['kolor'],
-                    range_color=(400, 1900),
-                   projection="mercator")
-    
-    fig.update_geos(fitbounds="locations", visible=False)
-    fig.update_layout(height=650,showlegend=False,title="Mapa Polski",title_x=0.5)
-    st.subheader('Imiona męskie')
+      
 
     col1, col2 = st.columns(2)
     col1.plotly_chart(fig)
