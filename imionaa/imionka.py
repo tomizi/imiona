@@ -235,7 +235,7 @@ if sekcja == 'Wyniki analizy statystycznej':
                     color_discrete_sequence=dff['kolor'],
                     range_color=(400, 1900),
                    projection="mercator")
-    
+    st.subheader('Imiona męskie')
     fig.update_geos(fitbounds="locations", visible=False)
     fig.update_layout(height=650,showlegend=False,title="Mapa Polski",title_x=0.5)
     st.subheader('Imiona męskie')
