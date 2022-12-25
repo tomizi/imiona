@@ -449,7 +449,7 @@ if sekcja == 'Wyniki analizy statystycznej':
 				       851,800,730,707,702,667,621,592,578,563,
 				      269,240,210,199,198,159,157,155,148,147]}
 
-
+		     )
     DF_2019_z=pd.DataFrame({"Województwo":['dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie',
 				      'kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie',
 				      'lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie',
@@ -500,7 +500,7 @@ if sekcja == 'Wyniki analizy statystycznej':
 				       944,880,856,797,793,759,687,686,599,523,
 				      280,235,234,215,197,195,146,143,141,138]}
 			  
-			   
+		     )   
 			   
     DF_2019_m=pd.DataFrame({"Województwo":['dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie',
 				      'kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie',
@@ -554,7 +554,7 @@ if sekcja == 'Wyniki analizy statystycznej':
 
 				       
 				       
-
+		     )
 	
     col2.plotly_chart(px.bar(x=DF[DF['Województwo']==mies]['Liczba imion'][::-1],y=DF[DF['Województwo']==mies]['Imię'][::-1],
 			     orientation='h',text=DF[DF['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
