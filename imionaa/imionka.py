@@ -567,7 +567,7 @@ if sekcja == 'Wyniki analizy statystycznej':
       
 
     col1, col2 = st.columns(2)
-    col1.plotly_chart(fig)
+    
     # top 10
     
    
