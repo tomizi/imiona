@@ -185,8 +185,15 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.subheader('Imiona dla dzieci, które były nadawane zarówno chłopcom jak i dziewczynkom')
     st.dataframe(dziwne)
 	
+	
+	
+	
+	
+	
+	
+	
 	#Mapka Polski
-    st.subheader('Najczęściej nadawane dzieciom imiona w 2021 roku w podziale na województwa')
+    st.subheader('Najczęściej nadawane dzieciom imiona w X roku w podziale na województwa')
     with urlopen('https://raw.githubusercontent.com/ppatrzyk/polska-geojson/master/wojewodztwa/wojewodztwa-min.geojson') as response:
         counties = json.load(response)
     dff = pd.DataFrame({"Województwo":['dolnośląskie','kujawsko-pomorskie','lubelskie','lubuskie','łódzkie','małopolskie','mazowieckie',
@@ -262,39 +269,8 @@ if sekcja == 'Wyniki analizy statystycznej':
 				       414,403,386,374,362,355,329,315,279,275]}
 				       
 		     )
-    col2.plotly_chart(px.bar(x=DF[DF['Województwo']==mies]['Liczba imion'][::-1],y=DF[DF['Województwo']==mies]['Imię'][::-1],
-			     orientation='h',text=DF[DF['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
-			     color_discrete_map="identity",
-			     title='Top 10 imon żeńskich').update_xaxes(title_text='Liczba imion').update_yaxes(title_text='Imię'
-				).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
-
-  
-
-      #chłopcy
-    with urlopen('https://raw.githubusercontent.com/ppatrzyk/polska-geojson/master/wojewodztwa/wojewodztwa-min.geojson') as response:
-        counties = json.load(response)
-    dff = pd.DataFrame({"Województwo":['dolnośląskie','kujawsko-pomorskie','lubelskie','lubuskie','łódzkie','małopolskie','mazowieckie',
-                                   'opolskie','podkarpackie','podlaskie','pomorskie','śląskie','świętokrzyskie','warmińsko-mazurskie',
-                                   'wielkopolskie','zachodniopomorskie'],'kolor':['lightgray']*16})
-    
-    dff['kolor']=dff['kolor'].where(dff['Województwo']!=mies,'red')
-    fig = px.choropleth(dff,
-                    locations="Województwo",
-                    geojson=counties,
-                    featureidkey="properties.nazwa",
-                    color='Województwo',
-                    color_discrete_sequence=dff['kolor'],
-                    range_color=(400, 1900),
-                   projection="mercator")
-    
-    fig.update_geos(fitbounds="locations", visible=False)
-    fig.update_layout(height=650,showlegend=False,title="Mapa Polski",title_x=0.5)
-    st.subheader('Imiona męskie')
-
-    col1, col2 = st.columns(2)
-    col1.plotly_chart(fig)
-    # top 10
-    DF_c = pd.DataFrame({"Województwo":['dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie',
+	
+	DF_c = pd.DataFrame({"Województwo":['dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie',
 				      'kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie','kujawsko-pomorskie',
 				      'lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie','lubelskie',
 				      'lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie','lubuskie',
@@ -344,6 +320,44 @@ if sekcja == 'Wyniki analizy statystycznej':
 				       279,223,200,198,172,142,139,130,127,122]}
 				       
 		     )
+	
+	
+	
+
+	
+    col2.plotly_chart(px.bar(x=DF[DF['Województwo']==mies]['Liczba imion'][::-1],y=DF[DF['Województwo']==mies]['Imię'][::-1],
+			     orientation='h',text=DF[DF['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
+			     color_discrete_map="identity",
+			     title='Top 10 imon żeńskich').update_xaxes(title_text='Liczba imion').update_yaxes(title_text='Imię'
+				).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
+
+  
+
+      #chłopcy
+    with urlopen('https://raw.githubusercontent.com/ppatrzyk/polska-geojson/master/wojewodztwa/wojewodztwa-min.geojson') as response:
+        counties = json.load(response)
+    dff = pd.DataFrame({"Województwo":['dolnośląskie','kujawsko-pomorskie','lubelskie','lubuskie','łódzkie','małopolskie','mazowieckie',
+                                   'opolskie','podkarpackie','podlaskie','pomorskie','śląskie','świętokrzyskie','warmińsko-mazurskie',
+                                   'wielkopolskie','zachodniopomorskie'],'kolor':['lightgray']*16})
+    
+    dff['kolor']=dff['kolor'].where(dff['Województwo']!=mies,'red')
+    fig = px.choropleth(dff,
+                    locations="Województwo",
+                    geojson=counties,
+                    featureidkey="properties.nazwa",
+                    color='Województwo',
+                    color_discrete_sequence=dff['kolor'],
+                    range_color=(400, 1900),
+                   projection="mercator")
+    
+    fig.update_geos(fitbounds="locations", visible=False)
+    fig.update_layout(height=650,showlegend=False,title="Mapa Polski",title_x=0.5)
+    st.subheader('Imiona męskie')
+
+    col1, col2 = st.columns(2)
+    col1.plotly_chart(fig)
+    # top 10
+    
    
     col2.plotly_chart(px.bar(x=DF_c[DF_c['Województwo']==mies]['Liczba imion'][::-1],y=DF_c[DF_c['Województwo']==mies]['Imię'][::-1],
 			     orientation='h',text=DF_c[DF_c['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
@@ -351,6 +365,19 @@ if sekcja == 'Wyniki analizy statystycznej':
 			     title='Top 10 imon męskich').update_xaxes(title_text='Liczba imion').update_yaxes(title_text='Imię'
 				).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
  
+
+
+
+
+
+
+
+
+
+
+
+
+
 if sekcja == 'Analiza korespondencji':
     new_title = '<b style="color:rgb(0, 80, 170); font-size: 62px;">Analiza imion nadanym dzieciom w latach 2000-2021</p>'
     st.markdown(new_title, unsafe_allow_html=True)
