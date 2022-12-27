@@ -600,8 +600,13 @@ if sekcja == 'Analiza korespondencji':
     roczek_opcje=["2019","2020","2021"]
     roczek_wybrany = st.selectbox("Wybierz rok:", roczek_opcje)
     if roczek_wybrany == "2019":
-        st.write("ff")
+        st.subheader("Analiza korespondencji dla chłopców")
+	st.write("Skumulowana proporcja bezwładności dla 2 wymiarów wynosi = 0.459)
         st.image('imionaa/PI1/PI1/zk1.png')
+        st.subheader("Analiza korespondencji dla dziewczynek")
+        st.write("Skumulowana proporcja bezwładności dla 2 wymiarów wynosi = 0.464)
+        st.image('imionaa/PI1/PI1/zk1.png')
+        
     
 		
 		
