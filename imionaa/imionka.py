@@ -596,7 +596,8 @@ if sekcja == 'Analiza korespondencji':
     new_title = '<b style="color:rgb(0, 80, 170); font-size: 62px;">Analiza imion nadanym dzieciom w latach 2000-2021</p>'
     st.markdown(new_title, unsafe_allow_html=True)
     st.markdown('---')
-    roczek=st.selectbox("Wybierz rok:", list(range(2019,2022)))
+    roczek=[2019,2020,2021]
+    st.selectbox("Wybierz rok:", roczek)
     st.title('Analiza korespondencji')
     if roczek =='2019':
 	st.image(imionaa/PI1/PI1/zk1.png)
