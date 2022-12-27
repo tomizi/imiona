@@ -598,7 +598,7 @@ if sekcja == 'Analiza korespondencji':
     st.markdown('---')
     roczek=st.selectbox("Wybierz rok:", list(range(2019,2022)))
     st.title('Analiza korespondencji')
-    if roczek=='2019':
+    if roczek =='2019':
 	st.image(imionaa/PI1/PI1/zk1.png)
 		
 		
