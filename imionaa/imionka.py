@@ -599,7 +599,7 @@ if sekcja == 'Analiza korespondencji':
     roczek=[2019,2020,2021]
     st.selectbox("Wybierz rok:", roczek)
     st.title('Analiza korespondencji')
-    if roczek =='2019':
+    if roczek == 2019:
         st.image(imionaa/PI1/PI1/zk1.png)
 		
 		
