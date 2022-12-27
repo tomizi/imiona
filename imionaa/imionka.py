@@ -606,9 +606,12 @@ if sekcja == 'Analiza korespondencji':
         st.subheader("Analiza korespondencji dla dziewczynek")
         st.write("Skumulowana proporcja bezwładności dla 2 wymiarów wynosi 0.464")
         st.image('imionaa/AK/f2_dzi2019.png')
-        
-    
-		
+    if roczek_wybrany == "2020":
+        st.subheader("Analiza korespondencji dla chłopców")
+	st.write("Skumulowana proporcja bezwładności dla 2 wymiarów wynosi 0.402")
+        st.image('imionaa/AK/f2_chl2020.png')
+        st.write("Skumulowana proporcja bezwładności dla 2 wymiarów wynosi 0.447")
+	st.image('imionaa/AK/f2_dzi2020.png')	
 		
 	#st.subheader('Imiona żeńskie')
         #st.image('imionaa/PI1/PI1/zk1.png')
