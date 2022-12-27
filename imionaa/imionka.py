@@ -67,10 +67,10 @@ tabelka_m1=im.pivot_table('Liczba', index=ostatnia_litera_m,columns=['Rok'], agg
 
 if sekcja == 'Strona główna':
     new_title = '<b style="color:rgb(0, 80, 170); font-size: 62px;">Imiona nadawane dzieciom w Polsce - analiza </p>'
+    st.subheader('Niniejsza strona prezentuje trendy w popularności imion nadawanych dzieciom w Polsce w latach 2000 - 2021.')
     st.markdown(new_title, unsafe_allow_html=True)
     st.markdown('---')
     st.title('Strona główna')
-    st.subheader('Niniejsza strona prezentuje trendy w popularności imion nadawanych dzieciom w Polsce w latach 2000 - 2021.')
     st.subheader('Wybór imienia dla dziecka to niełatwa decyzja. Powinna być świadomym wyborem obojga partnerów. ' +
 		 'Niektórzy rodzice kierują się modą, inni rodzinną tradycją, kolejni łatwością do zdrobnienia. ' +
 		 'Są też tacy, którzy zwracają uwagę na oryginalność lub po prostu brzmienie imienia.')
