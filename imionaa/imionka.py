@@ -602,9 +602,9 @@ if sekcja == 'Analiza korespondencji':
     if roczek == 2019:
         st.image(imionaa/PI1/PI1/zk1.png)
     if roczek == 2020:
-	st.image(imionaa/PI1/PI1/zk2.png)
+        st.image(imionaa/PI1/PI1/zk2.png)
     if roczek == 2021:
-	st.image(imionaa/PI1/PI1/zk3.png)
+        st.image(imionaa/PI1/PI1/zk3.png)
 		
 		
 	#st.subheader('Imiona żeńskie')
