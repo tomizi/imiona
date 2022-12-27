@@ -600,7 +600,7 @@ if sekcja == 'Analiza korespondencji':
     st.selectbox("Wybierz rok:", roczek)
     st.title('Analiza korespondencji')
     if roczek =='2019':
-	st.image(imionaa/PI1/PI1/zk1.png)
+        st.image(imionaa/PI1/PI1/zk1.png)
 		
 		
 	#st.subheader('Imiona żeńskie')
