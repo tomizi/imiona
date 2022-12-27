@@ -601,7 +601,7 @@ if sekcja == 'Analiza korespondencji':
     roczek_wybrany = st.selectbox("Wybierz rok:", roczek_opcje)
     if roczek_wybrany == "2019":
         st.write("ff")
-        st.image(imionaa/PI1/PI1/"zk1.png")
+        st.image('imionaa/PI1/PI1/zk1.png')
     
 		
 		
