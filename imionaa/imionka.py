@@ -601,11 +601,11 @@ if sekcja == 'Analiza korespondencji':
     roczek_wybrany = st.selectbox("Wybierz rok:", roczek_opcje)
     if roczek_wybrany == "2019":
         st.subheader("Analiza korespondencji dla chłopców")
-        st.write("Skumulowana proporcja bezwładności dla 2 wymiarów wynosi = 0.459")
-        st.image('imionaa/PI1/PI1/zk1.png')
+        st.write("Skumulowana proporcja bezwładności dla 2 wymiarów wynosi 0.459")
+        st.image('imionaa/AK/f2_chl2019.png')
         st.subheader("Analiza korespondencji dla dziewczynek")
-        st.write("Skumulowana proporcja bezwładności dla 2 wymiarów wynosi = 0.464")
-        st.image('imionaa/PI1/PI1/zk1.png')
+        st.write("Skumulowana proporcja bezwładności dla 2 wymiarów wynosi 0.464")
+        st.image('imionaa/AK/f2_dzi2019.png')
         
     
 		
