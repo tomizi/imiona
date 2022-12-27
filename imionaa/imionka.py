@@ -599,8 +599,11 @@ if sekcja == 'Analiza korespondencji':
     roczek=st.selectbox("Wybierz rok:", list(range(2019,2022)))
     st.title('Analiza korespondencji')
     if roczek==[2019]:
-	st.subheader('Imiona żeńskie')
-        st.image('imionaa/PI1/PI1/zk1.png')
+		st.image(imionaa/PI1/PI1/zk1.png)
+		
+		
+	#st.subheader('Imiona żeńskie')
+        #st.image('imionaa/PI1/PI1/zk1.png')
 	
    
     
