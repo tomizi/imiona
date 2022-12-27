@@ -597,15 +597,12 @@ if sekcja == 'Analiza korespondencji':
     st.markdown(new_title, unsafe_allow_html=True)
     st.markdown('---')
     st.title('Analiza korespondencji')
-    roczek=["2019","2020","2021"]
-    st.selectbox("Wybierz rok:", roczek)
-    if roczek == "2019":
+    roczek_opcje=["2019","2020","2021"]
+    roczek_wybrany = st.selectbox("Wybierz rok:", roczek_opcje)
+    if roczek_wybrany == "2019":
         st.write("ff")
         st.image(imionaa/PI1/PI1/zk1.png)
-    if roczek == "2020":
-        st.image(imionaa/PI1/PI1/zk2.png)
-    if roczek == "2021":
-        st.image(imionaa/PI1/PI1/zk3.png)
+    
 		
 		
 	#st.subheader('Imiona żeńskie')
