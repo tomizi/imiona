@@ -202,8 +202,8 @@ if sekcja == 'Wyniki analizy statystycznej':
     top10.reset_index(inplace=True, drop=True)
     top10_k=top10[top10.Płeć=='K']
     top10_m=top10[top10.Płeć=='M']
-    st.dataframe(top10_k)
-    top10_k2000=top10_k[top10_k.Rok==2000]
+    top10_k2000=top10_k[top10_k.Rok=='2000']
+    st.dataframe(top10_k2000)
     col1.plotly_chart(px.bar(top10_k2000, x="Liczba", y="Imię", orientation='h',
              height=400,
              title='Restaurant bills'))
