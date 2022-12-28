@@ -187,13 +187,28 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.dataframe(dziwne)
 	
 	
+	#Najczęsciej nadawane imiona dzieciom w Polsce
+    def the_top10(group):
+        return group.sort_values(by='Liczba', ascending=False)[:10]
+    grouped=im.groupby(['Rok','Płeć'])
+    top10=grouped.apply(the_top10)
+    top10.reset_index(inplace=True, drop=True)
+	
+    st.dataframe(top10)
 	
 	
 	
 	
 	
 	
-	#Najczęściej nadawane imiona dzieciom
+	
+	
+	
+	
+	
+	
+	
+	#Najczęściej nadawane imiona dzieciom w podziale na województwa
     st.subheader('Najczęściej nadawane dzieciom imiona w latach 2019 - 2021 w podziale na województwa')
     latka_opcje=["2019","2020","2021"]
     wybrany = st.selectbox("Wybierz rok:", latka_opcje)
@@ -611,21 +626,10 @@ if sekcja == 'Wyniki analizy statystycznej':
 				).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
 	
     
-    # top 10
+
     
+   #ANALIZA KORESPONDENCJI
    
-   
-
-
-
-
-
-
-
-
-
-
-
 if sekcja == 'Analiza korespondencji':
     new_title = '<b style="color:rgb(0, 80, 170); font-size: 62px;">Imiona nadawane dzieciom w Polsce - analiza</p>'
     st.markdown(new_title, unsafe_allow_html=True)
