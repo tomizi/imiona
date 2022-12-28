@@ -204,7 +204,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     top10_m=top10[top10.Płeć=='M']
     st.dataframe(top10_k)
     tab_dz= top10_k.pivot_table('Liczba', index='Imię', columns=['Rok'])
-    tab_dz=pd.DataFrame(tab_10)
+    tab_dz=pd.DataFrame(tab_dz)
     st.dataframe(tab_dz)
 	
 	
