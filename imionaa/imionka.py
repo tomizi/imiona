@@ -578,7 +578,7 @@ if sekcja == 'Wyniki analizy statystycznej':
 				).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
 	
     if wybrany == "2020":
-	col1.plotly_chart(fig)
+        col1.plotly_chart(fig)
         col2.plotly_chart(px.bar(x=DF_2020_z[DF_2020_z['Województwo']==mies]['Liczba imion'][::-1],y=DF_2020_z[DF_2020_z['Województwo']==mies]['Imię'][::-1],
 			         orientation='h',text=DF_2020_z[DF_2020_z['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
 			         color_discrete_map="identity",
