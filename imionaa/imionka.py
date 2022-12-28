@@ -115,6 +115,35 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.line_chart(diversity)
 	
    
+
+    
+	
+    #PORÓWNANIE TRENDÓW DLA DWÓCH IMION
+    st.subheader('Porównanie trendów dla dwóch imion')
+    imie1 = st.text_input('Podaj pierwsze imię: ','Martyna')
+    imie1 = imie1.upper()
+    imie2 = st.text_input('Podaj drugie imię: ','Joanna')
+    imie2 = imie2.upper()
+
+    imionka1=im[im.Imię==str(imie1)]
+    imionka2=im[im.Imię==str(imie2)]
+    imionka=pd.concat([imionka1,imionka2], ignore_index=True, sort=False)
+    #st.dataframe(imionka)
+    st.plotly_chart(px.line(imionka,x='Rok',y='Liczba',color='Imię',markers=True,width=1100, height=600))
+
+    
+    #IMIONA JEDNOCZEŚNIE MĘSKIE I ŻEŃSKIE
+    chłopcy=im[im.Płeć=='M']
+    dziewczynki=im[im.Płeć=='K']
+    dziwne=['ADEL','ADI','ALEX','ALEXIS','AMAL','AMIT','ANDREA','ANGEL','ARIEL','BAO AN','CHEN','DANIEL','EDEN','ELI','ELIA','EZRA','FABIAN','GIA',
+	    'IGOR','ILIA','IMAN','ISA','KAREN','LAUREN','LILIAN','MICHAL','MIKA','MILENA','MINH','MINH ANH','MORGAN','NICOLA','NIKITA','NIKOLA',
+	    'NOA','NOAM','OMER','ORI','PARIS','RILEY','RONI','SASHA','SIMONE','SZYMON','TAL','THIEN AN','YARDEN','YUVAL']
+    st.subheader('Imiona dla dzieci, które były nadawane zarówno chłopcom jak i dziewczynkom')
+    st.dataframe(dziwne)
+	
+	
+	
+	
     # PIERWSZA LITERA
 	#liczba dziewczynek
     st.header('Analiza pierwszej i ostatniej litery imienia')
@@ -162,31 +191,9 @@ if sekcja == 'Wyniki analizy statystycznej':
     	st.plotly_chart(px.bar(uni,y='litera').update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
     
-	
-    #PORÓWNANIE TRENDÓW DLA DWÓCH IMION
-    st.subheader('Porównanie trendów dla dwóch imion')
-    imie1 = st.text_input('Podaj pierwsze imię: ','Martyna')
-    imie1 = imie1.upper()
-    imie2 = st.text_input('Podaj drugie imię: ','Joanna')
-    imie2 = imie2.upper()
 
-    imionka1=im[im.Imię==str(imie1)]
-    imionka2=im[im.Imię==str(imie2)]
-    imionka=pd.concat([imionka1,imionka2], ignore_index=True, sort=False)
-    #st.dataframe(imionka)
-    st.plotly_chart(px.line(imionka,x='Rok',y='Liczba',color='Imię',markers=True,width=1100, height=600))
 
-    
-    #IMIONA JEDNOCZEŚNIE MĘSKIE I ŻEŃSKIE
-    chłopcy=im[im.Płeć=='M']
-    dziewczynki=im[im.Płeć=='K']
-    dziwne=['ADEL','ADI','ALEX','ALEXIS','AMAL','AMIT','ANDREA','ANGEL','ARIEL','BAO AN','CHEN','DANIEL','EDEN','ELI','ELIA','EZRA','FABIAN','GIA',
-	    'IGOR','ILIA','IMAN','ISA','KAREN','LAUREN','LILIAN','MICHAL','MIKA','MILENA','MINH','MINH ANH','MORGAN','NICOLA','NIKITA','NIKOLA',
-	    'NOA','NOAM','OMER','ORI','PARIS','RILEY','RONI','SASHA','SIMONE','SZYMON','TAL','THIEN AN','YARDEN','YUVAL']
-    st.subheader('Imiona dla dzieci, które były nadawane zarówno chłopcom jak i dziewczynkom')
-    st.dataframe(dziwne)
-	
-	
+
 	#Najczęsciej nadawane imiona dzieciom w Polsce
     def the_top10(group):
         return group.sort_values(by='Liczba', ascending=False)[:10]
@@ -197,10 +204,6 @@ if sekcja == 'Wyniki analizy statystycznej':
     top10_m=top10[top10.Płeć=='M']
     st.dataframe(top10_m)
 
-
-    roczki = list(range(2000,2022))
-    wybierz_roczek=st.selectbox('Wybierz rok:', roczki)
-	
 	
 	
 	
