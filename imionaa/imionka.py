@@ -204,7 +204,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     top10_m=top10[top10.Płeć=='M']
     st.dataframe(top10_m)
 
-    st.plotly_chart(px.bar(dataframe=top10_k, x=Liczba, y=Imię)
+    st.plotly_chart(px.bar(dataframe=top10_k, x=Liczba, y=Imię))
 
 	
 	
