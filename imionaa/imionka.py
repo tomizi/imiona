@@ -206,7 +206,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     cos=st.selectbox("Wybierz rok:", dowyboru)
     top10_k=top10_k[top10_k.Rok==str(cos)]
     st.dataframe(top10_k)
-    st.plotly_chart(px.bar(top10_k, x="Liczba", y="Imię", orientation='h',
+    st.plotly_chart(px.bar(top10_k, x="Liczba", y="Imię",
              height=400,
              title='Top 10 najczęściej nadawanych imion w roku {i}'.format(i=str(cos))))
 	
