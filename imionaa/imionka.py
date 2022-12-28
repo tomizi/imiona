@@ -195,6 +195,7 @@ if sekcja == 'Wyniki analizy statystycznej':
 
 
 	#Najczęsciej nadawane imiona dzieciom w Polsce
+    st.subheader("Najczęściej nadawane imiona dzieciom w latach 2001-2021")
     def the_top10(group):
         return group.sort_values(by='Liczba', ascending=False)[:10]
     grouped=im.groupby(['Rok','Płeć'])
