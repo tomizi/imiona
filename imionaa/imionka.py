@@ -199,8 +199,7 @@ if sekcja == 'Wyniki analizy statystycznej':
 
     	
     rok = st.selectbox("Wybierz rok:", list(range(2000,2022)))
-    #st.plotly_chart(px.bar(top10[str(rok)],y=str(rok)).update_xaxes(title_text='Pierwsza litera').update_yaxes(title_text='Liczba'
-		#).update_layout(plot_bgcolor='white'))
+    
 	
 	
 	
