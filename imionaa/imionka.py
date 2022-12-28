@@ -564,7 +564,7 @@ if sekcja == 'Wyniki analizy statystycznej':
 				       
 		     )
     if wybrany == "2021":
-	col1.plotly_chart(fig)
+        col1.plotly_chart(fig)
         col2.plotly_chart(px.bar(x=DF[DF['Województwo']==mies]['Liczba imion'][::-1],y=DF[DF['Województwo']==mies]['Imię'][::-1],
 			         orientation='h',text=DF[DF['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
 			         color_discrete_map="identity",
