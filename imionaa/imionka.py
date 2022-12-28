@@ -204,7 +204,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     top10_m=top10[top10.Płeć=='M']
     st.dataframe(top10_m)
 
-    st.bar_chart(data=top10_k, x='Liczba', y='Imię')
+    st.bar_chart(top10_k)
 	
 #col2.plotly_chart(px.bar(x=DF[DF['Województwo']==mies]['Liczba imion'][::-1],y=DF[DF['Województwo']==mies]['Imię'][::-1],
 			         #orientation='h',text=DF[DF['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
