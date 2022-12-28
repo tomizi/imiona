@@ -106,7 +106,7 @@ if sekcja == 'Wyniki analizy statystycznej':
 	
     tabelka=top100.pivot_table('Proporcja',index='Rok',columns='Płeć',aggfunc=sum)
     tabelka=pd.DataFrame(tabelka, columns=['K','M'])
-    st.subheader('Część urodzonych dzieci, którym nadaje się imiona należące do listy 100 najpopularniejszych imion')
+    st.subheader('Odsetek urodzonych dzieci, którym nadaje się imiona należące do listy 100 najpopularniejszych imion')
     st.line_chart(tabelka)
 	
 	
