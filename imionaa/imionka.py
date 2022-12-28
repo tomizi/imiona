@@ -611,19 +611,11 @@ if sekcja == 'Wyniki analizy statystycznej':
 
       
 
-    col1, col2 = st.columns(2)
     
     # top 10
     
    
-    """col2.plotly_chart(px.bar(x=DF_c[DF_c['Województwo']==mies]['Liczba imion'][::-1],y=DF_c[DF_c['Województwo']==mies]['Imię'][::-1],
-			     orientation='h',text=DF_c[DF_c['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
-			     color_discrete_map="identity",
-			     title='Top 10 imon męskich').update_xaxes(title_text='Liczba imion').update_yaxes(title_text='Imię'
-				).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
- """
-
-
+   
 
 
 
