@@ -204,7 +204,14 @@ if sekcja == 'Wyniki analizy statystycznej':
     top10_m=top10[top10.Płeć=='M']
     st.dataframe(top10_m)
 
-    st.plotly_chart(px.bar(dataframe=top10_k, x=Liczba, y=Imię))
+    st.plotly_chart(px.bar(x=im[im['Rok']==rok['Liczba imion'][::-1], y=im[im['Rok']==rok]['Imię'][::-1],
+				orientation='h'))
+	
+#col2.plotly_chart(px.bar(x=DF[DF['Województwo']==mies]['Liczba imion'][::-1],y=DF[DF['Województwo']==mies]['Imię'][::-1],
+			         #orientation='h',text=DF[DF['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
+			         #color_discrete_map="identity",
+			         #title='Top 10 imon żeńskich').update_xaxes(title_text='Liczba imion').update_yaxes(title_text='Imię'
+				    #).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
 
 	
 	
