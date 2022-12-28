@@ -207,7 +207,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     tab_dz=pd.DataFrame(tab_dz)
     st.dataframe(tab_dz)
     st.subheader('Top 10 imion żeńskich')
-    st.bar_chart(tab_dz['Rok'==rok])
+    st.bar_chart(tab_dz)['Rok'==rok]
 	
 	
 	
