@@ -203,13 +203,9 @@ if sekcja == 'Wyniki analizy statystycznej':
     top10_k=top10[top10.Płeć=='K']
     top10_m=top10[top10.Płeć=='M']
     st.dataframe(top10_k)
-    tab_dz= top10_k.pivot_table('Liczba', index='Imię', columns=['Rok'])
-    tab_dz=pd.DataFrame(tab_dz)
-    st.dataframe(tab_dz)
-    st.subheader('Top 10 imion żeńskich')
-    st.bar_chart(tab_dz)['Rok'==rok]
-	
-	
+    col1.plotly_chart(px.bar(top10_k, x="Liczba", y="Imię", orientation='h',
+             height=400,
+             title='Restaurant bills'))
 	
 
 #col2.plotly_chart(px.bar(x=DF[DF['Województwo']==mies]['Liczba imion'][::-1],y=DF[DF['Województwo']==mies]['Imię'][::-1],
