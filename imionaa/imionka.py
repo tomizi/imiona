@@ -196,6 +196,8 @@ if sekcja == 'Wyniki analizy statystycznej':
 
 	#Najczęsciej nadawane imiona dzieciom w Polsce
     st.subheader("Najczęściej nadawane imiona dzieciom w latach 2001-2021")
+    dowyboru=list(range(2001,2022))
+    cos=st.selectbox("Wybierz rok:", dowyboru)
     def the_top10(group):
         return group.sort_values(by='Liczba', ascending=False)[:10]
     grouped=im.groupby(['Rok','Płeć'])
@@ -203,9 +205,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     top10.reset_index(inplace=True, drop=True)
     top10_k=top10[top10.Płeć=='K']
     top10_m=top10[top10.Płeć=='M']
-    dowyboru=list(range(2001,2022))
     c1, c2 = st.columns(2)
-    cos=st.selectbox("Wybierz rok:", dowyboru)
     top10_k=top10_k[top10_k.Rok==str(cos)]
     top10_k = top10_k.sort_values(by='Liczba', ascending = True)
     st.dataframe(top10_k)
