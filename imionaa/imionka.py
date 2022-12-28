@@ -194,7 +194,7 @@ if sekcja == 'Wyniki analizy statystycznej':
 	
 	
 	#Najczęściej nadawane imiona dzieciom
-    st.subheader('Najczęściej nadawane dzieciom imiona w X roku w podziale na województwa')
+    st.subheader('Najczęściej nadawane dzieciom imiona w latach 2019 - 2021 w podziale na województwa')
     latka_opcje=["2019","2020","2021"]
     wybrany = st.selectbox("Wybierz rok:", latka_opcje)
     
