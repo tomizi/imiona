@@ -203,7 +203,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     top10_k=top10[top10.Płeć=='K']
     top10_m=top10[top10.Płeć=='M']
     st.dataframe(top10_m)
-    tab_dz= top10_k.pivot_table('Liczba', index='Imię', columns=['Rok'], aggfunc=sum)
+    tab_dz= top10_k.pivot_table('Liczba', index='Imię', columns=['Rok'])
     st.dataframe(tab_dz)
 	
 	
