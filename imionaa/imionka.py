@@ -214,6 +214,7 @@ if sekcja == 'Wyniki analizy statystycznej':
              title='Top 10 najczęściej nadawanych imion żeńskich w roku {i}'.format(i=str(cos))))
     top10_m=top10_m[top10_m.Rok==str(cos)]
     top10_m=top10_m.sort_values(by="Liczba", ascending = True)
+    st.dataframe(top10_m)
     c2.plotly_chart(px.bar(top10_m, x="Liczba", y="Imię", orientation='h',
              height=600,
              title='Top 10 najczęściej nadawanych imion męskich w roku {i}'.format(i=str(cos))))
