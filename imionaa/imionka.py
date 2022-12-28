@@ -211,7 +211,11 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.dataframe(top10_k)
     c1.plotly_chart(px.bar(top10_k, x="Liczba", y="Imię", orientation='h',
              height=600,
-             title='Top 10 najczęściej nadawanych imion w roku {i}'.format(i=str(cos))))
+             title='Top 10 najczęściej nadawanych imion żeńskich w roku {i}'.format(i=str(cos))))
+    top10_m=top10_m.sort_values(by="Liczba", ascending = True)
+    c2.plotly_chart(px.bar(top10_m, x="Liczba", y="Imię", orientation='h',
+             height=600,
+             title='Top 10 najczęściej nadawanych imion męskich w roku {i}'.format(i=str(cos))))
 
 #col2.plotly_chart(px.bar(x=DF[DF['Województwo']==mies]['Liczba imion'][::-1],y=DF[DF['Województwo']==mies]['Imię'][::-1],
 			         #orientation='h',text=DF[DF['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
