@@ -207,9 +207,8 @@ if sekcja == 'Wyniki analizy statystycznej':
     top10_k=top10_k[top10_k.Rok==str(cos)]
     st.dataframe(top10_k)
     st.plotly_chart(px.bar(top10_k, x="Liczba", y="Imię", orientation='h',
-             height=400,
-             title='Top 10 najczęściej nadawanych imion w roku {i}'.format(i=str(cos)))).sort_values(by='Liczba')
-	
+             height=800,
+             title='Top 10 najczęściej nadawanych imion w roku {i}'.format(i=str(cos))))
 
 #col2.plotly_chart(px.bar(x=DF[DF['Województwo']==mies]['Liczba imion'][::-1],y=DF[DF['Województwo']==mies]['Imię'][::-1],
 			         #orientation='h',text=DF[DF['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
