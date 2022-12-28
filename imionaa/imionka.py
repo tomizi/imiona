@@ -219,7 +219,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     
     fig.update_geos(fitbounds="locations", visible=False)
     fig.update_layout(height=650,showlegend=False,title="Mapa Polski",title_x=0.5)
-    st.subheader('Imiona żeńskie')
+   
     col1, col2 = st.columns(2)
     
     #col1.plotly_chart(fig)
@@ -245,7 +245,7 @@ if sekcja == 'Wyniki analizy statystycznej':
    
     fig.update_geos(fitbounds="locations", visible=False)
     fig.update_layout(height=650,showlegend=False,title="Mapa Polski",title_x=0.5)
-    st.subheader('Imiona męskie')
+    
     #col1.plotly_chart(fig)
     #col1.plotly_chart(fig)
     # top 10
@@ -610,14 +610,6 @@ if sekcja == 'Wyniki analizy statystycznej':
 			     title='Top 10 imon męskich').update_xaxes(title_text='Liczba imion').update_yaxes(title_text='Imię'
 				).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
 	
-	
-	
-	
-
-  
-
-      
-
     
     # top 10
     
