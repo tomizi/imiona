@@ -198,7 +198,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.dataframe(top10_m)
 
     	
-    rok = st.selectbox("Wybierz rok:", list(range(2000,2022)))
+    rok1 = st.selectbox("Wybierz rok:", list(range(2000,2022)))
     
 	
 	
