@@ -208,33 +208,17 @@ if sekcja == 'Wyniki analizy statystycznej':
     c1, c2 = st.columns(2)
     top10_k=top10_k[top10_k.Rok==str(cos)]
     top10_k = top10_k.sort_values(by='Liczba', ascending = True)
-    st.dataframe(top10_k)
+    #st.dataframe(top10_k)
     c1.plotly_chart(px.bar(top10_k, x="Liczba", y="Imię", orientation='h',
              height=600,
              title='Top 10 najczęściej nadawanych imion żeńskich w roku {i}'.format(i=str(cos))))
     top10_m=top10_m[top10_m.Rok==str(cos)]
     top10_m=top10_m.sort_values(by="Liczba", ascending = True)
-    st.dataframe(top10_m)
+    #st.dataframe(top10_m)
     c2.plotly_chart(px.bar(top10_m, x="Liczba", y="Imię", orientation='h',
              height=600,
              title='Top 10 najczęściej nadawanych imion męskich w roku {i}'.format(i=str(cos))))
 
-#col2.plotly_chart(px.bar(x=DF[DF['Województwo']==mies]['Liczba imion'][::-1],y=DF[DF['Województwo']==mies]['Imię'][::-1],
-			         #orientation='h',text=DF[DF['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
-			         #color_discrete_map="identity",
-			         #title='Top 10 imon żeńskich').update_xaxes(title_text='Liczba imion').update_yaxes(title_text='Imię'
-				    #).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
-
-#łączna ilość urodzeń
-    #total_ur=im.pivot_table('Liczba', index='Rok', columns='Płeć', aggfunc=sum)	
-    #total_ur=pd.DataFrame(total_ur, columns=['K','M'])
-    #st.subheader('Łączna liczba dzieci urodzonych w latach 2000-2021 z podziałem na płeć')
-    #st.line_chart(total_ur)	
-	
-	
-	
-	
-	
 	
 	
 	
