@@ -197,7 +197,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     top10_m=top10[top10.Płeć=='M']
     st.dataframe(top10_m)
 
-    st.subheader('Najpopularniejsze imiona w Polsce')	
+    	
     rok = st.selectbox("Wybierz rok:", list(range(2000,2022))
     #st.plotly_chart(px.bar(top10[str(rok)],y=str(rok)).update_xaxes(title_text='Pierwsza litera').update_yaxes(title_text='Liczba'
 		#).update_layout(plot_bgcolor='white'))
