@@ -202,7 +202,8 @@ if sekcja == 'Wyniki analizy statystycznej':
     top10.reset_index(inplace=True, drop=True)
     top10_k=top10[top10.Płeć=='K']
     top10_m=top10[top10.Płeć=='M']
-    cos=st.selectbox("Wybierz rok:", [2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021])
+    dowyboru=[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021]
+    cos=st.selectbox("Wybierz rok:", dowyboru)
     top10_k=top10_k[top10_k.Rok==cos]
     st.dataframe(top10_k)
     st.plotly_chart(px.bar(top10_k, x="Liczba", y="Imię", orientation='h',
