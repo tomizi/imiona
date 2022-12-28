@@ -570,7 +570,7 @@ if sekcja == 'Wyniki analizy statystycznej':
 			         color_discrete_map="identity",
 			         title='Top 10 imon żeńskich').update_xaxes(title_text='Liczba imion').update_yaxes(title_text='Imię'
 				    ).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
-	col3.plotly_chart(fig)
+        col3.plotly_chart(fig)
         col4.plotly_chart(px.bar(x=DF_c[DF_c['Województwo']==mies]['Liczba imion'][::-1],y=DF_c[DF_c['Województwo']==mies]['Imię'][::-1],
 			     orientation='h',text=DF_c[DF_c['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
 			     color_discrete_map="identity",
