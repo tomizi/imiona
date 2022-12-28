@@ -588,6 +588,19 @@ if sekcja == 'Wyniki analizy statystycznej':
 			     color_discrete_map="identity",
 			     title='Top 10 imon męskich').update_xaxes(title_text='Liczba imion').update_yaxes(title_text='Imię'
 				).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
+    if wybrany == "2019":
+        col2.plotly_chart(px.bar(x=DF_2019_z[DF_2019_z['Województwo']==mies]['Liczba imion'][::-1],y=DF_2019_z[DF_2019_z['Województwo']==mies]['Imię'][::-1],
+			         orientation='h',text=DF_2019_z[DF_2019_z['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
+			         color_discrete_map="identity",
+			         title='Top 10 imon żeńskich').update_xaxes(title_text='Liczba imion').update_yaxes(title_text='Imię'
+				    ).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
+	
+        col2.plotly_chart(px.bar(x=DF_2019_m[DF_2019_m['Województwo']==mies]['Liczba imion'][::-1],y=DF_2019_m[DF_2019_m['Województwo']==mies]['Imię'][::-1],
+			     orientation='h',text=DF_2019_m[DF_2019_m['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
+			     color_discrete_map="identity",
+			     title='Top 10 imon męskich').update_xaxes(title_text='Liczba imion').update_yaxes(title_text='Imię'
+				).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
+	
 	
 	
 	
