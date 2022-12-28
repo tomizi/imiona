@@ -197,7 +197,9 @@ if sekcja == 'Wyniki analizy statystycznej':
     top10_m=top10[top10.Płeć=='M']
     st.dataframe(top10_m)
 
- 
+
+    roczki = list(range(2000,2022))
+    wybierz_roczek=st.selectbox('Wybierz rok:', roczki)
 	
 	
 	
