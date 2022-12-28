@@ -198,7 +198,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     st.dataframe(top10_m)
 
     	
-    rok = st.selectbox("Wybierz rok:", list(range(2000,2022))
+    rok = st.selectbox("Wybierz rok:", list(range(2000,2022)))
     #st.plotly_chart(px.bar(top10[str(rok)],y=str(rok)).update_xaxes(title_text='Pierwsza litera').update_yaxes(title_text='Liczba'
 		#).update_layout(plot_bgcolor='white'))
 	
@@ -215,7 +215,7 @@ if sekcja == 'Wyniki analizy statystycznej':
 	
 	
 	#Najczęściej nadawane imiona dzieciom w podziale na województwa
-    st.subheader('Najczęściej nadawane dzieciom imiona w latach 2019 - 2021 w podziale na województwa')
+    #st.subheader('Najczęściej nadawane dzieciom imiona w latach 2019 - 2021 w podziale na województwa')
     latka_opcje=["2019","2020","2021"]
     wybrany = st.selectbox("Wybierz rok:", latka_opcje)
     
