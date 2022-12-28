@@ -194,6 +194,10 @@ if sekcja == 'Wyniki analizy statystycznej':
 	
 	
 	#Mapka Polski
+	
+    latka_opcje=["2019","2020","2021"]
+    wybrany = st.selectbox("Wybierz rok:", latka_opcje)
+    
     st.subheader('Najczęściej nadawane dzieciom imiona w X roku w podziale na województwa')
     with urlopen('https://raw.githubusercontent.com/ppatrzyk/polska-geojson/master/wojewodztwa/wojewodztwa-min.geojson') as response:
         counties = json.load(response)
@@ -217,7 +221,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     fig.update_layout(height=650,showlegend=False,title="Mapa Polski",title_x=0.5)
     st.subheader('Imiona żeńskie')
     col1, col2 = st.columns(2)
-    col1.plotly_chart(fig)
+    #col1.plotly_chart(fig)
     
 	
 	
@@ -241,7 +245,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     fig.update_geos(fitbounds="locations", visible=False)
     fig.update_layout(height=650,showlegend=False,title="Mapa Polski",title_x=0.5)
     st.subheader('Imiona męskie')
-    col1.plotly_chart(fig)
+    #col1.plotly_chart(fig)
     #col1.plotly_chart(fig)
     # top 10
     DF = pd.DataFrame({"Województwo":['dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie','dolnośląskie',
