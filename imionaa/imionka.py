@@ -193,12 +193,12 @@ if sekcja == 'Wyniki analizy statystycznej':
 	
 	
 	
-	#Mapka Polski
-	
+	#Najczęściej nadawane imiona dzieciom
+    st.subheader('Najczęściej nadawane dzieciom imiona w X roku w podziale na województwa')
     latka_opcje=["2019","2020","2021"]
     wybrany = st.selectbox("Wybierz rok:", latka_opcje)
     
-    st.subheader('Najczęściej nadawane dzieciom imiona w X roku w podziale na województwa')
+        #Mapka
     with urlopen('https://raw.githubusercontent.com/ppatrzyk/polska-geojson/master/wojewodztwa/wojewodztwa-min.geojson') as response:
         counties = json.load(response)
     dff = pd.DataFrame({"Województwo":['dolnośląskie','kujawsko-pomorskie','lubelskie','lubuskie','łódzkie','małopolskie','mazowieckie',
@@ -562,12 +562,20 @@ if sekcja == 'Wyniki analizy statystycznej':
 				       
 				       
 		     )
+    if wybrany == "2021":
 	
-    col2.plotly_chart(px.bar(x=DF[DF['Województwo']==mies]['Liczba imion'][::-1],y=DF[DF['Województwo']==mies]['Imię'][::-1],
-			     orientation='h',text=DF[DF['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
+        col2.plotly_chart(px.bar(x=DF[DF['Województwo']==mies]['Liczba imion'][::-1],y=DF[DF['Województwo']==mies]['Imię'][::-1],
+			         orientation='h',text=DF[DF['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
+			         color_discrete_map="identity",
+			         title='Top 10 imon żeńskich').update_xaxes(title_text='Liczba imion').update_yaxes(title_text='Imię'
+				    ).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
+	
+	col2.plotly_chart(px.bar(x=DF_c[DF_c['Województwo']==mies]['Liczba imion'][::-1],y=DF_c[DF_c['Województwo']==mies]['Imię'][::-1],
+			     orientation='h',text=DF_c[DF_c['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
 			     color_discrete_map="identity",
-			     title='Top 10 imon żeńskich').update_xaxes(title_text='Liczba imion').update_yaxes(title_text='Imię'
+			     title='Top 10 imon męskich').update_xaxes(title_text='Liczba imion').update_yaxes(title_text='Imię'
 				).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
+	
 
   
 
@@ -578,12 +586,12 @@ if sekcja == 'Wyniki analizy statystycznej':
     # top 10
     
    
-    col2.plotly_chart(px.bar(x=DF_c[DF_c['Województwo']==mies]['Liczba imion'][::-1],y=DF_c[DF_c['Województwo']==mies]['Imię'][::-1],
+    """col2.plotly_chart(px.bar(x=DF_c[DF_c['Województwo']==mies]['Liczba imion'][::-1],y=DF_c[DF_c['Województwo']==mies]['Imię'][::-1],
 			     orientation='h',text=DF_c[DF_c['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
 			     color_discrete_map="identity",
 			     title='Top 10 imon męskich').update_xaxes(title_text='Liczba imion').update_yaxes(title_text='Imię'
 				).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
- 
+ """
 
 
 
