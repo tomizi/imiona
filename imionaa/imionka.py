@@ -81,7 +81,7 @@ if sekcja == 'Strona główna':
     st.plotly_chart(px.line(im[im['Imię']==imie],x='Rok',y='Liczba',color='Płeć',markers=True,width=1100, height=600).update_yaxes(rangemode='tozero'))
 
     st.subheader('Odsetek dzieci o nadanym imieniu {} na przestrzeni lat 2000-2021'.format(imie))
-    st.plotly_chart(px.line(im[im['Imię']==imie],x='Rok',y='Proporcja%',color='Płeć',markers=True,width=1100, height=600).update_yaxes(rangemode='nonnegative'))
+    st.plotly_chart(px.line(im[im['Imię']==imie],x='Rok',y='Proporcja%',color='Płeć',markers=True,width=1100, height=600).update_yaxes(rangemode='tozero'))
 	
 
 	
