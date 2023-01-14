@@ -118,6 +118,9 @@ if sekcja == 'Wyniki analizy statystycznej':
     diversity = pd.DataFrame(diversity, columns=['K','M'])
     st.subheader('Liczba imion tworzących 50% zbioru najpopularniejszych imion')
     st.line_chart(diversity)
+
+    st.write('Dane w latach 2000 – 2012 zawierają imiona, których liczba powtórzeń wynosi co najmniej 5. Od roku 2013 dane są bardziej dokładne. ' +
+	    'Zawierają imiona, których liczba powtórzeń jest większa od 1.')
 	
    
 
