@@ -85,7 +85,7 @@ if sekcja == 'Strona główna':
 
     st.subheader('Źródło danych')
     st.write('Dane do analizy pobrane zostały ze strony Ministerstwa Cyfryzacji. Były one w postaci jedenastu plików formatu xlsx.')
-    st.write('kLink do strony: https://dane.gov.pl/pl/dataset/219,imiona-nadawane-dzieciom-w-polsce')
+    st.write('Link do strony: https://dane.gov.pl/pl/dataset/219,imiona-nadawane-dzieciom-w-polsce')
     st.write('Dostęp z dnia 29.05.2022r.')
 	
 
