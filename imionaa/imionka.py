@@ -87,6 +87,7 @@ if sekcja == 'Strona główna':
     st.write('Dane do analizy pobrane zostały ze strony Ministerstwa Cyfryzacji. Były one w postaci jedenastu plików formatu xlsx. ' + 
 	     'Link do strony: https://dane.gov.pl/pl/dataset/219,imiona-nadawane-dzieciom-w-polsce ' +
 	    'Dostęp z dnia 29.05.2022r')
+    st.write('kupa')
 	
 
 	
