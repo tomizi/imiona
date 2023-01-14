@@ -84,10 +84,9 @@ if sekcja == 'Strona główna':
     st.plotly_chart(px.line(im[im['Imię']==imie],x='Rok',y='Proporcja%',color='Płeć',markers=True,width=1100, height=600).update_yaxes(rangemode='tozero'))
 
     st.subheader('Źródło danych')
-    st.write('Dane do analizy pobrane zostały ze strony Ministerstwa Cyfryzacji. Były one w postaci jedenastu plików formatu xlsx. ' + 
-	     'Link do strony: https://dane.gov.pl/pl/dataset/219,imiona-nadawane-dzieciom-w-polsce ' +
-	    'Dostęp z dnia 29.05.2022r')
-    st.write('kupa')
+    st.write('Dane do analizy pobrane zostały ze strony Ministerstwa Cyfryzacji. Były one w postaci jedenastu plików formatu xlsx.')
+    st.write('kLink do strony: https://dane.gov.pl/pl/dataset/219,imiona-nadawane-dzieciom-w-polsce')
+    st.write('Dostęp z dnia 29.05.2022r.')
 	
 
 	
