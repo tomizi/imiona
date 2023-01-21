@@ -665,7 +665,7 @@ if sekcja == 'Analiza korespondencji':
     if roczek_wybrany == "2019":
         st.subheader("Analiza korespondencji dla 10 najpopularnijeszych imion męskich w każdym województwie")
         st.write("Skumulowana proporcja bezwładności dla 2 wymiarów wynosi 0.459")
-        st.image('imionaa/AK/f2_chl2019.png')
+        st.image('imionaa/AK/f2_chl2019.png', width=400)
         st.subheader("Analiza korespondencji dla 10 najpopularnijeszych imion żeńskich w każdym województwie")
         st.write("Skumulowana proporcja bezwładności dla 2 wymiarów wynosi 0.464")
         st.image('imionaa/AK/f2_dzi2019.png')
