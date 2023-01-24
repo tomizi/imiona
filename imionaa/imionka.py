@@ -60,7 +60,7 @@ wyciagam_ostatnia_litere = lambda x: x[-1]
 ostatnia_litera_k = imiona_k.Imię.map(wyciagam_ostatnia_litere)
 ostatnia_litera_m = imiona_m.Imię.map(wyciagam_ostatnia_litere)
 
-tabelka_k1=im.pivot_table('Liczba', index=ostatnia_litera_k,columns=['Rok'], aggfunc=sum)
+tabelka_k1=im.pivot_table('Liczba', index=sorted(ostatnia_litera_k),columns=['Rok'], aggfunc=sum)
 tabelka_m1=im.pivot_table('Liczba', index=ostatnia_litera_m,columns=['Rok'], aggfunc=sum)
 
 
