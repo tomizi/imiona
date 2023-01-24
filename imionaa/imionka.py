@@ -64,7 +64,7 @@ tabelka_k1=im.pivot_table('Liczba', index=ostatnia_litera_k,columns=['Rok'], agg
 tabelka_m1=im.pivot_table('Liczba', index=ostatnia_litera_m,columns=['Rok'], aggfunc=sum)
 
 
-tabelka_k
+type(pierwsza_litera_k)
 if sekcja == 'Strona główna':
     new_title = '<b style="color:rgb(0, 80, 170); font-size: 62px;">Imiona nadawane dzieciom w Polsce - analiza </p>'
     st.markdown(new_title, unsafe_allow_html=True)
