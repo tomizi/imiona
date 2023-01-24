@@ -7,6 +7,9 @@ import plotly.express as px
 import plotly.graph_objects as go
 from urllib.request import urlopen
 import json
+import locale
+
+locale.setlocale(locale.LC_COLLATE, "pl_PL.UTF-8")
 
 
 
@@ -64,7 +67,7 @@ tabelka_k1=im.pivot_table('Liczba', index=ostatnia_litera_k,columns=['Rok'], agg
 tabelka_m1=im.pivot_table('Liczba', index=ostatnia_litera_m,columns=['Rok'], aggfunc=sum)
 
 
-st.write(sorted(list(pierwsza_litera_k)))
+st.write(list(pierwsza_litera_k).sort(key=locale.strxfrm))
 if sekcja == 'Strona główna':
     new_title = '<b style="color:rgb(0, 80, 170); font-size: 62px;">Imiona nadawane dzieciom w Polsce - analiza </p>'
     st.markdown(new_title, unsafe_allow_html=True)
