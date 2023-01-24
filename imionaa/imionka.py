@@ -60,11 +60,11 @@ wyciagam_ostatnia_litere = lambda x: x[-1]
 ostatnia_litera_k = imiona_k.Imię.map(wyciagam_ostatnia_litere)
 ostatnia_litera_m = imiona_m.Imię.map(wyciagam_ostatnia_litere)
 
-tabelka_k1=im.pivot_table('Liczba', index=sorted(ostatnia_litera_k),columns=['Rok'], aggfunc=sum)
+tabelka_k1=im.pivot_table('Liczba', index=ostatnia_litera_k,columns=['Rok'], aggfunc=sum)
 tabelka_m1=im.pivot_table('Liczba', index=ostatnia_litera_m,columns=['Rok'], aggfunc=sum)
 
 
-
+ostatnia_litera_k
 if sekcja == 'Strona główna':
     new_title = '<b style="color:rgb(0, 80, 170); font-size: 62px;">Imiona nadawane dzieciom w Polsce - analiza </p>'
     st.markdown(new_title, unsafe_allow_html=True)
