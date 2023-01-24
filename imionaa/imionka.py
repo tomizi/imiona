@@ -168,7 +168,7 @@ if sekcja == 'Wyniki analizy statystycznej':
 		).update_layout(plot_bgcolor='white'))
 	
 	#liczba imion żeńskich
-    st.dataframe(tabelka_k[str(rok)].sort_index())	
+    st.dataframe(tabelka_k[str(rok)].sort_index(ascending=False))	
     with c2:
     	uni=pd.DataFrame({'litera':list(map(lambda x: x[0],im[(im['Rok']==str(rok)) & (im['Płeć']=='K')].sort_values(by='Imię')['Imię'].unique()))}).groupby(['litera'])['litera'].count()
     	st.subheader('Liczba imion żeńskich rozpoczynających się na daną literę')
