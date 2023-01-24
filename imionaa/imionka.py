@@ -48,7 +48,7 @@ wyciagam_pierwsza_litere = lambda x: x[0]
 pierwsza_litera_k = imiona_k.Imię.map(wyciagam_pierwsza_litere)
 pierwsza_litera_m = imiona_m.Imię.map(wyciagam_pierwsza_litere)
 
-tabelka_k= im.pivot_table('Liczba', index=sorted(list(pierwsza_litera_k)), columns=['Rok'], aggfunc=sum)
+tabelka_k= im.pivot_table('Liczba', index=pierwsza_litera_k, columns=['Rok'], aggfunc=sum)
 tabelka_m= im.pivot_table('Liczba', index=pierwsza_litera_m, columns=['Rok'], aggfunc=sum)
 
 litera_ulamek_k = tabelka_k/tabelka_k.sum()
@@ -164,11 +164,11 @@ if sekcja == 'Wyniki analizy statystycznej':
     c1, c2 = st.columns(2)
     with c1:
     	st.subheader('Liczba dziewczynek o imieniu rozpoczynającym się na daną literę')
-    	st.plotly_chart(px.bar(tabelka_k[str(rok)],y=str(rok)).update_xaxes(title_text='Pierwsza litera').update_yaxes(title_text='Liczba'
+    	st.plotly_chart(px.bar(tabelka_k[str(rok)].sort_index(),y=str(rok)).update_xaxes(title_text='Pierwsza litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
 	
 	#liczba imion żeńskich
-    st.dataframe(tabelka_k[str(rok)])	
+    st.dataframe(tabelka_k[str(rok)].sort_index())	
     with c2:
     	uni=pd.DataFrame({'litera':list(map(lambda x: x[0],im[(im['Rok']==str(rok)) & (im['Płeć']=='K')].sort_values(by='Imię')['Imię'].unique()))}).groupby(['litera'])['litera'].count()
     	st.subheader('Liczba imion żeńskich rozpoczynających się na daną literę')
