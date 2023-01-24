@@ -48,7 +48,7 @@ wyciagam_pierwsza_litere = lambda x: x[0]
 pierwsza_litera_k = imiona_k.Imię.map(wyciagam_pierwsza_litere)
 pierwsza_litera_m = imiona_m.Imię.map(wyciagam_pierwsza_litere)
 
-tabelka_k= im.pivot_table('Liczba', index=pierwsza_litera_k, columns=['Rok'], aggfunc=sum)
+tabelka_k= im.pivot_table('Liczba', index=sorted(list(pierwsza_litera_k)), columns=['Rok'], aggfunc=sum)
 tabelka_m= im.pivot_table('Liczba', index=pierwsza_litera_m, columns=['Rok'], aggfunc=sum)
 
 litera_ulamek_k = tabelka_k/tabelka_k.sum()
@@ -64,7 +64,7 @@ tabelka_k1=im.pivot_table('Liczba', index=ostatnia_litera_k,columns=['Rok'], agg
 tabelka_m1=im.pivot_table('Liczba', index=ostatnia_litera_m,columns=['Rok'], aggfunc=sum)
 
 
-st.write(type(list(pierwsza_litera_k)))
+st.write(sorted(list(pierwsza_litera_k)))
 if sekcja == 'Strona główna':
     new_title = '<b style="color:rgb(0, 80, 170); font-size: 62px;">Imiona nadawane dzieciom w Polsce - analiza </p>'
     st.markdown(new_title, unsafe_allow_html=True)
