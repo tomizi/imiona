@@ -166,8 +166,9 @@ if sekcja == 'Wyniki analizy statystycznej':
     	st.subheader('Liczba dziewczynek o imieniu rozpoczynającym się na daną literę')
     	st.plotly_chart(px.bar(tabelka_k[str(rok)],y=str(rok)).update_xaxes(title_text='Pierwsza litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
-	st.dataframe(tabelka_k[str(rok)])
+	
 	#liczba imion żeńskich
+    st.dataframe(tabelka_k[str(rok)])	
     with c2:
     	uni=pd.DataFrame({'litera':list(map(lambda x: x[0],im[(im['Rok']==str(rok)) & (im['Płeć']=='K')].sort_values(by='Imię')['Imię'].unique()))}).groupby(['litera'])['litera'].count()
     	st.subheader('Liczba imion żeńskich rozpoczynających się na daną literę')
