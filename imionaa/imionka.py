@@ -138,7 +138,7 @@ if sekcja == 'Wyniki analizy statystycznej':
     imionka2=im[im.Imię==str(imie2)]
     imionka=pd.concat([imionka1,imionka2], ignore_index=True, sort=False)
     #st.dataframe(imionka)
-    st.plotly_chart(px.line(imionka,x='Rok',y='Liczba',color='Imię',markers=True,width=1100, height=600).update_xaxes(range=[2000,2021]).update_yaxes(rangemode='tozero'))
+    st.plotly_chart(px.line(imionka,x='Rok',y='Liczba',color='Imię',markers=True,width=1100, height=600).update_xaxes().update_yaxes(rangemode='tozero', range=[2000,2021]))
 
     
     #IMIONA JEDNOCZEŚNIE MĘSKIE I ŻEŃSKIE
