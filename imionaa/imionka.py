@@ -7,9 +7,6 @@ import plotly.express as px
 import plotly.graph_objects as go
 from urllib.request import urlopen
 import json
-import locale
-
-locale.setlocale(locale.LC_COLLATE, "pl_PL.UTF-8")
 
 
 
@@ -67,7 +64,7 @@ tabelka_k1=im.pivot_table('Liczba', index=ostatnia_litera_k,columns=['Rok'], agg
 tabelka_m1=im.pivot_table('Liczba', index=ostatnia_litera_m,columns=['Rok'], aggfunc=sum)
 
 
-st.write(list(pierwsza_litera_k).sort(key=locale.strxfrm))
+
 if sekcja == 'Strona główna':
     new_title = '<b style="color:rgb(0, 80, 170); font-size: 62px;">Imiona nadawane dzieciom w Polsce - analiza </p>'
     st.markdown(new_title, unsafe_allow_html=True)
@@ -167,11 +164,10 @@ if sekcja == 'Wyniki analizy statystycznej':
     c1, c2 = st.columns(2)
     with c1:
     	st.subheader('Liczba dziewczynek o imieniu rozpoczynającym się na daną literę')
-    	st.plotly_chart(px.bar(tabelka_k[str(rok)].sort_index(),y=str(rok)).update_xaxes(title_text='Pierwsza litera').update_yaxes(title_text='Liczba'
+    	st.plotly_chart(px.bar(tabelka_k[str(rok)],y=str(rok)).update_xaxes(title_text='Pierwsza litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
 	
-	#liczba imion żeńskich
-    st.dataframe(tabelka_k[str(rok)].sort_index(ascending=False))	
+	#liczba imion żeńskich	
     with c2:
     	uni=pd.DataFrame({'litera':list(map(lambda x: x[0],im[(im['Rok']==str(rok)) & (im['Płeć']=='K')].sort_values(by='Imię')['Imię'].unique()))}).groupby(['litera'])['litera'].count()
     	st.subheader('Liczba imion żeńskich rozpoczynających się na daną literę')
