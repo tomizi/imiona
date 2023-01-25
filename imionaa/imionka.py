@@ -15,7 +15,7 @@ st.set_page_config(page_title='Imiona nadawane dzieciom w Polsce - analiza', pag
 
 sekcja = st.sidebar.radio(
     'Wybierz sekcję:',
-    ('Strona główna','Wyniki analizy statystycznej','Analiza korespondencji')
+    ('Strona główna','Analiza statystyczna','Analiza korespondencji')
  )
 
 
@@ -91,7 +91,7 @@ if sekcja == 'Strona główna':
 	
 
 	
-if sekcja == 'Wyniki analizy statystycznej':
+if sekcja == 'Analiza statystyczna':
     new_title = '<b style="color:rgb(0, 80, 170); font-size: 62px;">Imiona nadawane dzieciom w Polsce - analiza</p>'
     st.markdown(new_title, unsafe_allow_html=True)
     st.markdown('---')
