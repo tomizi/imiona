@@ -74,6 +74,9 @@ if sekcja == 'Strona główna':
 		 'Niektórzy rodzice kierują się modą, inni rodzinną tradycją, kolejni łatwością do zdrobnienia. ' +
 		 'Są też tacy, którzy zwracają uwagę na oryginalność lub po prostu brzmienie imienia. ' +
 		'Niniejsza strona prezentuje trendy w popularności imion nadawanych dzieciom w Polsce w latach 2000-2021.')
+
+    st.write('Dane z lat 2000–2012 zawierają imiona, których liczba wystąpień wynosi co najmniej 5. +
+	     'Od roku 2013 dane zawierają imiona, których liczba wystąpień jest większa od 1')
        
     imie = st.text_input('Podaj imię: ','Martyna')
     imie = imie.upper()
@@ -119,8 +122,6 @@ if sekcja == 'Analiza statystyczna':
     st.subheader('Liczba imion tworzących 50% zbioru najpopularniejszych imion')
     st.line_chart(diversity)
 
-    st.write('Dane z lat 2000 – 2012 zawierają imiona, których liczba powtórzeń wynosi co najmniej 5. Od roku 2013 dane są bardziej dokładne. ' +
-	    'Zawierają imiona, których liczba powtórzeń jest większa od 1.')
 	
    
 
