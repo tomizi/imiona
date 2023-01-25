@@ -115,7 +115,7 @@ if sekcja == 'Analiza statystyczna':
     tabelka=top100.pivot_table('Proporcja',index='Rok',columns='Płeć',aggfunc=sum)
     tabelka=pd.DataFrame(tabelka, columns=['K','M'])
     st.subheader('Odsetek urodzonych dzieci, którym nadaje się imiona należące do listy 100 najpopularniejszych imion')
-    st.pliotly_chart(px.line(tabelka))
+    st.plotly_chart(px.line(tabelka))
 	
 	
     diversity = pd.DataFrame(diversity, columns=['K','M'])
