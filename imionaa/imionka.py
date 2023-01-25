@@ -22,7 +22,7 @@ sekcja = st.sidebar.radio(
 tabs_font_css = """
 <style>
 div[class*="stTextInput"] label {
-  font-size: 46px;
+  font-size: 86px;
   color: black;
 }
 
