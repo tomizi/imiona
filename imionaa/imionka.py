@@ -35,7 +35,7 @@ div[class*="stSelectbox"] label {
 st.write(tabs_font_css, unsafe_allow_html=True)
 
 kol = {'K':'rgb(255, 0, 255)','M':'rgb(0,70,180)'}
-
+kol1 = {'KK':['rgb(255, 0, 255)','rgb(255, 0, 25)'],'MM':['rgb(0,70,180)','rgb(255,0,205)'],'KM':['rgb(255, 0, 255)','rgb(0,70,180)'],'MK':['rgb(0,70,180)','rgb(255, 0, 255)']}
 
 im = pd.read_excel(io='imionaa/imiona.xlsx',engine='openpyxl',dtype={'Rok':str})
 
@@ -169,7 +169,7 @@ if sekcja == 'Analiza statystyczna':
     if imionka.empty:
 	    st.write('*Brak danych dla wybranych imion')
     else:
-	    st.plotly_chart(px.line(imionka,x='Rok',y='Liczba',color='Imię',markers=True,width=1100, height=600).update_xaxes().update_yaxes(rangemode='tozero'))
+	    st.plotly_chart(px.line(imionka,x='Rok',y='Liczba',color='Imię',markers=True,width=1100, height=600,color_discrete_sequence=kol1[str(im[im['Imię']==imie1]['Płeć'].iloc[0])+str(im[im['Imię']==imie2]['Płeć'].iloc[0])]).update_xaxes().update_yaxes(rangemode='tozero'))
     
     
     #IMIONA JEDNOCZEŚNIE MĘSKIE I ŻEŃSKIE
