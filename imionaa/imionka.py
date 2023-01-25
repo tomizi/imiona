@@ -104,7 +104,7 @@ if sekcja == 'Analiza statystyczna':
     total_ur=im.pivot_table('Liczba', index='Rok', columns='Płeć', aggfunc=sum)	
     total_ur=pd.DataFrame(total_ur, columns=['K','M'])
     st.subheader('Łączna liczba dzieci urodzonych w latach 2000-2021 z podziałem na płeć')
-    st.plotly_chart(st.line_chart(total_ur))
+    st.plotly_chart(px.line(total_ur))
     #top 100
     def the_top100(group):
     	return group.sort_values(by='Liczba', ascending=False)[:100]
