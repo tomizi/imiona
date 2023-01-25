@@ -26,7 +26,7 @@ div[class*="stTextInput"] label {
   color: black;
 }
 div[class*="stSelectbox"] label {
-  font-size: 86px;
+  font-size: 40px;
   color: black;
 }
 </style>
