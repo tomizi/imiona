@@ -124,8 +124,10 @@ if sekcja == 'Analiza statystyczna':
     total_ur=pd.DataFrame(total_ur, columns=['K','M'])
     st.subheader('Łączna liczba dzieci urodzonych w latach 2000-2021 z podziałem na płeć')
     fig = go.Figure()
-    fig.add_trace(line(total_ur['K']).update_traces(line_color=kol['K']).update_yaxes(title_text='Rok').update_yaxes(title_text='Liczba',rangemode='tozero'))
-    fig.add_trace(line(total_ur['M']).update_traces(line_color=kol['M']).update_yaxes(title_text='Rok').update_yaxes(title_text='Liczba',rangemode='tozero'))
+    fig.add_trace(go.Scatter(total_ur['K'],line_color=kol['K']))
+    fig.add_trace(go.Scatter(total_ur['M'],line_color=kol['M']))
+    fig.update_xaxes(title_text='Rok')
+    fig.update_yaxes(title_text='Liczba',rangemode='tozero')
     st.plotly_chart(fig)
 	
     #top 100
