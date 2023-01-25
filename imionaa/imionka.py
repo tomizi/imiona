@@ -75,6 +75,10 @@ if sekcja == 'Strona główna':
 		 'Są też tacy, którzy zwracają uwagę na oryginalność lub po prostu brzmienie imienia. ' +
 		'Niniejsza strona prezentuje trendy w popularności imion nadawanych dzieciom w Polsce w latach 2000-2021.')
 
+    st.subheader('Źródło danych')
+    st.write('Dane do analizy pobrane zostały ze strony Ministerstwa Cyfryzacji. Były one w postaci jedenastu plików formatu xlsx.')
+    st.write('Link do strony: https://dane.gov.pl/pl/dataset/219,imiona-nadawane-dzieciom-w-polsce')
+    st.write('Dostęp z dnia 29.05.2022r.')
     st.write('Dane z lat 2000–2012 zawierają imiona, których liczba wystąpień wynosi co najmniej 5. ' +
 	     'Od roku 2013 dane zawierają imiona, których liczba wystąpień jest większa od 1')
        
@@ -87,10 +91,6 @@ if sekcja == 'Strona główna':
     st.subheader('Odsetek dzieci danej płci o nadanym imieniu {} na przestrzeni lat 2000-2021'.format(imie))
     st.plotly_chart(px.line(im[im['Imię']==imie].sort_values(['Rok','Płeć']),x='Rok',y='Proporcja%',color='Płeć',markers=True,width=1100, height=600).update_yaxes(title_text='Procent',rangemode='tozero'))
 
-    st.subheader('Źródło danych')
-    st.write('Dane do analizy pobrane zostały ze strony Ministerstwa Cyfryzacji. Były one w postaci jedenastu plików formatu xlsx.')
-    st.write('Link do strony: https://dane.gov.pl/pl/dataset/219,imiona-nadawane-dzieciom-w-polsce')
-    st.write('Dostęp z dnia 29.05.2022r.')
 	
 
 	
