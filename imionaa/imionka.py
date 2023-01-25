@@ -123,7 +123,7 @@ if sekcja == 'Analiza statystyczna':
     total_ur=im.pivot_table('Liczba', index='Rok', columns='Płeć', aggfunc=sum)	
     total_ur=pd.DataFrame(total_ur, columns=['K','M'])
     st.subheader('Łączna liczba dzieci urodzonych w latach 2000-2021 z podziałem na płeć')
-    st.dataframe(total_ur.index())
+    st.dataframe(total_ur.index)
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=total,y=total_ur['K'],line_color=kol['K']))
     fig.add_trace(go.Scatter(total_ur['M'],line_color=kol['M']))
