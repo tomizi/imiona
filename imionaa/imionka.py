@@ -116,7 +116,7 @@ if sekcja == 'Analiza statystyczna':
 	
     tabelka=top100.pivot_table('Proporcja%',index='Rok',columns='Płeć',aggfunc=sum)
     tabelka=pd.DataFrame(tabelka, columns=['K','M'])
-    st.subheader('Odsetek urodzonych dzieci, którym nadaje się imiona należące do listy 100 najpopularniejszych imion')
+    st.subheader('Procent urodzonych dzieci, którym nadaje się imiona należące do listy 100 najpopularniejszych imion')
     st.plotly_chart(px.line(tabelka).update_yaxes(title_text='Rok').update_yaxes(title_text='Procent'))
 	
 	
