@@ -164,7 +164,7 @@ if sekcja == 'Analiza statystyczna':
     c1, c2 = st.columns(2)
     with c1:
     	st.subheader('Liczba dziewczynek o imieniu rozpoczynającym się na daną literę')
-    	st.plotly_chart(px.bar(tabelka_k[str(rok)],y=str(rok)).update_xaxes(title_text='Pierwsza litera').update_yaxes(title_text='Liczba'
+    	st.plotly_chart(px.bar(tabelka_k[str(rok)],y=str(rok)).update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
 	
 	#liczba imion żeńskich	
@@ -179,7 +179,7 @@ if sekcja == 'Analiza statystyczna':
     c3, c4 = st.columns(2)
     with c3:
     	st.subheader('Liczba chłopców o imieniu rozpoczynającym się na daną literę')
-    	st.plotly_chart(px.bar(tabelka_m[str(rok)],y=str(rok)).update_xaxes(title_text='Pierwsza litera').update_yaxes(title_text='Liczba'
+    	st.plotly_chart(px.bar(tabelka_m[str(rok)],y=str(rok)).update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
     
 	#liczba imion męskich
@@ -193,7 +193,7 @@ if sekcja == 'Analiza statystyczna':
     c5, c6 = st.columns(2)
     with c5:
     	st.subheader('Liczba chłopców o imieniu kończącym się na daną literę')
-    	st.plotly_chart(px.bar(tabelka_m1[str(rok)],y=str(rok)).update_xaxes(title_text='Ostatnia litera').update_yaxes(title_text='Liczba'
+    	st.plotly_chart(px.bar(tabelka_m1[str(rok)],y=str(rok)).update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
     
 	#liczba imion męskich
