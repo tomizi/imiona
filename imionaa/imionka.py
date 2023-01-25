@@ -125,10 +125,11 @@ if sekcja == 'Analiza statystyczna':
     st.subheader('Łączna liczba dzieci urodzonych w latach 2000-2021 z podziałem na płeć')
     st.dataframe(total_ur.index)
     fig = go.Figure()
-    fig.add_trace(go.Scatter(x=total_ur.index,y=total_ur['K'],line_color=kol['K']))
-    fig.add_trace(go.Scatter(x=total_ur.index,y=total_ur['M'],line_color=kol['M']))
+    fig.add_trace(go.Scatter(x=total_ur.index,y=total_ur['K'],line_color=kol['K'],name='Dziewczynki'))
+    fig.add_trace(go.Scatter(x=total_ur.index,y=total_ur['M'],line_color=kol['M'],name='Chłopcy'))
     fig.update_xaxes(title_text='Rok')
     fig.update_yaxes(title_text='Liczba',rangemode='tozero')
+    fig.update_layout(legend_title_text='Płeć')
     st.plotly_chart(fig)
 	
     #top 100
