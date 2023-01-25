@@ -35,7 +35,7 @@ div[class*="stSelectbox"] label {
 st.write(tabs_font_css, unsafe_allow_html=True)
 
 kol = {'K':'rgb(255, 0, 255)','M':'rgb(0,70,180)'}
-kol1 = {'KK':['rgb(255, 0, 255)','rgb(255, 0, 25)'],'MM':['rgb(0,70,180)','rgb(255,0,205)'],'KM':['rgb(255, 0, 255)','rgb(0,70,180)'],'MK':['rgb(0,70,180)','rgb(255, 0, 255)']}
+kol1 = {'KK':['rgb(255, 0, 255)','rgb(200, 0, 25)'],'MM':['rgb(0,70,180)','rgb(0,0,205)'],'KM':['rgb(255, 0, 255)','rgb(0,70,180)'],'MK':['rgb(0,70,180)','rgb(255, 0, 255)']}
 
 im = pd.read_excel(io='imionaa/imiona.xlsx',engine='openpyxl',dtype={'Rok':str})
 
