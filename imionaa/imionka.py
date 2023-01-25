@@ -124,7 +124,7 @@ if sekcja == 'Analiza statystyczna':
     total_ur=pd.DataFrame(total_ur, columns=['K','M'])
     st.subheader('Łączna liczba dzieci urodzonych w latach 2000-2021 z podziałem na płeć')
     st.plotly_chart(px.line(total_ur).update_yaxes(title_text='Rok').update_yaxes(title_text='Liczba',rangemode='tozero'))
-	
+    st.dataframe(total_ur)
 	
     #top 100
     def the_top100(group):
