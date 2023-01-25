@@ -105,6 +105,8 @@ if sekcja == 'Analiza statystyczna':
     total_ur=pd.DataFrame(total_ur, columns=['K','M'])
     st.subheader('Łączna liczba dzieci urodzonych w latach 2000-2021 z podziałem na płeć')
     st.plotly_chart(px.line(total_ur).update_yaxes(title_text='Rok').update_yaxes(title_text='Liczba',rangemode='tozero'))
+	
+	
     #top 100
     def the_top100(group):
     	return group.sort_values(by='Liczba', ascending=False)[:100]
@@ -112,7 +114,7 @@ if sekcja == 'Analiza statystyczna':
     top100=grouped.apply(the_top100)
     top100.reset_index(inplace=True, drop=True)
 	
-    tabelka=top100.pivot_table('Proporcja'*100,index='Rok',columns='Płeć',aggfunc=sum)
+    tabelka=top100.pivot_table('Proporcja%',index='Rok',columns='Płeć',aggfunc=sum)
     tabelka=pd.DataFrame(tabelka, columns=['K','M'])
     st.subheader('Odsetek urodzonych dzieci, którym nadaje się imiona należące do listy 100 najpopularniejszych imion')
     st.plotly_chart(px.line(tabelka).update_yaxes(title_text='Rok').update_yaxes(title_text='Odsetek'))
