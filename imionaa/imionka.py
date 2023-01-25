@@ -238,7 +238,7 @@ if sekcja == 'Analiza statystyczna':
 	
 	
 	#Najczęściej nadawane imiona dzieciom w podziale na województwa
-    st.subheader('Najczęściej nadawane dzieciom imiona w Polsce w latach 2019 - 2021 w podziale na województwa')
+    st.subheader('Imiona najczęściej nadawane dzieciom w Polsce w latach 2019-2021 w podziale na województwa')
     latka_opcje=["2019","2020","2021"]
     wybrany = st.selectbox("Wybierz rok:", latka_opcje)
     
