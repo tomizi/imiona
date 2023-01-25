@@ -19,6 +19,18 @@ sekcja = st.sidebar.radio(
  )
 
 
+tabs_font_css = """
+<style>
+div[class*="stTextInput"] label {
+  font-size: 46px;
+  color: black;
+}
+
+</style>
+"""
+
+st.write(tabs_font_css, unsafe_allow_html=True)
+
 
 im = pd.read_excel(io='imionaa/imiona.xlsx',engine='openpyxl',dtype={'Rok':str})
 
