@@ -73,7 +73,7 @@ if sekcja == 'Strona główna':
     st.write('Ustalenie imienia dla dziecka to niełatwa decyzja. Powinna być świadomym wyborem obojga partnerów. ' +
 		 'Niektórzy rodzice kierują się modą, inni rodzinną tradycją, kolejni łatwością do zdrobnienia. ' +
 		 'Są też tacy, którzy zwracają uwagę na oryginalność lub po prostu brzmienie imienia. ' +
-		'Niniejsza strona prezentuje trendy w popularności imion nadawanych dzieciom w Polsce w latach 2000 - 2021.')
+		'Niniejsza strona prezentuje trendy w popularności imion nadawanych dzieciom w Polsce w latach 2000-2021.')
        
     imie = st.text_input('Podaj imię: ','Martyna')
     imie = imie.upper()
@@ -82,7 +82,7 @@ if sekcja == 'Strona główna':
     #st.dataframe(im[im['Imię']==imie].sort_values(['Płeć','Rok']))
 	
     st.subheader('Odsetek dzieci danej płci o nadanym imieniu {} na przestrzeni lat 2000-2021'.format(imie))
-    st.plotly_chart(px.line(im[im['Imię']==imie].sort_values(['Rok','Płeć']),x='Rok',y='Proporcja%',color='Płeć',markers=True,width=1100, height=600).update_yaxes(rangemode='tozero'))
+    st.plotly_chart(px.line(im[im['Imię']==imie].sort_values(['Rok','Płeć']),x='Rok',y='Proporcja%',color='Płeć',markers=True,width=1100, height=600).update_yaxes(title_text='Procent',rangemode='tozero'))
 
     st.subheader('Źródło danych')
     st.write('Dane do analizy pobrane zostały ze strony Ministerstwa Cyfryzacji. Były one w postaci jedenastu plików formatu xlsx.')
