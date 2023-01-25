@@ -129,7 +129,7 @@ if sekcja == 'Analiza statystyczna':
     fig.add_trace(go.Scatter(x=total_ur.index,y=total_ur['M'],line_color=kol['M'],name='Chłopcy'))
     fig.update_xaxes(title_text='Rok')
     fig.update_yaxes(title_text='Liczba',rangemode='tozero')
-    fig.update_layout(legend_title_text='Płeć')
+    fig.update_layout(legend_title_text='Płeć',width=1000,height=400)
     st.plotly_chart(fig)
 	
     #top 100
