@@ -94,7 +94,7 @@ if sekcja == 'Strona główna':
     st.write('Dane z lat 2000–2012 zawierają imiona, których liczba wystąpień wynosi co najmniej 5. ' +
 	     'Od roku 2013 dane zawierają imiona, których liczba wystąpień jest większa od 1.')
        
-    imie = st.text_input(st.markdown('Podaj imię:  ','Martyna')
+    imie = st.text_input('Podaj imię:  ','Martyna')
     imie = imie.upper()
     st.subheader('Liczba dzieci o nadanym imieniu {i} na przestrzeni lat 2000-2021'.format(i=str(imie)))
     st.plotly_chart(px.line(im[im['Imię']==imie].sort_values(['Rok','Płeć']),x='Rok',y='Liczba',color='Płeć',markers=True,width=1100, height=600).update_yaxes(rangemode='tozero').update_traces(line_color='#0000ff', line_width=2))
