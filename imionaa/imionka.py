@@ -123,7 +123,7 @@ if sekcja == 'Analiza statystyczna':
     total_ur=im.pivot_table('Liczba', index='Rok', columns='Płeć', aggfunc=sum)	
     total_ur=pd.DataFrame(total_ur, columns=['K','M'])
     st.subheader('Łączna liczba dzieci urodzonych w latach 2000-2021 z podziałem na płeć')
-    st.plotly_chart(px.line(total_ur).update_traces(color_discrete_sequence=[kol['K'],kol['M']]).update_yaxes(title_text='Rok').update_yaxes(title_text='Liczba',rangemode='tozero'))
+    st.plotly_chart(go.Figure(line(total_ur).update_traces(line_color=[kol['K'],kol['M']]).update_yaxes(title_text='Rok').update_yaxes(title_text='Liczba',rangemode='tozero'))
     st.dataframe(total_ur)
 	
     #top 100
