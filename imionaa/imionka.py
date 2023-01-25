@@ -112,7 +112,7 @@ if sekcja == 'Analiza statystyczna':
     top100=grouped.apply(the_top100)
     top100.reset_index(inplace=True, drop=True)
 	
-    tabelka=top100.pivot_table('Proporcja',index='Rok',columns='Płeć',aggfunc=sum)
+    tabelka=top100.pivot_table('Proporcja'*100,index='Rok',columns='Płeć',aggfunc=sum)
     tabelka=pd.DataFrame(tabelka, columns=['K','M'])
     st.subheader('Odsetek urodzonych dzieci, którym nadaje się imiona należące do listy 100 najpopularniejszych imion')
     st.plotly_chart(px.line(tabelka).update_yaxes(title_text='Rok').update_yaxes(title_text='Odsetek'))
