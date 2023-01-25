@@ -123,8 +123,10 @@ if sekcja == 'Analiza statystyczna':
     total_ur=im.pivot_table('Liczba', index='Rok', columns='Płeć', aggfunc=sum)	
     total_ur=pd.DataFrame(total_ur, columns=['K','M'])
     st.subheader('Łączna liczba dzieci urodzonych w latach 2000-2021 z podziałem na płeć')
-    st.plotly_chart(go.Figure(line(total_ur).update_traces(line_color=[kol['K'],kol['M']]).update_yaxes(title_text='Rok').update_yaxes(title_text='Liczba',rangemode='tozero'))
-    st.dataframe(total_ur)
+    fig = go.Figure()
+    fig.add_trace(line(total_ur['K']).update_traces(line_color=kol['K']).update_yaxes(title_text='Rok').update_yaxes(title_text='Liczba',rangemode='tozero'))
+    fig.add_trace(line(total_ur['M']).update_traces(line_color=kol['M']).update_yaxes(title_text='Rok').update_yaxes(title_text='Liczba',rangemode='tozero'))
+    st.plotly_chart(fig)
 	
     #top 100
     def the_top100(group):
