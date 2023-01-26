@@ -192,7 +192,7 @@ if sekcja == 'Analiza statystyczna':
     imionka2=im[im.Imię==str(imie2)]
     imionka=pd.concat([imionka1,imionka2], ignore_index=True, sort=False)
     #st.dataframe(imionka)
-    st.write(kol1[str(im[im['Imię']==imie1]['Płeć'].iloc[0])+str(im[im['Imię']==imie2]['Płeć'].iloc[0])])
+    #st.write(kol1[str(im[im['Imię']==imie1]['Płeć'].iloc[0])+str(im[im['Imię']==imie2]['Płeć'].iloc[0])])
     if imionka.empty:
 	    st.write('*Brak danych dla wybranych imion')
     else:
