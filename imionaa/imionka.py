@@ -130,7 +130,7 @@ if sekcja == 'Analiza statystyczna':
     total_ur=pd.DataFrame(total_ur, columns=['K','M'])
     st.subheader('Łączna liczba dzieci zarejestrowanych w latach 2000-2021 z podziałem na płeć')
     st.write('Po wzroście liczby rejestrowanych dzieci w latach 2008-2010 i w roku 2017 w ostatnich latach zauważalny jest znaczny spadek.')
-    st.dataframe(total_ur.index)
+    #st.dataframe(total_ur.index)
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=total_ur.index,y=total_ur['K'],line_color=kol['K'],name='Dziewczynki'))
     fig.add_trace(go.Scatter(x=total_ur.index,y=total_ur['M'],line_color=kol['M'],name='Chłopcy'))
@@ -163,6 +163,9 @@ if sekcja == 'Analiza statystyczna':
 	
     diversity = pd.DataFrame(diversity, columns=['K','M'])
     st.subheader('Liczba imion z listy najpopularniejszych w Polsce nadanych łącznie przynajmniej 50% zarejestrowanych dzieci danej płci')
+    st.write(' Mimo, że na liście imion nadawanych dzieciom w Polsce w latach 2000-2021 jest 1922 imion żeńskich i 1988 imion męskich' +
+	     'ponad połowie dzieci nadano imię z listy 12-19 najpopularniejszych. '+
+	     'O ile różnorodność imion męskich jest od lat na mniej więcej stałym poziomie, to różnorodność imion żeńskich stale rośnie.')
     #st.plotly_chart(px.line(diversity).update_yaxes(title_text='Rok').update_yaxes(title_text='Liczba',rangemode='tozero'))
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=diversity.index,y=diversity['K'],line_color=kol['K'],name='Dziewczynki'))
