@@ -129,6 +129,7 @@ if sekcja == 'Analiza statystyczna':
     total_ur=im.pivot_table('Liczba', index='Rok', columns='Płeć', aggfunc=sum)	
     total_ur=pd.DataFrame(total_ur, columns=['K','M'])
     st.subheader('Łączna liczba dzieci zarejestrowanych w latach 2000-2021 z podziałem na płeć')
+    st.write('Po wzroście liczby rejestrowanych dzieci w latach 2008-2010 i w roku 2017 w ostatnich latach zauważalny jest znaczny spadek.')
     st.dataframe(total_ur.index)
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=total_ur.index,y=total_ur['K'],line_color=kol['K'],name='Dziewczynki'))
@@ -137,6 +138,7 @@ if sekcja == 'Analiza statystyczna':
     fig.update_yaxes(title_text='Liczba',rangemode='tozero')
     fig.update_layout(legend_title_text='Płeć',width=1000,height=400)
     st.plotly_chart(fig)
+    
 	
     #top 100
     def the_top100(group):
@@ -148,6 +150,7 @@ if sekcja == 'Analiza statystyczna':
     tabelka=top100.pivot_table('Proporcja%',index='Rok',columns='Płeć',aggfunc=sum)
     tabelka=pd.DataFrame(tabelka, columns=['K','M'])
     st.subheader('Procent zarejestrowanych dzieci, którym nadaje się imiona należące do listy 100 najpopularniejszych imion')
+    st.write('Wykres ten pokazuje, że rodzice coraz rzadziej sięgają bo najpopularniejsze imiona. Trend ten zmienił się chwilowo w latach 2016-2018, być może ze względu na dużą popularność w tych latach takich imion jak Antoni czy Zofia. ')
     #st.plotly_chart(px.line(tabelka).update_yaxes(title_text='Rok').update_yaxes(title_text='Procent'))
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=tabelka.index,y=tabelka['K'],line_color=kol['K'],name='Dziewczynki'))
