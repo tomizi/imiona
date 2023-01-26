@@ -154,7 +154,14 @@ if sekcja == 'Analiza statystyczna':
 	
     diversity = pd.DataFrame(diversity, columns=['K','M'])
     st.subheader('Liczba imion tworzących 50% zbioru najpopularniejszych imion')
-    st.plotly_chart(px.line(diversity).update_yaxes(title_text='Rok').update_yaxes(title_text='Liczba',rangemode='tozero'))
+    #st.plotly_chart(px.line(diversity).update_yaxes(title_text='Rok').update_yaxes(title_text='Liczba',rangemode='tozero'))
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=diversity.index,y=tabelka['K'],line_color=kol['K'],name='Dziewczynki'))
+    fig.add_trace(go.Scatter(x=diversity.index,y=tabelka['M'],line_color=kol['M'],name='Chłopcy'))
+    fig.update_xaxes(title_text='Rok')
+    fig.update_yaxes(title_text='Liczba')
+    fig.update_layout(legend_title_text='Płeć',width=1000,height=400)
+    st.plotly_chart(fig)
    
 
 	
