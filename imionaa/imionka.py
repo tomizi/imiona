@@ -155,7 +155,7 @@ if sekcja == 'Analiza statystyczna':
 	
 	
     diversity = pd.DataFrame(diversity, columns=['K','M'])
-    st.subheader('Liczba imion tworzących 50% zbioru najpopularniejszych imion')
+    st.subheader('Liczba imion z listy najpopularniejszych w Polsce nadanych łącznie przynajmniej 50% zarejestrowanych dzieci danej płci')
     #st.plotly_chart(px.line(diversity).update_yaxes(title_text='Rok').update_yaxes(title_text='Liczba',rangemode='tozero'))
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=diversity.index,y=diversity['K'],line_color=kol['K'],name='Dziewczynki'))
