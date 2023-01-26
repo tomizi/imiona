@@ -128,7 +128,7 @@ if sekcja == 'Analiza statystyczna':
     #łączna ilość urodzeń
     total_ur=im.pivot_table('Liczba', index='Rok', columns='Płeć', aggfunc=sum)	
     total_ur=pd.DataFrame(total_ur, columns=['K','M'])
-    st.subheader('Łączna liczba dzieci urodzonych w latach 2000-2021 z podziałem na płeć')
+    st.subheader('Łączna liczba dzieci zarejestrowanych w latach 2000-2021 z podziałem na płeć')
     st.dataframe(total_ur.index)
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=total_ur.index,y=total_ur['K'],line_color=kol['K'],name='Dziewczynki'))
@@ -147,7 +147,7 @@ if sekcja == 'Analiza statystyczna':
 	
     tabelka=top100.pivot_table('Proporcja%',index='Rok',columns='Płeć',aggfunc=sum)
     tabelka=pd.DataFrame(tabelka, columns=['K','M'])
-    st.subheader('Procent urodzonych dzieci, którym nadaje się imiona należące do listy 100 najpopularniejszych imion')
+    st.subheader('Procent zarejestrowanych dzieci, którym nadaje się imiona należące do listy 100 najpopularniejszych imion')
     #st.plotly_chart(px.line(tabelka).update_yaxes(title_text='Rok').update_yaxes(title_text='Procent'))
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=tabelka.index,y=tabelka['K'],line_color=kol['K'],name='Dziewczynki'))
