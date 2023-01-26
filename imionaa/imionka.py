@@ -111,7 +111,7 @@ if sekcja == 'Strona główna':
     #st.write(im[im['Imię']==imie]['Płeć'].groupby('Rok')['Płeć'].astype(int).agg(np.min))
 	#st.dataframe(im[im['Imię']==imie].sort_values(['Płeć','Rok']))
 	
-    st.subheader('Odsetek dzieci danej płci o nadanym imieniu {} na przestrzeni lat 2000-2021'.format(imie))
+    st.subheader('Procent dzieci danej płci o nadanym imieniu {} na przestrzeni lat 2000-2021'.format(imie))
     st.plotly_chart(px.line(im[im['Imię']==imie].sort_values(['Rok','Płeć']),x='Rok',y='Proporcja%',color='Płeć',markers=True,width=1100, height=600,color_discrete_sequence=list(map(lambda x: kol[x],im[im['Imię']==imie]['Płeć'].unique()))).update_yaxes(title_text='Procent',rangemode='tozero'))
 
 	
