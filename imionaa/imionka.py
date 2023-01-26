@@ -97,7 +97,9 @@ if sekcja == 'Strona główna':
     st.write('Link do strony: https://dane.gov.pl/pl/dataset/219,imiona-nadawane-dzieciom-w-polsce')
     st.write('Dostęp z dnia 29.05.2022r.')
     st.write('Dane z lat 2000–2012 zawierają imiona, których liczba wystąpień wynosi co najmniej 5. ' +
-	     'Od roku 2013 dane zawierają imiona, których liczba wystąpień jest większa od 1.')
+	     'Od roku 2013 dane zawierają imiona, których liczba wystąpień jest większa od 1. ')
+    st.write('W związku z tym łączna liczba zarejestrowanych dzieci w rzeczywistości oznacza łączną liczbę zarejestrowanych dzieci o imionach występujących na liście, ' +
+	     'czyli tych, które nie są unikalne. Ta liczba służy też do wyznaczenia wszystkich wartości względnych (procentowych).')
        
     imie = st.text_input('Podaj imię:  ','Martyna')
     imie = imie.upper()
