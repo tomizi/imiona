@@ -150,7 +150,7 @@ if sekcja == 'Analiza statystyczna':
     tabelka=top100.pivot_table('Proporcja%',index='Rok',columns='Płeć',aggfunc=sum)
     tabelka=pd.DataFrame(tabelka, columns=['K','M'])
     st.subheader('Procent zarejestrowanych dzieci, którym nadaje się imiona należące do listy 100 najpopularniejszych imion')
-    st.write('Wykres ten pokazuje, że rodzice coraz rzadziej sięgają bo najpopularniejsze imiona. Trend ten zmienił się chwilowo w latach 2016-2018, być może ze względu na dużą popularność w tych latach takich imion jak Antoni czy Zofia. ')
+    st.write('Wykres ten pokazuje, że rodzice coraz rzadziej sięgają po najpopularniejsze imiona. Trend ten zmienił się chwilowo w latach 2016-2018, być może ze względu na dużą popularność w tych latach takich imion jak Antoni czy Zofia. ')
     #st.plotly_chart(px.line(tabelka).update_yaxes(title_text='Rok').update_yaxes(title_text='Procent'))
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=tabelka.index,y=tabelka['K'],line_color=kol['K'],name='Dziewczynki'))
