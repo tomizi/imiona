@@ -276,13 +276,13 @@ if sekcja == 'Analiza statystyczna':
     top10_k=top10_k[top10_k.Rok==str(cos)]
     top10_k = top10_k.sort_values(by='Liczba', ascending = True)
     #st.dataframe(top10_k)
-    c1.plotly_chart(px.bar(top10_k, x="Liczba", y="Imię", orientation='h',color_discrete_sequence='rgb(255,0,205)',
+    c1.plotly_chart(px.bar(top10_k, x="Liczba", y="Imię", orientation='h',marker_color='rgb(255,0,205)',
              height=600,
              title='Top 10 najczęściej nadawanych imion żeńskich w roku {i}'.format(i=str(cos))))
     top10_m=top10_m[top10_m.Rok==str(cos)]
     top10_m=top10_m.sort_values(by="Liczba", ascending = True)
     #st.dataframe(top10_m)
-    c2.plotly_chart(px.bar(top10_m, x="Liczba", y="Imię", orientation='h',color_discrete_sequence='rgb(0,70,180)',
+    c2.plotly_chart(px.bar(top10_m, x="Liczba", y="Imię", orientation='h',marker_color='rgb(0,70,180)',
              height=600,
              title='Top 10 najczęściej nadawanych imion męskich w roku {i}'.format(i=str(cos))))
 
