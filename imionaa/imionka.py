@@ -344,7 +344,7 @@ if sekcja == 'Analiza statystyczna':
    
     fig.update_geos(fitbounds="locations", visible=False)
     fig.update_layout(height=650,showlegend=False,title="Mapa Polski",title_x=0.5)
-
+    dff1=dff
     dff1['kolor']=dff1['kolor'].where(dff1['Województwo']!=mies,'rgb(0,70,180)')
     fig1 = px.choropleth(dff1,
                     locations="Województwo",
