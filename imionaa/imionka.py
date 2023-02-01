@@ -38,7 +38,12 @@ kol = {'K':'rgb(255, 0, 255)','M':'rgb(0,70,180)'}
 kol1 = {'KK':['rgb(255, 0, 255)','rgb(200, 0, 25)'],'MM':['rgb(0,70,180)','rgb(0,0,205)'],'KM':['rgb(255, 0, 255)','rgb(0,70,180)'],'MK':['rgb(0,70,180)','rgb(255, 0, 255)']}
 kol2 = {'K0K1M2M3':['rgb(255,0,205)','red','rgb(0,70,180)','blue'],'K0M1M2K3':['rgb(255,0,205)','rgb(0,70,180)','blue','red'],
        'K0M1K2M3':['rgb(255,0,205)','rgb(0,70,180)','red','blue'],'M0K1M2K3':['rgb(0,70,180)','red','blue','rgb(255,0,205)'],
-       'M0M1K2K3':['rgb(0,70,180)','blue','red','rgb(255,0,205)'],'M0K1K2M3':['rgb(0,70,180)','red','rgb(255,0,205)','blue']}
+       'M0M1K2K3':['rgb(0,70,180)','blue','red','rgb(255,0,205)'],'M0K1K2M3':['rgb(0,70,180)','red','rgb(255,0,205)','blue'],
+       'M0M1K2':['rgb(0,70,180)','blue','rgb(255,0,205)'],'M0K1K2':['rgb(0,70,180)','red','rgb(255,0,205)'],
+       'M0K1M2':['rgb(0,70,180)','rgb(255,0,205)','blue'],'K0M1K2':['rgb(255,0,205)','rgb(0,70,180)','red'],
+       'K0M1M2':['rgb(255,0,205)','rgb(0,70,180)','blue'],'K0K1M2':['rgb(255,0,205)','red','rgb(0,70,180)'],
+       'K0K1':['rgb(255,0,205)','red'],'K0M1':['rgb(255,0,205)','rgb(0,70,180)'],'M0K1':['rgb(0,70,180)','rgb(255,0,205)'],
+       'M0M1':['rgb(0,70,180)','blue']}
 im = pd.read_excel(io='imionaa/imiona.xlsx',engine='openpyxl',dtype={'Rok':str})
 
 
@@ -212,11 +217,13 @@ if sekcja == 'Analiza statystyczna':
     #st.dataframe(imionka2)
     st.dataframe(imionka2.sort_values(['Rok','Nowa2']))
     koly = list(map(lambda x, y: x[0]+str(y),list(imionka2.sort_values(['Rok','Nowa2'])['Nowa2'].unique()),list(range(len(list(list(imionka2.sort_values(['Rok','Nowa2'])['Nowa2'].unique()))) ))) )
+    koly0 = ''.join(str(x) for x in koly)
     st.dataframe(koly)
+    st.write(koly0)
     if imionka.empty:
 	    st.write('*Brak danych dla wybranych imion')
     else:
-	    st.plotly_chart(px.line(imionka2.sort_values(['Rok','Nowa2']),x='Rok',y='Liczba',color='Nowa2',markers=True,width=1100, height=600,color_discrete_sequence=list(map(lambda x: kol2[x], koly))).update_xaxes().update_yaxes(rangemode='tozero'))
+	    st.plotly_chart(px.line(imionka2.sort_values(['Rok','Nowa2']),x='Rok',y='Liczba',color='Nowa2',markers=True,width=1100, height=600,color_discrete_sequence=kol2[koly0]).update_xaxes().update_yaxes(rangemode='tozero'))
     
 
     #IMIONA JEDNOCZEŚNIE MĘSKIE I ŻEŃSKIE
