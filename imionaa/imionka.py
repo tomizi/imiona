@@ -220,12 +220,14 @@ if sekcja == 'Analiza statystyczna':
     koly0 = ''.join(str(x) for x in koly)
     st.dataframe(imionka2.sort_values(['Rok','Nowa2']))
     #st.write(koly0)
-    if (imie1 in list(im['Imię']))  and (imie2 in list(im['Imię']) ):
+    #if (imie1 in list(im['Imię']))  and (imie2 in list(im['Imię']) )
+    if (np.max(list(im[im['Imię']==imie1]['Liczba'])))>100)  and (np.max(list(im[im['Imię']==imie2]['Liczba'])))>100) ):
 	    st.plotly_chart(px.line(imionka2.sort_values(['Rok','Nowa2']),x='Rok',y='Liczba',color='Nowa2',markers=True,width=1100, height=600,color_discrete_sequence=kol2[koly0]).update_xaxes().update_yaxes(rangemode='tozero'))
     else:
 	    st.write('*Brak danych dla wybranych imion')
     
 
+    
     #IMIONA JEDNOCZEŚNIE MĘSKIE I ŻEŃSKIE
     chłopcy=im[im.Płeć=='M']
     dziewczynki=im[im.Płeć=='K']
