@@ -666,7 +666,7 @@ if sekcja == 'Analiza statystyczna':
        
         col1.plotly_chart(fig)
         col2.plotly_chart(px.bar(x=DF[DF['Województwo']==mies]['Liczba imion'][::-1],y=DF[DF['Województwo']==mies]['Imię'][::-1],
-			         orientation='h',text=DF[DF['Województwo']==mies]['Liczba imion'][::-1],color=["rgb(255,205,0)"]*10,
+			         orientation='h',text=DF[DF['Województwo']==mies]['Liczba imion'][::-1],color=["rgb(255,0,205)"]*10,
 			         color_discrete_map="identity",
 			         title='Top 10 imion żeńskich').update_xaxes(title_text='Liczba imion').update_yaxes(title_text='Imię'
 				    ).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
