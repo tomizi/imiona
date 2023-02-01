@@ -205,7 +205,7 @@ if sekcja == 'Analiza statystyczna':
     #st.write(kol1[str(im[im['Imię']==imie1]['Płeć'].iloc[0])+str(im[im['Imię']==imie2]['Płeć'].iloc[0])])
     st.dataframe(imionka)
     imionka2 = imionka
-    imionka2['Nowa'] = imionka2['Imię','Płeć'].apply(lambda x, y: x+y,axis=1)
+    imionka2['Nowa'] = imionka2[['Imię','Płeć']].apply(lambda x, y: x+y,axis=1)
     st.dataframe(imionka2)
     if imionka.empty:
 	    st.write('*Brak danych dla wybranych imion')
