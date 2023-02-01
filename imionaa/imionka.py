@@ -36,7 +36,9 @@ st.write(tabs_font_css, unsafe_allow_html=True)
 
 kol = {'K':'rgb(255, 0, 255)','M':'rgb(0,70,180)'}
 kol1 = {'KK':['rgb(255, 0, 255)','rgb(200, 0, 25)'],'MM':['rgb(0,70,180)','rgb(0,0,205)'],'KM':['rgb(255, 0, 255)','rgb(0,70,180)'],'MK':['rgb(0,70,180)','rgb(255, 0, 255)']}
-kol2 = {'K0':'rgb(255, 0, 255)','K1':'red','M0':'rgb(0,70,180)','M1':'blue','M2':'rgb(0,70,180)','M3':'blue'}
+kol2 = {'K0K1M2M3':['rgb(255,0,205)','red','rgb(0,70,180)','blue'],'K0M1M2K3':['rgb(255,0,205)','rgb(0,70,180)','blue','red'],
+       'K0M1K2M3':['rgb(255,0,205)','rgb(0,70,180)','red','blue'],'M0K1M2K3':['rgb(0,70,180)','red','blue','rgb(255,0,205)'],
+       'M0M1K2K3':['rgb(0,70,180)','blue','red','rgb(255,0,205)'],'M0K1K2M3':['rgb(0,70,180)','red','rgb(255,0,205)','blue']}
 im = pd.read_excel(io='imionaa/imiona.xlsx',engine='openpyxl',dtype={'Rok':str})
 
 
