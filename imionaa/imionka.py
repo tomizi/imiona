@@ -220,7 +220,7 @@ if sekcja == 'Analiza statystyczna':
     koly0 = ''.join(str(x) for x in koly)
     #st.dataframe(koly)
     #st.write(koly0)
-    if imionka.empty:
+    if (imie1 in list(im['Imię'])  and imie2 in list(im['Imię']) ):
 	    st.write('*Brak danych dla wybranych imion')
     else:
 	    st.plotly_chart(px.line(imionka2.sort_values(['Rok','Nowa2']),x='Rok',y='Liczba',color='Nowa2',markers=True,width=1100, height=600,color_discrete_sequence=kol2[koly0]).update_xaxes().update_yaxes(rangemode='tozero'))
