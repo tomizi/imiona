@@ -208,7 +208,7 @@ if sekcja == 'Analiza statystyczna':
     else:
 	    st.plotly_chart(px.line(imionka,x='Rok',y='Liczba',color='Imię',markers=True,width=1100, height=600,color_discrete_sequence=kol1[str(im[im['Imię']==imie1]['Płeć'].iloc[0])+str(im[im['Imię']==imie2]['Płeć'].iloc[0])]).update_xaxes().update_yaxes(rangemode='tozero'))
     
-    
+    st.write(imionka)
     #IMIONA JEDNOCZEŚNIE MĘSKIE I ŻEŃSKIE
     chłopcy=im[im.Płeć=='M']
     dziewczynki=im[im.Płeć=='K']
