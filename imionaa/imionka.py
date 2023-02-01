@@ -332,7 +332,7 @@ if sekcja == 'Analiza statystyczna':
                                    'opolskie','podkarpackie','podlaskie','pomorskie','śląskie','świętokrzyskie','warmińsko-mazurskie',
                                    'wielkopolskie','zachodniopomorskie'],'kolor':['lightgray']*16})
     
-    dff['kolor']=dff['kolor'].where(dff['Województwo']!=mies,'red')
+    dff['kolor']=dff['kolor'].where(dff['Województwo']!=mies,'rgb(255,0,205)')
     fig = px.choropleth(dff,
                     locations="Województwo",
                     geojson=counties,
@@ -673,7 +673,7 @@ if sekcja == 'Analiza statystyczna':
      
         col1.plotly_chart(fig)
         col2.plotly_chart(px.bar(x=DF_c[DF_c['Województwo']==mies]['Liczba imion'][::-1],y=DF_c[DF_c['Województwo']==mies]['Imię'][::-1],
-			     orientation='h',text=DF_c[DF_c['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
+			     orientation='h',text=DF_c[DF_c['Województwo']==mies]['Liczba imion'][::-1],color=["rgb(0,70,180)"]*10,
 			     color_discrete_map="identity",
 			     title='Top 10 imion męskich').update_xaxes(title_text='Liczba imion').update_yaxes(title_text='Imię'
 				).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
@@ -682,14 +682,14 @@ if sekcja == 'Analiza statystyczna':
         
         col1.plotly_chart(fig)
         col2.plotly_chart(px.bar(x=DF_2020_z[DF_2020_z['Województwo']==mies]['Liczba imion'][::-1],y=DF_2020_z[DF_2020_z['Województwo']==mies]['Imię'][::-1],
-			         orientation='h',text=DF_2020_z[DF_2020_z['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
+			         orientation='h',text=DF_2020_z[DF_2020_z['Województwo']==mies]['Liczba imion'][::-1],color=["rgb(255,0,205)"]*10,
 			         color_discrete_map="identity",
 			         title='Top 10 imion żeńskich').update_xaxes(title_text='Liczba imion').update_yaxes(title_text='Imię'
 				    ).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
         
         col1.plotly_chart(fig)
         col2.plotly_chart(px.bar(x=DF_2020_m[DF_2020_m['Województwo']==mies]['Liczba imion'][::-1],y=DF_2020_m[DF_2020_m['Województwo']==mies]['Imię'][::-1],
-			     orientation='h',text=DF_2020_m[DF_2020_m['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
+			     orientation='h',text=DF_2020_m[DF_2020_m['Województwo']==mies]['Liczba imion'][::-1],color=["rgb(0,70,180)"]*10,
 			     color_discrete_map="identity",
 			     title='Top 10 imion męskich').update_xaxes(title_text='Liczba imion').update_yaxes(title_text='Imię'
 				).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
@@ -697,14 +697,14 @@ if sekcja == 'Analiza statystyczna':
         
         col1.plotly_chart(fig)
         col2.plotly_chart(px.bar(x=DF_2019_z[DF_2019_z['Województwo']==mies]['Liczba imion'][::-1],y=DF_2019_z[DF_2019_z['Województwo']==mies]['Imię'][::-1],
-			         orientation='h',text=DF_2019_z[DF_2019_z['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
+			         orientation='h',text=DF_2019_z[DF_2019_z['Województwo']==mies]['Liczba imion'][::-1],color=["rgb(255,0,205)"]*10,
 			         color_discrete_map="identity",
 			         title='Top 10 imion żeńskich').update_xaxes(title_text='Liczba imion').update_yaxes(title_text='Imię'
 				    ).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
       
         col1.plotly_chart(fig)
         col2.plotly_chart(px.bar(x=DF_2019_m[DF_2019_m['Województwo']==mies]['Liczba imion'][::-1],y=DF_2019_m[DF_2019_m['Województwo']==mies]['Imię'][::-1],
-			     orientation='h',text=DF_2019_m[DF_2019_m['Województwo']==mies]['Liczba imion'][::-1],color=["red"]*10,
+			     orientation='h',text=DF_2019_m[DF_2019_m['Województwo']==mies]['Liczba imion'][::-1],color=["rgb(0,70,180)"]*10,
 			     color_discrete_map="identity",
 			     title='Top 10 imion męskich').update_xaxes(title_text='Liczba imion').update_yaxes(title_text='Imię'
 				).update_layout(plot_bgcolor='white',title_x=0.5,height=600))
