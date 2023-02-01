@@ -203,11 +203,11 @@ if sekcja == 'Analiza statystyczna':
     imionka=pd.concat([imionka1,imionka2], ignore_index=True, sort=False)
     #st.dataframe(imionka)
     #st.write(kol1[str(im[im['Imię']==imie1]['Płeć'].iloc[0])+str(im[im['Imię']==imie2]['Płeć'].iloc[0])])
-    st.dataframe(imionka)
+    #st.dataframe(imionka)
     imionka2 = imionka
     imionka2['Nowa'] = imionka2[['Imię','Płeć']].apply(lambda x: x['Imię']+str('(')+x['Płeć']+str(')'),axis=1)
     imionka2['Nowa2'] = imionka2[['Imię','Płeć']].apply(lambda x: x['Płeć']+str('(')+x['Imię']+str(')'),axis=1)
-    st.dataframe(imionka2)
+    #st.dataframe(imionka2)
     koly = list(map(lambda x, y: x[0]+str(y),sorted(list(imionka2['Nowa2'].unique())),list(range(len(list(sorted(list(imionka2['Nowa2'].unique()))) ))) ))
     if imionka.empty:
 	    st.write('*Brak danych dla wybranych imion')
