@@ -208,12 +208,12 @@ if sekcja == 'Analiza statystyczna':
     imionka2['Nowa'] = imionka2[['Imię','Płeć']].apply(lambda x: x['Imię']+str('(')+x['Płeć']+str(')'),axis=1)
     imionka2['Nowa2'] = imionka2[['Imię','Płeć']].apply(lambda x: x['Płeć']+str('(')+x['Imię']+str(')'),axis=1)
     #st.dataframe(imionka2)
-    st.dataframe(imionka2.sort_values(['Nowa','Rok']))
+    st.dataframe(imionka2.sort_values(['Nowa','Rok','Nowa2']))
     koly = list(map(lambda x, y: x[0]+str(y),sorted(list(imionka2['Nowa2'].unique())),list(range(len(list(sorted(list(imionka2['Nowa2'].unique()))) ))) ))
     if imionka.empty:
 	    st.write('*Brak danych dla wybranych imion')
     else:
-	    st.plotly_chart(px.line(imionka2.sort_values(['Rok','Nowa']),x='Rok',y='Liczba',color='Nowa2',markers=True,width=1100, height=600,color_discrete_sequence=list(map(lambda x: kol2[x], koly))).update_xaxes().update_yaxes(rangemode='tozero'))
+	    st.plotly_chart(px.line(imionka2.sort_values(['Nowa','Rok']),x='Rok',y='Liczba',color='Nowa2',markers=True,width=1100, height=600,color_discrete_sequence=list(map(lambda x: kol2[x], koly))).update_xaxes().update_yaxes(rangemode='tozero'))
     
 
     #IMIONA JEDNOCZEŚNIE MĘSKIE I ŻEŃSKIE
