@@ -104,6 +104,7 @@ if sekcja == 'Strona główna':
     imie = st.text_input('Podaj imię:  ','Martyna')
     imie = imie.upper()
     st.subheader('Liczba dzieci o nadanym imieniu {i} na przestrzeni lat 2000-2021'.format(i=str(imie)))
+    st.dataframe(im[im['Imię']==imie].sort_values(['Rok','Płeć'])
     st.plotly_chart(px.line(im[im['Imię']==imie].sort_values(['Rok','Płeć']),x='Rok',y='Liczba',color='Płeć',markers=True,width=1100, height=600,color_discrete_sequence=list(map(lambda x: kol[x],im[im['Imię']==imie]['Płeć'].unique()))).update_yaxes(rangemode='tozero').update_traces(line_width=2))
     
     
