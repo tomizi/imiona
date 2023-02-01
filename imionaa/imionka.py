@@ -282,7 +282,7 @@ if sekcja == 'Analiza statystyczna':
     top10_m=top10_m[top10_m.Rok==str(cos)]
     top10_m=top10_m.sort_values(by="Liczba", ascending = True)
     #st.dataframe(top10_m)
-    c2.plotly_chart(px.bar(top10_m, x="Liczba", y="Imię", orientation='h',color='Płeć',marker_color=['rgb(0,70,180)'],
+    c2.plotly_chart(px.bar(top10_m, x="Liczba", y="Imię", orientation='h',color='Płeć',color_discrete_sequence=['rgb(0,70,180)'],
              height=600,
              title='Top 10 najczęściej nadawanych imion męskich w roku {i}'.format(i=str(cos))))
 
