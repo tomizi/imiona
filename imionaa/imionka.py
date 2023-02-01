@@ -210,7 +210,7 @@ if sekcja == 'Analiza statystyczna':
     if imionka.empty:
 	    st.write('*Brak danych dla wybranych imion')
     else:
-	    st.plotly_chart(px.line(imionka2.sort_values(['Rok','Nowa']),x='Rok',y='Liczba',color='Nowa',markers=True,width=1100, height=600,color_discrete_sequence=kol1[str(im[im['Imię']==imie1]['Płeć'].iloc[0])+str(im[im['Imię']==imie2]['Płeć'].iloc[0])]).update_xaxes().update_yaxes(rangemode='tozero'))
+	    st.plotly_chart(px.line(imionka2.sort_values(['Rok','Nowa']),x='Rok',y='Liczba',color='Nowa',markers=True,width=1100, height=600,color_discrete_sequence=['red','blue','green','black']).update_xaxes().update_yaxes(rangemode='tozero'))
     
 
     #IMIONA JEDNOCZEŚNIE MĘSKIE I ŻEŃSKIE
