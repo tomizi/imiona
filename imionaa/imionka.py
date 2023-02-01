@@ -215,11 +215,11 @@ if sekcja == 'Analiza statystyczna':
     imionka2['Nowa'] = imionka2[['Imię','Płeć']].apply(lambda x: x['Imię']+str('(')+x['Płeć']+str(')'),axis=1)
     imionka2['Nowa2'] = imionka2[['Imię','Płeć']].apply(lambda x: x['Płeć']+str('(')+x['Imię']+str(')'),axis=1)
     #st.dataframe(imionka2)
-    st.dataframe(imionka2.sort_values(['Rok','Nowa2']))
+    #st.dataframe(imionka2.sort_values(['Rok','Nowa2']))
     koly = list(map(lambda x, y: x[0]+str(y),list(imionka2.sort_values(['Rok','Nowa2'])['Nowa2'].unique()),list(range(len(list(list(imionka2.sort_values(['Rok','Nowa2'])['Nowa2'].unique()))) ))) )
     koly0 = ''.join(str(x) for x in koly)
-    st.dataframe(koly)
-    st.write(koly0)
+    #st.dataframe(koly)
+    #st.write(koly0)
     if imionka.empty:
 	    st.write('*Brak danych dla wybranych imion')
     else:
