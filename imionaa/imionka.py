@@ -208,7 +208,7 @@ if sekcja == 'Analiza statystyczna':
     imionka2['Nowa'] = imionka2[['Imię','Płeć']].apply(lambda x: x['Imię']+str('(')+x['Płeć']+str(')'),axis=1)
     imionka2['Nowa2'] = imionka2[['Imię','Płeć']].apply(lambda x: x['Płeć']+str('(')+x['Imię']+str(')'),axis=1)
     st.dataframe(imionka2)
-    st.dataframe(list(map(lambda x, y: x[::-1][0]+str(y),sorted(imionka2['Nowa2'].unique),list(range(len(list(sorted(imionka2['Nowa2'].unique)) ))) )))
+    st.dataframe(list(map(lambda x, y: x[::-1][0]+str(y),sorted(list(imionka2['Nowa2'].unique())),list(range(len(list(sorted(list(imionka2['Nowa2'].unique()))) ))) )))
     if imionka.empty:
 	    st.write('*Brak danych dla wybranych imion')
     else:
