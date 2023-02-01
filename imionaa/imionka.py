@@ -108,9 +108,12 @@ if sekcja == 'Strona główna':
         st.plotly_chart(px.line(im[im['Imię']==imie].sort_values(['Rok','Płeć']),x='Rok',y='Liczba',color='Płeć',markers=True,width=1100, height=600,
 			    color_discrete_sequence=list(map(lambda x: kol[x],[np.array(im[im['Imię']==imie].sort_values(['Rok','Płeć'])['Płeć'])[index] for index in sorted(np.unique(np.array(im[im['Imię']==imie].sort_values(['Rok','Płeć'])['Płeć']), return_index=True)[1])])))
 		    .update_yaxes(rangemode='tozero').update_traces(line_width=2))
-	st.subheader('Procent dzieci danej płci o nadanym imieniu {} na przestrzeni lat 2000-2021'.format(imie))
+        st.subheader('Procent dzieci danej płci o nadanym imieniu {} na przestrzeni lat 2000-2021'.format(imie))
         st.write('Wykres prezentuje liczbę dzieci o danym imieniu w ujęciu procentowym względem liczby zarejestrowanych dzieci, która mogła być różna w kolejnych latach. ')
         st.plotly_chart(px.line(im[im['Imię']==imie].sort_values(['Rok','Płeć']),x='Rok',y='Proporcja%',color='Płeć',markers=True,width=1100, height=600,color_discrete_sequence=list(map(lambda x: kol[x],im[im['Imię']==imie].sort_values(['Rok','Płeć'])['Płeć'].unique()))).update_yaxes(title_text='Procent',rangemode='tozero'))
+        
+    else:
+        st.write("Brak danych o wybranym imieniu")
     #st.subheader('Liczba dzieci o nadanym imieniu {i} na przestrzeni lat 2000-2021'.format(i=str(imie)))
     #st.plotly_chart(px.line(im[im['Imię']==imie].sort_values(['Rok','Płeć']),x='Rok',y='Liczba',color='Płeć',markers=True,width=1100, height=600,
 	#		    color_discrete_sequence=list(map(lambda x: kol[x],[np.array(im[im['Imię']==imie].sort_values(['Rok','Płeć'])['Płeć'])[index] for index in sorted(np.unique(np.array(im[im['Imię']==imie].sort_values(['Rok','Płeć'])['Płeć']), return_index=True)[1])])))
