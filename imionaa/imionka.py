@@ -36,7 +36,7 @@ st.write(tabs_font_css, unsafe_allow_html=True)
 
 kol = {'K':'rgb(255, 0, 255)','M':'rgb(0,70,180)'}
 kol1 = {'KK':['rgb(255, 0, 255)','rgb(200, 0, 25)'],'MM':['rgb(0,70,180)','rgb(0,0,205)'],'KM':['rgb(255, 0, 255)','rgb(0,70,180)'],'MK':['rgb(0,70,180)','rgb(255, 0, 255)']}
-
+kol2 = {'K0':'rgb(255, 0, 255)','K1':'red','M0':'rgb(0,70,180)','M1':'blue','M2':'rgb(0,70,180)','M3':'blue'}
 im = pd.read_excel(io='imionaa/imiona.xlsx',engine='openpyxl',dtype={'Rok':str})
 
 
@@ -208,11 +208,11 @@ if sekcja == 'Analiza statystyczna':
     imionka2['Nowa'] = imionka2[['Imię','Płeć']].apply(lambda x: x['Imię']+str('(')+x['Płeć']+str(')'),axis=1)
     imionka2['Nowa2'] = imionka2[['Imię','Płeć']].apply(lambda x: x['Płeć']+str('(')+x['Imię']+str(')'),axis=1)
     st.dataframe(imionka2)
-    st.write(list(map(lambda x, y: x[0]+str(y),sorted(list(imionka2['Nowa2'].unique())),list(range(len(list(sorted(list(imionka2['Nowa2'].unique()))) ))) )))
+    koly = list(map(lambda x, y: x[0]+str(y),sorted(list(imionka2['Nowa2'].unique())),list(range(len(list(sorted(list(imionka2['Nowa2'].unique()))) ))) ))
     if imionka.empty:
 	    st.write('*Brak danych dla wybranych imion')
     else:
-	    st.plotly_chart(px.line(imionka2.sort_values(['Rok','Nowa']),x='Rok',y='Liczba',color='Nowa',markers=True,width=1100, height=600,color_discrete_sequence=list(map(lambda x, y: x[::-1][0]+str(y),sorted(imionka2['Nowa'].unique),list(sorted(imionka2['Nowa'].unique)).index))).update_xaxes().update_yaxes(rangemode='tozero'))
+	    st.plotly_chart(px.line(imionka2.sort_values(['Rok','Nowa']),x='Rok',y='Liczba',color='Nowa',markers=True,width=1100, height=600,color_discrete_sequence=list(map(lambda kol2[x], koly))).update_xaxes().update_yaxes(rangemode='tozero'))
     
 
     #IMIONA JEDNOCZEŚNIE MĘSKIE I ŻEŃSKIE
