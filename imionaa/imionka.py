@@ -218,10 +218,10 @@ if sekcja == 'Analiza statystyczna':
     #st.dataframe(imionka2.sort_values(['Rok','Nowa2']))
     koly = list(map(lambda x, y: x[0]+str(y),list(imionka2.sort_values(['Rok','Nowa2'])['Nowa2'].unique()),list(range(len(list(list(imionka2.sort_values(['Rok','Nowa2'])['Nowa2'].unique()))) ))) )
     koly0 = ''.join(str(x) for x in koly)
-    #st.dataframe(koly)
+    st.dataframe(imionka2.sort_values(['Rok','Nowa2']))
     #st.write(koly0)
     if (imie1 in list(im['Imię']))  and (imie2 in list(im['Imię']) ):
-	    st.plotly_chart(px.line(imionka2.sort_values(['Rok','Nowa2']),x='Rok',y='Liczba',color='Nowa',markers=True,width=1100, height=600,color_discrete_sequence=kol2[koly0]).update_xaxes().update_yaxes(rangemode='tozero'))
+	    st.plotly_chart(px.line(imionka2.sort_values(['Rok','Nowa2']),x='Rok',y='Liczba',color='Nowa2',markers=True,width=1100, height=600,color_discrete_sequence=kol2[koly0]).update_xaxes().update_yaxes(rangemode='tozero'))
     else:
 	    st.write('*Brak danych dla wybranych imion')
     
