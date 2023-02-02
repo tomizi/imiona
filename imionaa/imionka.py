@@ -216,17 +216,18 @@ if sekcja == 'Analiza statystyczna':
     imionka2['Nowa2'] = imionka2[['Imię','Płeć']].apply(lambda x: x['Płeć']+str('(')+x['Imię']+str(')'),axis=1)
     #st.dataframe(imionka2)
     #st.dataframe(imionka2.sort_values(['Rok','Nowa2']))
-    #koly = list(map(lambda x, y: x[0]+str(y),list(imionka2.sort_values(['Rok','Nowa2'])['Nowa2'].unique()),list(range(len(list(list(imionka2.sort_values(['Rok','Nowa2'])['Nowa2'].unique()))) ))) )
-    #koly0 = ''.join(str(x) for x in koly)
+    koly = list(map(lambda x, y: x[0]+str(y),list(imionka2.sort_values(['Rok','Nowa2'])['Nowa2'].unique()),list(range(len(list(list(imionka2.sort_values(['Rok','Nowa2'])['Nowa2'].unique()))) ))) )
+    koly0 = ''.join(str(x) for x in koly)
     
     #st.dataframe(imionka2.sort_values(['Rok','Nowa2']))
     imionka3 = imionka2.groupby(by=['Rok','Imię']).sum().reset_index()
     st.dataframe(imionka3['Rok'].apply(lambda x: str(x)+'-12'))
     imionka3['Rok'] = imionka3['Rok'].apply(lambda x: str(x)+'-12')
+    imionka2['Rok'] = imionka2['Rok'].apply(lambda x: str(x)+'-12')
     #st.write(koly0)
     #if (imie1 in list(im['Imię']))  and (imie2 in list(im['Imię']) )
     #if (np.min(list(im[im['Imię']==imie1]['Liczba']))>100)  and (np.min(list(im[im['Imię']==imie2]['Liczba']))>100) :
-    #st.plotly_chart(px.line(imionka2.sort_values(['Rok','Nowa2']),x='Rok',y='Liczba',color='Nowa2',markers=True,width=1100, height=600,color_discrete_sequence=kol2[koly0]).update_xaxes().update_yaxes(rangemode='tozero'))
+    st.plotly_chart(px.line(imionka2.sort_values(['Rok','Nowa2']),x='Rok',y='Liczba',color='Nowa2',markers=True,width=1100, height=600,color_discrete_sequence=kol2[koly0]).update_xaxes().update_yaxes(rangemode='tozero'))
     if (imie1 in list(im['Imię']))  and (imie2 in list(im['Imię']) ):
 	    st.plotly_chart(px.line(imionka3.sort_values(['Rok','Imię']),x=sorted(list(imionka3['Rok'])),y='Liczba',color='Imię',width=1100, height=600, markers=True).update_xaxes(tickmode='array').update_yaxes(rangemode='tozero'))
     else:
