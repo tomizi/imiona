@@ -275,7 +275,7 @@ if sekcja == 'Analiza statystyczna':
     with c4:
     	uni=pd.DataFrame({'litera':list(map(lambda x: x[0],im[(im['Rok']==str(rok)) & (im['Płeć']=='M')].sort_values(by='Imię')['Imię'].unique()))}).groupby(['litera'])['litera'].count()
     	st.subheader('Liczba imion męskich rozpoczynających się na daną literę')
-    	st.plotly_chart(px.bar(uni,y='litera',color_discrete_sequence=['rgb(0,70,180)']*uni).update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
+    	st.plotly_chart(px.bar(uni,y='litera',color_discrete_sequence=['rgb(0,70,180)']*len(uni)).update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
 	
     st.header('Ostatnia litera - imiona żeńskie')
