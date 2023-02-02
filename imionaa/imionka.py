@@ -766,24 +766,24 @@ if sekcja == 'Analiza korespondencji':
     if roczek_wybrany == "2019":
         st.subheader("Analiza korespondencji dla 10 najpopularniejszych imion męskich w każdym województwie")
         st.write("Skumulowana proporcja bezwładności dla 2 wymiarów wynosi 0.459")
-        st.image('imionaa/AK/f2_chl2019.png', width=1000)
+        st.image('imionaa/PII/chl2019.png', width=1000)
         st.subheader("Analiza korespondencji dla 10 najpopularniejszych imion żeńskich w każdym województwie")
         st.write("Skumulowana proporcja bezwładności dla 2 wymiarów wynosi 0.464")
-        st.image('imionaa/AK/f2_dzi2019.png', width=1000)
+        st.image('imionaa/PII/dz2019.png', width=1000)
     if roczek_wybrany == "2020":
         st.subheader("Analiza korespondencji dla 10 najpopularniejszych imion męskich w każdym województwie")
         st.write("Skumulowana proporcja bezwładności dla 2 wymiarów wynosi 0.402")
-        st.image('imionaa/AK/f2_chl2020.png', width=1000)
+        st.image('imionaa/PII/chl2020.png', width=1000)
         st.subheader("Analiza korespondencji dla 10 najpopularniejszych imion żeńskich w każdym województwie")
         st.write("Skumulowana proporcja bezwładności dla 2 wymiarów wynosi 0.447")
-        st.image('imionaa/AK/f2_dzi2020.png', width=1000)
+        st.image('imionaa/PII/dz2020.png', width=1000)
     if roczek_wybrany == "2021":
         st.subheader("Analiza korespondencji dla 10 najpopularniejszych imion męskich w każdym województwie")
         st.write("Skumulowana proporcja bezwładności dla 2 wymiarów wynosi 0.511")
-        st.image('imionaa/AK/f2_chl2021.png', width=1000)
+        st.image('imionaa/PII/ch2021.png', width=1000)
         st.subheader("Analiza korespondencji dla 10 najpopularniejszych imion żeńskich w każdym województwie")
         st.write("Skumulowana proporcja bezwładności dla 2 wymiarów wynosi 0.654")
-        st.image('imionaa/AK/f2_dzi2021.png', width=1000)
+        st.image('imionaa/PII/dz2021.png', width=1000)
 
 	
    
