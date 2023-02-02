@@ -761,7 +761,8 @@ if sekcja == 'Analiza korespondencji':
     st.markdown(new_title, unsafe_allow_html=True)
     st.markdown('---')
     st.title('Analiza korespondencji')
-    st.header('Jak interpretować poniższe wykresy?')
+    st.subheader('Analizę korespondencji wykonano w oprogramowaniu PS IMAGO PRO 28 opartym o silnik analityczny IBM SPSS Statistics 28.')
+    st.subheader('Poniższe wykresy są proste do interpretacji - obiekty położone blisko siebie są podobne, obiekty położone daleko od siebie są od siebie różne')
 
     roczek_opcje=["2019","2020","2021"][::-1]
     roczek_wybrany = st.selectbox("Wybierz rok:", roczek_opcje)
