@@ -779,6 +779,9 @@ if sekcja == 'Analiza korespondencji':
     st.title('Analiza korespondencji')
     st.subheader('Analizę korespondencji wykonano w oprogramowaniu PS IMAGO PRO 28 opartym o silnik analityczny IBM SPSS Statistics 28.')
     st.subheader('Poniższe wykresy są proste do interpretacji - obiekty położone blisko siebie są podobne, obiekty położone daleko od siebie są od siebie różne.')
+    st.subheader('Aby wykres był bardziej czytelny, zamiast nazw województw widzimy liczby odpowiadające indentyfikatorom poszczególnego terytorium z ' +
+		 'Wykazu identyfikatorów i nazw jednostek podziału terytorialnego kraju. Wyjaśnienie przedstawia niżej umieszczona tabelka:)
+    st.image('imionaa/PII/tabelka.png')
 
     roczek_opcje=["2019","2020","2021"][::-1]
     roczek_wybrany = st.selectbox("Wybierz rok:", roczek_opcje)
