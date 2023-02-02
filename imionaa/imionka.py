@@ -227,7 +227,7 @@ if sekcja == 'Analiza statystyczna':
     else:
 	    st.write('*Brak danych dla wybranych imion')
     imionka3 = imionka2.groupby(by=['Rok','Imię']).sum().reset_index()
-    st.plotly_chart(px.line(imionka3.sort_values(['Rok','Imię']),x='Rok',y='Liczba',color='Imię',markers=True,width=1100, height=600).update_xaxes().update_yaxes(rangemode='tozero'))
+    st.plotly_chart(px.line(imionka3.sort_values(['Rok','Imię']),x=list(range(2000,2022)),y='Liczba',color='Imię',markers=True,width=1100, height=600).update_xaxes().update_yaxes(rangemode='tozero'))
     #IMIONA JEDNOCZEŚNIE MĘSKIE I ŻEŃSKIE
     chłopcy=im[im.Płeć=='M']
     dziewczynki=im[im.Płeć=='K']
