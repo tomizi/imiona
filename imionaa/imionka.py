@@ -221,13 +221,13 @@ if sekcja == 'Analiza statystyczna':
     
     #st.dataframe(imionka2.sort_values(['Rok','Nowa2']))
     imionka3 = imionka2.groupby(by=['Rok','Imię']).sum().reset_index()
-    
+    st.dataframe(px.data.gapminder().query("country == 'Canada'"))
     #st.write(koly0)
     #if (imie1 in list(im['Imię']))  and (imie2 in list(im['Imię']) )
     #if (np.min(list(im[im['Imię']==imie1]['Liczba']))>100)  and (np.min(list(im[im['Imię']==imie2]['Liczba']))>100) :
     #st.plotly_chart(px.line(imionka2.sort_values(['Rok','Nowa2']),x='Rok',y='Liczba',color='Nowa2',markers=True,width=1100, height=600,color_discrete_sequence=kol2[koly0]).update_xaxes().update_yaxes(rangemode='tozero'))
     if (imie1 in list(im['Imię']))  and (imie2 in list(im['Imię']) ):
-	    st.plotly_chart(px.bar(imionka3.sort_values(['Rok','Imię']),x=sorted(list(imionka3['Rok'])),y='Liczba',color='Imię',width=1100, height=600).update_xaxes(tickmode='array').update_yaxes(rangemode='tozero'))
+	    st.plotly_chart(px.bar(imionka3.sort_values(['Rok','Imię']),x=sorted(list(imionka3['Rok'])),y='Liczba',color='Imię',width=1100, height=600, barmode='g).update_xaxes(tickmode='array').update_yaxes(rangemode='tozero'))
     else:
 	    st.write('*Brak danych dla wybranych imion')
     
