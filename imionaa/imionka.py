@@ -253,14 +253,14 @@ if sekcja == 'Analiza statystyczna':
     c1, c2 = st.columns(2)
     with c1:
     	st.subheader('Liczba dziewczynek o imieniu rozpoczynającym się na daną literę')
-    	st.plotly_chart(px.bar(tabelka_k[str(rok)],y=str(rok),color_discrete_sequence=['rgb(255,205,0)']*len(tabelka_k[str(rok)])).update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
+    	st.plotly_chart(px.bar(tabelka_k[str(rok)],y=str(rok),color_discrete_sequence=['rgb(255,0,205)']*len(tabelka_k[str(rok)])).update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
 	
 	#liczba imion żeńskich	
     with c2:
     	uni=pd.DataFrame({'litera':list(map(lambda x: x[0],im[(im['Rok']==str(rok)) & (im['Płeć']=='K')].sort_values(by='Imię')['Imię'].unique()))}).groupby(['litera'])['litera'].count()
     	st.subheader('Liczba imion żeńskich rozpoczynających się na daną literę')
-    	st.plotly_chart(px.bar(uni,y='litera').update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
+    	st.plotly_chart(px.bar(uni,y='litera',color_discrete_sequence=['rgb(255,0,205)']*len(uni)).update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
     
 	#liczba chłopców
@@ -268,28 +268,28 @@ if sekcja == 'Analiza statystyczna':
     c3, c4 = st.columns(2)
     with c3:
     	st.subheader('Liczba chłopców o imieniu rozpoczynającym się na daną literę')
-    	st.plotly_chart(px.bar(tabelka_m[str(rok)],y=str(rok)).update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
+    	st.plotly_chart(px.bar(tabelka_m[str(rok)],y=str(rok),color_discrete_sequence=['rgb(0,70,180)']*len(tabelka_m[str(rok)])).update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
     
 	#liczba imion męskich
     with c4:
     	uni=pd.DataFrame({'litera':list(map(lambda x: x[0],im[(im['Rok']==str(rok)) & (im['Płeć']=='M')].sort_values(by='Imię')['Imię'].unique()))}).groupby(['litera'])['litera'].count()
     	st.subheader('Liczba imion męskich rozpoczynających się na daną literę')
-    	st.plotly_chart(px.bar(uni,y='litera').update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
+    	st.plotly_chart(px.bar(uni,y='litera',color_discrete_sequence=['rgb(0,70,180)']*uni).update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
 	
     st.header('Ostatnia litera - imiona żeńskie')
     c7, c8 = st.columns(2)
     with c7:
         st.subheader('Liczba dziewczynek o imieniu kończącym się na daną literę')
-        st.plotly_chart(px.bar(tabelka_k1[str(rok)],y=str(rok)).update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
+        st.plotly_chart(px.bar(tabelka_k1[str(rok)],y=str(rok),color_discrete_sequence=['rgb(255,0,205)']*len(tabelka_k1[str(rok)])).update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
 	
 	#liczba imion żeńskich
     with c8:
         uni=pd.DataFrame({'litera':list(map(lambda x: x[-1],im[(im['Rok']==str(rok)) & (im['Płeć']=='K')].sort_values(by='Imię')['Imię'].unique()))}).groupby(['litera'])['litera'].count()
         st.subheader('Liczba imion żeńskich kończących się na daną literę')
-        st.plotly_chart(px.bar(uni,y='litera').update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
+        st.plotly_chart(px.bar(uni,y='litera',color_discrete_sequence=['rgb(255,0,205)']*len(uni)).update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
 	
 	
@@ -298,14 +298,14 @@ if sekcja == 'Analiza statystyczna':
     c5, c6 = st.columns(2)
     with c5:
     	st.subheader('Liczba chłopców o imieniu kończącym się na daną literę')
-    	st.plotly_chart(px.bar(tabelka_m1[str(rok)],y=str(rok)).update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
+    	st.plotly_chart(px.bar(tabelka_m1[str(rok)],y=str(rok),color_discrete_sequence=['rgb(0,70,180)']*len(tabelka_m1[str(rok)])).update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
     
 	#liczba imion męskich
     with c6:
     	uni=pd.DataFrame({'litera':list(map(lambda x: x[-1],im[(im['Rok']==str(rok)) & (im['Płeć']=='M')].sort_values(by='Imię')['Imię'].unique()))}).groupby(['litera'])['litera'].count()
     	st.subheader('Liczba imion męskich kończących się na daną literę')
-    	st.plotly_chart(px.bar(uni,y='litera').update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
+    	st.plotly_chart(px.bar(uni,y='litera',color_discrete_sequence=['rgb(0,70,180)']*len(uni)).update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
     
 
