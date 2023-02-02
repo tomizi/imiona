@@ -273,6 +273,22 @@ if sekcja == 'Analiza statystyczna':
     	st.plotly_chart(px.bar(uni,y='litera').update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
 	
+    st.header('Ostatnia litera - imiona żeńskie')
+    c7, c8 = st.columns(2)
+    with c7:
+	st.subheader('Liczba dziewczynek o imieniu kończącym się na daną literę')
+    	st.plotly_chart(px.bar(tabelka_k1[str(rok)],y=str(rok)).update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
+		).update_layout(plot_bgcolor='white'))
+	
+	#liczba imion żeńskich
+    with c8:
+	uni=pd.DataFrame({'litera':list(map(lambda x: x[-1],im[(im['Rok']==str(rok)) & (im['Płeć']=='K')].sort_values(by='Imię')['Imię'].unique()))}).groupby(['litera'])['litera'].count()
+    	st.subheader('Liczba imion żeńskich kończących się na daną literę')
+    	st.plotly_chart(px.bar(uni,y='litera').update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
+		).update_layout(plot_bgcolor='white'))
+	
+	
+	
     st.header('Ostatnia litera - imiona męskie')
     c5, c6 = st.columns(2)
     with c5:
@@ -762,7 +778,7 @@ if sekcja == 'Analiza korespondencji':
     st.markdown('---')
     st.title('Analiza korespondencji')
     st.subheader('Analizę korespondencji wykonano w oprogramowaniu PS IMAGO PRO 28 opartym o silnik analityczny IBM SPSS Statistics 28.')
-    st.subheader('Poniższe wykresy są proste do interpretacji - obiekty położone blisko siebie są podobne, obiekty położone daleko od siebie są od siebie różne')
+    st.subheader('Poniższe wykresy są proste do interpretacji - obiekty położone blisko siebie są podobne, obiekty położone daleko od siebie są od siebie różne.')
 
     roczek_opcje=["2019","2020","2021"][::-1]
     roczek_wybrany = st.selectbox("Wybierz rok:", roczek_opcje)
