@@ -781,7 +781,7 @@ if sekcja == 'Analiza korespondencji':
     st.subheader('Poniższe wykresy są proste do interpretacji - obiekty położone blisko siebie są podobne, obiekty położone daleko od siebie są od siebie różne.')
     st.subheader('Aby wykres był bardziej czytelny, zamiast nazw województw widzimy liczby odpowiadające indentyfikatorom poszczególnego terytorium z ' +
 		 'Wykazu identyfikatorów i nazw jednostek podziału terytorialnego kraju. Wyjaśnienie przedstawia niżej umieszczona tabelka: ')
-    c1,c2,c3 = st.columns(3)
+    c1,c2,c3,c4 = st.columns(3)
     c2.image('imionaa/PII/tabelka.png', width=1000)
 
     roczek_opcje=["2019","2020","2021"][::-1]
