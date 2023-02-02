@@ -277,7 +277,7 @@ if sekcja == 'Analiza statystyczna':
     c7, c8 = st.columns(2)
     with c7:
         st.subheader('Liczba dziewczynek o imieniu kończącym się na daną literę')
-	st.plotly_chart(px.bar(tabelka_k1[str(rok)],y=str(rok)).update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
+        st.plotly_chart(px.bar(tabelka_k1[str(rok)],y=str(rok)).update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
 	
 	#liczba imion żeńskich
