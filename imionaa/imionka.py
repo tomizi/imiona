@@ -324,8 +324,8 @@ if sekcja == 'Analiza statystyczna':
 
 
 	#Najczęsciej nadawane imiona dzieciom w Polsce
-    st.subheader("Imiona najczęściej nadawane dzieciom w Polsce w latach 2001-2021")
-    dowyboru=list(range(2000,2022)[::-1])
+    st.subheader("Imiona najczęściej nadawane dzieciom w Polsce w latach 2001-2022")
+    dowyboru=list(range(2000,2023)[::-1])
     cos=st.selectbox("Wybierz rok:     ", dowyboru)
     def the_top10(group):
         return group.sort_values(by='Liczba', ascending=False)[:10]
@@ -356,7 +356,7 @@ if sekcja == 'Analiza statystyczna':
 	
 	#Najczęściej nadawane imiona dzieciom w podziale na województwa
     st.subheader('Imiona najczęściej nadawane dzieciom w Polsce w latach 2019-2021 w podziale na województwa')
-    latka_opcje=["2019","2020","2021"][::-1]
+    latka_opcje=["2019","2020","2021","2022"][::-1]
     wybrany = st.selectbox("Wybierz rok:", latka_opcje)
     
         #Mapka
