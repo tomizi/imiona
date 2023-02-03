@@ -850,8 +850,7 @@ if sekcja == 'Analiza statystyczna':
 
        
 			   
-    if wybrany == "2022":
-      
+    if wybrany == "2022":      
         col1.plotly_chart(fig)
         col2.plotly_chart(px.bar(x=DF_2022_z[DF_2020_z['Województwo']==mies]['Liczba imion'][::-1],y=DF_2022_z[DF_2022_z['Województwo']==mies]['Imię'][::-1],
 			         orientation='h',text=DF_2022_z[DF_2022_z['Województwo']==mies]['Liczba imion'][::-1],color=["rgb(255,0,205)"]*10,
