@@ -267,7 +267,8 @@ if sekcja == 'Analiza statystyczna':
 	#liczba imion żeńskich	
     with c2:
     	uni=pd.DataFrame({'litera':list(map(lambda x: x[0],im[(im['Rok']==str(rok)) & (im['Płeć']=='K')].sort_values(by='Imię')['Imię'].unique()))}).groupby(['litera'])['litera'].count()
-    	st.subheader('Liczba imion żeńskich rozpoczynających się na daną literę')
+    	st.dataframe(uni)
+	st.subheader('Liczba imion żeńskich rozpoczynających się na daną literę')
     	st.plotly_chart(px.bar(uni,y='litera',color_discrete_sequence=['rgb(255,0,205)']*len(uni)).update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
     
