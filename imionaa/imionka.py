@@ -45,7 +45,7 @@ kol2 = {'K0K1M2M3':['rgb(255,0,205)','red','rgb(0,70,180)','blue'],'K0M1M2K3':['
        'K0K1':['rgb(255,0,205)','red'],'K0M1':['rgb(255,0,205)','rgb(0,70,180)'],'M0K1':['rgb(0,70,180)','rgb(255,0,205)'],
        'M0M1':['rgb(0,70,180)','blue']}
 im = pd.read_excel(io='imionaa/imiona.xlsx',engine='openpyxl',dtype={'Rok':str})
-
+alf = {'A':0, 'B':1, 'C':2, 'D':3, 'E':4, 'F':5, 'G':6, 'H':7, 'I':8, 'J':9, 'K':10, 'L':11, 'Ł':12, 'M':13, 'N':14, 'O':15, 'Ó':16, 'P':17, 'Q':18, 'R':19, 'S':20, 'Ś':21, 'T':22, 'U':23, 'W':24, 'X':25, 'Y':26, 'Z':27, 'Ź':28, 'Ż':29}
 
 
 #PRZYDATNE FUNKCJE
@@ -73,9 +73,9 @@ pierwsza_litera_k = imiona_k.Imię.map(wyciagam_pierwsza_litere)
 pierwsza_litera_m = imiona_m.Imię.map(wyciagam_pierwsza_litere)
 
 tabelka_k= im.pivot_table('Liczba', index=pierwsza_litera_k, columns=['Rok'], aggfunc=sum)
-tabelka_k = tabelka_k.sort_index(key= lambda x : x.map({'A':0, 'B':1, 'C':2, 'D':3, 'E':4, 'F':5, 'G':6, 'H':7, 'I':8, 'J':9, 'K':10, 'L':11, 'Ł':12, 'M':13, 'N':14, 'O':15, 'Ó':16, 'P':17, 'Q':18, 'R':19, 'S':20, 'Ś':21, 'T':22, 'U':23, 'W':24, 'X':25, 'Y':26, 'Z':27, 'Ź':28, 'Ż':29
-						       }))
+tabelka_k = tabelka_k.sort_index(key= lambda x : x.map(alf))
 tabelka_m= im.pivot_table('Liczba', index=pierwsza_litera_m, columns=['Rok'], aggfunc=sum)
+tabelka_m = tabelka_m.sort_index(key= lambda x : x.map(alf))
 
 litera_ulamek_k = tabelka_k/tabelka_k.sum()
 
@@ -84,11 +84,15 @@ litera_ulamek_m = tabelka_m/tabelka_m.sum()
 #ostatnia litera imienia
 wyciagam_ostatnia_litere = lambda x: x[-1]
 ostatnia_litera_k = imiona_k.Imię.map(wyciagam_ostatnia_litere)
+ostatnia_litera_k = ostatnia_litera_k.sort_index(key= lambda x : x.map(alf))
 ostatnia_litera_m = imiona_m.Imię.map(wyciagam_ostatnia_litere)
+ostatnia_litera_m = ostatnia_litera_m.sort_index(key= lambda x : x.map(alf))
+
 
 tabelka_k1=im.pivot_table('Liczba', index=ostatnia_litera_k,columns=['Rok'], aggfunc=sum)
+tabelka_k1 = tabelka_k1.sort_index(key= lambda x : x.map(alf))
 tabelka_m1=im.pivot_table('Liczba', index=ostatnia_litera_m,columns=['Rok'], aggfunc=sum)
-
+tabelka_m1 = tabelka_m1.sort_index(key= lambda x : x.map(alf))
 
 
 if sekcja == 'Strona główna':
