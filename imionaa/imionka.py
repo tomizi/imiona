@@ -552,7 +552,7 @@ if sekcja == 'Analiza statystyczna':
 			       'Antoni','Nikodem','Aleksander','Jan','Jakub','Franciszek','Mikołaj','Szymon','Filip','Ignacy',
 			       'Leon','Antoni','Nikodem','Franciszek','Jan','Aleksander','Jakub','Mikołaj','Stanisław','Tymon',
 			       'Jan','Aleksander','Antoni','Franciszek','Nikodem','Jakub','Stanisław','Mikołaj','Ignacy','Leon',
-			       'Antoni','Jan';'Jakub';'Aleksander';'Nikodem';'Franciszek';'Leon';'Szymon';'Mikołaj';'Filip',
+			       'Antoni','Jan','Jakub','Aleksander','Nikodem','Franciszek','Leon','Szymon','Mikołaj','Filip',
 			       'Antoni','Leon','Nikodem','Franciszek','Jan','Jakub','Filip','Szymon','Wojciech','Mikołaj',
 			       'Antoni','Nikodem','Aleksander','Jakub','Jan','Franciszek','Szymon','Filip','Kacper','Michał',
 			       'Aleksander','Jakub','Antoni','Jan','Franciszek','Nikodem','Mikołaj','Szymon','Michał','Filip',
