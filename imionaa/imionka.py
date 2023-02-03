@@ -212,8 +212,8 @@ if sekcja == 'Analiza statystyczna':
     #st.write(kol1[str(im[im['Imię']==imie1]['Płeć'].iloc[0])+str(im[im['Imię']==imie2]['Płeć'].iloc[0])])
     #st.dataframe(imionka)
     imionka2 = imionka
-    imionka2['Nowa'] = imionka2[['Imię','Płeć']].apply(lambda x: x['Imię']+str('(')+x['Płeć']+str(')'),axis=1)
-    imionka2['Nowa2'] = imionka2[['Imię','Płeć']].apply(lambda x: x['Płeć']+str('(')+x['Imię']+str(')'),axis=1)
+    imionka2['Nowa'] = imionka2[['Imię','Płeć']].apply(lambda x: x['Imię']+str('_')+x['Płeć'],axis=1)
+    imionka2['Nowa2'] = imionka2[['Imię','Płeć']].apply(lambda x: x['Płeć']+str('_')+x['Imię'],axis=1)
     #st.dataframe(imionka2)
     #st.dataframe(imionka2.sort_values(['Rok','Nowa2']))
     koly = list(map(lambda x, y: x[0]+str(y),list(imionka2.sort_values(['Rok','Nowa2'])['Nowa2'].unique()),list(range(len(list(list(imionka2.sort_values(['Rok','Nowa2'])['Nowa2'].unique()))) ))) )
@@ -230,7 +230,7 @@ if sekcja == 'Analiza statystyczna':
     #st.plotly_chart(px.line(imionka3.sort_values(['Rok','Imię']),x=sorted(list(imionka3['Rok'])),y='Liczba',color='Imię',width=1100, height=600, markers=True).update_xaxes(tickmode='array').update_yaxes(rangemode='tozero'))
     #st.plotly_chart(px.line(imionka2.sort_values(['Rok','Nowa2']),x='Rok',y='Liczba',color='Nowa2',markers=True,width=1100, height=600,color_discrete_sequence=kol2[koly0]).update_xaxes(dtick='M12').update_yaxes(rangemode='tozero'))
     if (imie1 in list(im['Imię']))  and (imie2 in list(im['Imię']) ):
-	    st.plotly_chart(px.line(imionka2.sort_values(['Rok','Nowa2']),x='Rok',y='Liczba',color='Nowa2',markers=True,width=1100, height=600,color_discrete_sequence=kol2[koly0]).update_xaxes(dtick='M12').update_yaxes(rangemode='tozero'))
+	    st.plotly_chart(px.line(imionka2.sort_values(['Rok','Nowa2']),x='Rok',y='Liczba',color='Nowa2',markers=True,width=1100, height=600,color_discrete_sequence=kol2[koly0]).update_xaxes(dtick='M12').update_yaxes(rangemode='tozero').update_layout(legend_title_text='Płeć oraz imię'))
     else:
 	    st.write('*Brak danych dla wybranych imion')
     
