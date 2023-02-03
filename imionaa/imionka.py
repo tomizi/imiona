@@ -270,7 +270,7 @@ if sekcja == 'Analiza statystyczna':
 	st.subheader('Liczba imion żeńskich rozpoczynających się na daną literę')
     	st.plotly_chart(px.bar(uni,y='litera',color_discrete_sequence=['rgb(255,0,205)']*len(uni)).update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
 		).update_layout(plot_bgcolor='white'))
-    st.dataframe(uni)
+    
 	#liczba chłopców
     st.header('Pierwsza litera - imiona męskie')
     c3, c4 = st.columns(2)
