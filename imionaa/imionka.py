@@ -229,7 +229,7 @@ if sekcja == 'Analiza statystyczna':
     imionka3 = imionka2.groupby(by=['Rok','Imię']).sum().reset_index()
     #st.dataframe(imionka3['Rok'].apply(lambda x: str(x)+'-12'))
     #imionka3['Rok'] = imionka3['Rok'].apply(lambda x: str(x)+'-12')
-    imionka2['Rok'] = imionka2['Rok'].apply(lambda x: str(x)+'-12')
+    imionka2['Rok'] = imionka2['Rok'].apply(lambda x: str(x)+'-1')
     #st.write(koly0)
     #if (imie1 in list(im['Imię']))  and (imie2 in list(im['Imię']) )
     #if (np.min(list(im[im['Imię']==imie1]['Liczba']))>100)  and (np.min(list(im[im['Imię']==imie2]['Liczba']))>100) :
