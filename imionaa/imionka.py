@@ -550,7 +550,7 @@ if sekcja == 'Analiza statystyczna':
 		       'Imię':['Antoni','Jan','Nikodem','Jakub','Leon','Aleksander','Franciszek','Mikołaj','Filip','Stanisław',
 			       'Nikodem','Jan','Antoni','Aleksander','Franciszek','Leon','Mikołaj','Stanisław','Ignacy','Szymon',
 			       'Antoni','Nikodem','Aleksander','Jan','Jakub','Franciszek','Mikołaj','Szymon','Filip','Ignacy',
-			       'Leon','Antoni','Nikodem','Franciszek','Jan','Aleksander','Jakub','Mikołaj','Stanisław','Tymon,
+			       'Leon','Antoni','Nikodem','Franciszek','Jan','Aleksander','Jakub','Mikołaj','Stanisław','Tymon',
 			       'Jan','Aleksander','Antoni','Franciszek','Nikodem','Jakub','Stanisław','Mikołaj','Ignacy','Leon',
 			       'Antoni','Jan';'Jakub';'Aleksander';'Nikodem';'Franciszek';'Leon';'Szymon';'Mikołaj';'Filip',
 			       'Antoni','Leon','Nikodem','Franciszek','Jan','Jakub','Filip','Szymon','Wojciech','Mikołaj',
