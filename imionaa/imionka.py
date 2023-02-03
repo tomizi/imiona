@@ -103,7 +103,7 @@ if sekcja == 'Strona główna':
     st.write('Ustalenie imienia dla dziecka to niełatwa decyzja. Powinna być świadomym wyborem obojga partnerów. ' +
 		 'Niektórzy rodzice kierują się modą, inni rodzinną tradycją, kolejni łatwością do zdrobnienia. ' +
 		 'Są też tacy, którzy zwracają uwagę na oryginalność lub po prostu brzmienie imienia. ' +
-		'Niniejsza strona prezentuje trendy w popularności imion nadawanych dzieciom w Polsce w latach 2000-2021.')
+		'Niniejsza strona prezentuje trendy w popularności imion nadawanych dzieciom w Polsce w latach 2000-2022.')
 
     st.subheader('Źródło danych')
     st.write('Dane do analizy pobrane zostały ze strony Ministerstwa Cyfryzacji. Były one w postaci jedenastu plików formatu xlsx.')
@@ -355,7 +355,7 @@ if sekcja == 'Analiza statystyczna':
 	
 	
 	#Najczęściej nadawane imiona dzieciom w podziale na województwa
-    st.subheader('Imiona najczęściej nadawane dzieciom w Polsce w latach 2019-2021 w podziale na województwa')
+    st.subheader('Imiona najczęściej nadawane dzieciom w Polsce w latach 2019-2022 w podziale na województwa')
     latka_opcje=["2019","2020","2021","2022"][::-1]
     wybrany = st.selectbox("Wybierz rok:", latka_opcje)
     
