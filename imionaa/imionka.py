@@ -252,6 +252,7 @@ if sekcja == 'Analiza statystyczna':
     rok=st.selectbox("Wybierz rok:", list(range(2000,2022))[::-1])
     st.header('Pierwsza litera - imiona żeńskie')
     c1, c2 = st.columns(2)
+    st.dataframe(tabelka_k)
     with c1:
     	st.subheader('Liczba dziewczynek o imieniu rozpoczynającym się na daną literę')
     	st.plotly_chart(px.bar(tabelka_k[str(rok)],y=str(rok),color_discrete_sequence=['rgb(255,0,205)']*len(tabelka_k[str(rok)])).update_xaxes(title_text='Litera').update_yaxes(title_text='Liczba'
