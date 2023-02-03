@@ -44,7 +44,7 @@ kol2 = {'K0K1M2M3':['rgb(255,0,205)','red','rgb(0,70,180)','blue'],'K0M1M2K3':['
        'K0M1M2':['rgb(255,0,205)','rgb(0,70,180)','blue'],'K0K1M2':['rgb(255,0,205)','red','rgb(0,70,180)'],
        'K0K1':['rgb(255,0,205)','red'],'K0M1':['rgb(255,0,205)','rgb(0,70,180)'],'M0K1':['rgb(0,70,180)','rgb(255,0,205)'],
        'M0M1':['rgb(0,70,180)','blue']}
-im = pd.read_excel(io='imionaa/imiona.xlsx',engine='openpyxl',dtype={'Rok':str})
+im = pd.read_excel(io='imionaa/PII/imiona.xlsx',engine='openpyxl',dtype={'Rok':str})
 alf = {'A':0, 'B':1, 'C':2, 'D':3, 'E':4, 'F':5, 'G':6, 'H':7, 'I':8, 'J':9, 'K':10, 'L':11, 'Ł':12, 'M':13, 'N':14, 'O':15, 'Ó':16, 'P':17, 'Q':18, 'R':19, 'S':20, 'Ś':21, 'T':22, 'U':23, 'V':24, 'W':25, 'X':26, 'Y':27, 'Z':28, 'Ź':29, 'Ż':30}
 
 
