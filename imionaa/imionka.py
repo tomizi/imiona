@@ -247,7 +247,6 @@ if sekcja == 'Analiza statystyczna':
 	    'FABIAN','GIA','IGOR','ILIA','ILLIA','IMAN','ISA','jhj','KAREN','LAUREN','LILIAN','MICHAL','MIKA','MILENA','MINH','MINH ANH', 
 	    'MORGAN','NICOLA','NIKITA','NIKOLA','NOA','NOAM','OLIVIA','OMER','ORI','PARIS','RAJA','RILEY','RONI','SASHA','SIMONE','SZYMON', 
 	    'TAL','THIEN AN','YARDEN','YUVAL']
-]
     st.subheader('Imiona, które były nadawane zarówno chłopcom jak i dziewczynkom')
     st.dataframe(dziwne)
 	
