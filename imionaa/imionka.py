@@ -243,9 +243,9 @@ if sekcja == 'Analiza statystyczna':
     #IMIONA JEDNOCZEŚNIE MĘSKIE I ŻEŃSKIE
     chłopcy=im[im.Płeć=='M']
     dziewczynki=im[im.Płeć=='K']
-    dziwne=['ADI','ALEX','ALEXIS','AMAL','AMELIA','AMIT','ANDREA','ANGEL','ARIEL','BAO AN','CHEN','DANIEL','EDEN','ELI','ELIA','EZRA', +
-	    'FABIAN','GIA','IGOR','ILIA','ILLIA','IMAN','ISA','jhj','KAREN','LAUREN','LILIAN','MICHAL','MIKA','MILENA','MINH','MINH ANH', +
-	    'MORGAN','NICOLA','NIKITA','NIKOLA','NOA','NOAM','OLIVIA','OMER','ORI','PARIS','RAJA','RILEY','RONI','SASHA','SIMONE','SZYMON', +
+    dziwne=['ADI','ALEX','ALEXIS','AMAL','AMELIA','AMIT','ANDREA','ANGEL','ARIEL','BAO AN','CHEN','DANIEL','EDEN','ELI','ELIA','EZRA',
+	    'FABIAN','GIA','IGOR','ILIA','ILLIA','IMAN','ISA','jhj','KAREN','LAUREN','LILIAN','MICHAL','MIKA','MILENA','MINH','MINH ANH', 
+	    'MORGAN','NICOLA','NIKITA','NIKOLA','NOA','NOAM','OLIVIA','OMER','ORI','PARIS','RAJA','RILEY','RONI','SASHA','SIMONE','SZYMON', 
 	    'TAL','THIEN AN','YARDEN','YUVAL'
 ]
     st.subheader('Imiona, które były nadawane zarówno chłopcom jak i dziewczynkom')
