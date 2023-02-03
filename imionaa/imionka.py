@@ -117,11 +117,11 @@ if sekcja == 'Strona główna':
     imie = st.text_input('Podaj imię:  ','Martyna')
     imie = imie.upper()
     if imie in list(im['Imię']):
-        st.subheader('Liczba dzieci o nadanym imieniu {i} na przestrzeni lat 2000-2021'.format(i=str(imie)))
+        st.subheader('Liczba dzieci o nadanym imieniu {i} na przestrzeni lat 2000-2022'.format(i=str(imie)))
         st.plotly_chart(px.line(im[im['Imię']==imie].sort_values(['Rok','Płeć']),x='Rok',y='Liczba',color='Płeć',markers=True,width=1100, height=600,
 			    color_discrete_sequence=list(map(lambda x: kol[x],[np.array(im[im['Imię']==imie].sort_values(['Rok','Płeć'])['Płeć'])[index] for index in sorted(np.unique(np.array(im[im['Imię']==imie].sort_values(['Rok','Płeć'])['Płeć']), return_index=True)[1])])))
 		    .update_yaxes(rangemode='tozero').update_traces(line_width=2))
-        st.subheader('Procent dzieci danej płci o nadanym imieniu {} na przestrzeni lat 2000-2021'.format(imie))
+        st.subheader('Procent dzieci danej płci o nadanym imieniu {} na przestrzeni lat 2000-2022'.format(imie))
         st.write('Wykres prezentuje liczbę dzieci o danym imieniu w ujęciu procentowym względem liczby zarejestrowanych dzieci, która mogła być różna w kolejnych latach. ')
         st.plotly_chart(px.line(im[im['Imię']==imie].sort_values(['Rok','Płeć']),x='Rok',y='Proporcja%',color='Płeć',markers=True,width=1100, height=600,color_discrete_sequence=list(map(lambda x: kol[x],im[im['Imię']==imie].sort_values(['Rok','Płeć'])['Płeć'].unique()))).update_yaxes(title_text='Procent',rangemode='tozero'))
         
@@ -151,7 +151,7 @@ if sekcja == 'Analiza statystyczna':
     #łączna ilość urodzeń
     total_ur=im.pivot_table('Liczba', index='Rok', columns='Płeć', aggfunc=sum)	
     total_ur=pd.DataFrame(total_ur, columns=['K','M'])
-    st.subheader('Łączna liczba dzieci zarejestrowanych w latach 2000-2021 z podziałem na płeć')
+    st.subheader('Łączna liczba dzieci zarejestrowanych w latach 2000-2022 z podziałem na płeć')
     st.write('Po wzroście liczby rejestrowanych dzieci w latach 2008-2010 i w roku 2017 w ostatnich latach zauważalny jest znaczny spadek.')
     #st.dataframe(total_ur.index)
     fig = go.Figure()
@@ -186,8 +186,8 @@ if sekcja == 'Analiza statystyczna':
 	
     diversity = pd.DataFrame(diversity, columns=['K','M'])
     st.subheader('Liczba imion z listy najpopularniejszych w Polsce nadanych łącznie przynajmniej 50% zarejestrowanych dzieci danej płci')
-    st.write(' Mimo że na liście imion nadawanych dzieciom w Polsce w latach 2000-2021 jest 1922 imion żeńskich i 1988 imion męskich, ' +
-	     'ponad połowie dzieci nadano imię z listy 12-19 najpopularniejszych. '+
+    st.write(' Mimo że na liście imion nadawanych dzieciom w Polsce w latach 2000-2022 jest 2055 imion żeńskich i 2144 imion męskich, ' +
+	     'ponad połowie dzieci nadano imię z listy 12-20 najpopularniejszych. '+
         'O ile różnorodność imion męskich jest od lat na mniej więcej stałym poziomie, to różnorodność imion żeńskich stale rośnie.')
     #st.plotly_chart(px.line(diversity).update_yaxes(title_text='Rok').update_yaxes(title_text='Liczba',rangemode='tozero'))
     fig = go.Figure()
