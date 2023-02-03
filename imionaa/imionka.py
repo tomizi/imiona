@@ -74,7 +74,7 @@ pierwsza_litera_m = imiona_m.Imię.map(wyciagam_pierwsza_litere)
 
 tabelka_k= im.pivot_table('Liczba', index=pierwsza_litera_k, columns=['Rok'], aggfunc=sum)
 tabelka_k = tabelka_k.sort_index(key= lambda x : x.map({'A':0, 'B':1, 'C':2, 'D':3, 'E':4, 'F':5, 'G':6, 'H':7, 'I':8, 'J':9, 'K':10, 'L':11, 'Ł':12, 'M':13, 'N':14, 'O':15, 'Ó':16, 'P':17, 'Q':18, 'R':19, 'S':20, 'Ś':21, 'T':22, 'U':23, 'W':24, 'X':25, 'Y':26, 'Z':27, 'Ź':28, 'Ż':29
-]))
+						       }))
 tabelka_m= im.pivot_table('Liczba', index=pierwsza_litera_m, columns=['Rok'], aggfunc=sum)
 
 litera_ulamek_k = tabelka_k/tabelka_k.sum()
