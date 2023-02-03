@@ -45,7 +45,7 @@ kol2 = {'K0K1M2M3':['rgb(255,0,205)','red','rgb(0,70,180)','blue'],'K0M1M2K3':['
        'K0K1':['rgb(255,0,205)','red'],'K0M1':['rgb(255,0,205)','rgb(0,70,180)'],'M0K1':['rgb(0,70,180)','rgb(255,0,205)'],
        'M0M1':['rgb(0,70,180)','blue']}
 im = pd.read_excel(io='imionaa/imiona.xlsx',engine='openpyxl',dtype={'Rok':str})
-alf = {'A':0, 'B':1, 'C':2, 'D':3, 'E':4, 'F':5, 'G':6, 'H':7, 'I':8, 'J':9, 'K':10, 'L':11, 'Ł':12, 'M':13, 'N':14, 'O':15, 'Ó':16, 'P':17, 'Q':18, 'R':19, 'S':20, 'Ś':21, 'T':22, 'U':23, 'V':24, 'W':25, 'X':26, 'Y':27, 'Z':28, 'Ź':29, 'Ż':30}
+alf = {'A':0, 'B':1, 'C':2, 'D':3, 'E':4, 'F':5, 'G':6, 'H':7, 'I':8, 'J':9, 'K':10, 'L':11, 'Ł':12, 'M':13, 'N':14, 'O':15, 'Ó':16, 'P':17, 'Q':18, 'R':19, 'S':20, 'Ś':21, 'T':22, 'U':23, 'W':24, 'X':25, 'Y':26, 'Z':27, 'Ź':28, 'Ż':29}
 
 
 #PRZYDATNE FUNKCJE
@@ -236,7 +236,7 @@ if sekcja == 'Analiza statystyczna':
     #st.plotly_chart(px.line(imionka3.sort_values(['Rok','Imię']),x=sorted(list(imionka3['Rok'])),y='Liczba',color='Imię',width=1100, height=600, markers=True).update_xaxes(tickmode='array').update_yaxes(rangemode='tozero'))
     #st.plotly_chart(px.line(imionka2.sort_values(['Rok','Nowa2']),x='Rok',y='Liczba',color='Nowa2',markers=True,width=1100, height=600,color_discrete_sequence=kol2[koly0]).update_xaxes(dtick='M12').update_yaxes(rangemode='tozero'))
     if (imie1 in list(im['Imię']))  and (imie2 in list(im['Imię']) ):
-	    st.plotly_chart(px.line(imionka2.sort_values(['Rok','Nowa2']),x='Rok',y='Liczba',color='Nowa2',markers=True,width=1100, height=600,color_discrete_sequence=kol2[koly0]).update_xaxes(dtick='M12').update_yaxes(rangemode='tozero').update_layout(legend_title_text='Płeć oraz imię'))
+	    st.plotly_chart(px.line(imionka2.sort_values(['Rok','Nowa2']),x='Rok',y='Liczba',color='Nowa2',markers=True,width=1100, height=600,color_discrete_sequence=kol2[koly0]).update_xaxes(dtick='M12').update_yaxes(rangemode='tozero').update_layout(legend_title_text='Płeć oraz imię'),legend={'traceorder':'normal'})
     else:
 	    st.write('*Brak danych dla wybranych imion')
     
