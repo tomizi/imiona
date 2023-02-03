@@ -212,8 +212,8 @@ if sekcja == 'Analiza statystyczna':
     #st.write(kol1[str(im[im['Imię']==imie1]['Płeć'].iloc[0])+str(im[im['Imię']==imie2]['Płeć'].iloc[0])])
     #st.dataframe(imionka)
     imionka2 = imionka
-    imionka2['Nowa'] = imionka2[['Imię','Płeć']].apply(lambda x: x['Imię']+str('_')+x['Płeć'],axis=1)
-    imionka2['Nowa2'] = imionka2[['Imię','Płeć']].apply(lambda x: x['Płeć']+str('_')+x['Imię'],axis=1)
+    imionka2['Nowa'] = imionka2[['Imię','Płeć']].apply(lambda x: x['Imię']+str(' ')+x['Płeć'],axis=1)
+    imionka2['Nowa2'] = imionka2[['Imię','Płeć']].apply(lambda x: x['Płeć']+str(' ')+x['Imię'],axis=1)
     #st.dataframe(imionka2)
     #st.dataframe(imionka2.sort_values(['Rok','Nowa2']))
     koly = list(map(lambda x, y: x[0]+str(y),list(imionka2.sort_values(['Rok','Nowa2'])['Nowa2'].unique()),list(range(len(list(list(imionka2.sort_values(['Rok','Nowa2'])['Nowa2'].unique()))) ))) )
