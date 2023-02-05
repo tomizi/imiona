@@ -149,8 +149,7 @@ if sekcja == 'Strona główna':
 			"Liczba wystąpień imienia jako imię męskie":[2, 2, 8811, 2, 2, 2, 32, 149, 20, 400, 2, 2, 32540, 2, 31, 2, 11, 29196, 2, 73629, 
 								     41, 205, 2, 3, 2, 2, 6,
 								     211, 2, 2, 24, 4, 11, 34, 380, 9, 15, 76, 2, 54, 39, 2, 2, 2, 18, 33, 153, 162375, 
-								     12, 2, 4, 47],
-			 " ":[,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,]
+								     12, 2, 4, 47]
 			})
     st.subheader('Imiona, które były nadawane zarówno chłopcom jak i dziewczynkom')
     st.dataframe(dziwne)
