@@ -140,7 +140,7 @@ if sekcja == 'Strona główna':
      #IMIONA JEDNOCZEŚNIE MĘSKIE I ŻEŃSKIE
     chłopcy=im[im.Płeć=='M']
     dziewczynki=im[im.Płeć=='K']
-    dziwne=pd.DataFrame({"Imię":['ADEL','ADI','ALEX','ALEXIS','AMAL','AMELIA','AMIT','ANDREA','ANGEL','ARIEL','BAO AN','CHEN','DANIEL','EDEN',
+    dziwne=pd.DataFrame({"Imię":['  ADEL','ADI','ALEX','ALEXIS','AMAL','AMELIA','AMIT','ANDREA','ANGEL','ARIEL','BAO AN','CHEN','DANIEL','EDEN',
 				 'ELI','ELIA','EZRA','FABIAN','GIA','IGOR','ILIA','ILLIA','IMAN','ISA','KAREN','LAUREN','LILIAN','MICHAL','MIKA',
 				 'MILENA','MINH','MINH ANH','MORGAN','NICOLA','NIKITA','NIKOLA','NOA','NOAM','OLIVIA','OMER','ORI','PARIS','RAJA',
 				 'RILEY','RONI','SASHA','SIMONE','SZYMON','TAL','THIEN AN','YARDEN','YUVAL'],
