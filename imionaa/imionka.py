@@ -179,7 +179,7 @@ if sekcja == 'Analiza statystyczna':
     fig.add_trace(go.Scatter(x=tabelka.index,y=tabelka['K'],line_color=kol['K'],name='Dziewczynki'))
     fig.add_trace(go.Scatter(x=tabelka.index,y=tabelka['M'],line_color=kol['M'],name='Chłopcy'))
     fig.update_xaxes(title_text='Rok')
-    fig.update_yaxes(title_text='Procent')
+    fig.update_yaxes(title_text='Procent',rangemode='tozero')
     fig.update_layout(legend_title_text='Płeć',width=1000,height=400)
     st.plotly_chart(fig)
 	
@@ -194,7 +194,7 @@ if sekcja == 'Analiza statystyczna':
     fig.add_trace(go.Scatter(x=diversity.index,y=diversity['K'],line_color=kol['K'],name='Dziewczynki'))
     fig.add_trace(go.Scatter(x=diversity.index,y=diversity['M'],line_color=kol['M'],name='Chłopcy'))
     fig.update_xaxes(title_text='Rok')
-    fig.update_yaxes(title_text='Liczba')
+    fig.update_yaxes(title_text='Liczba',rangemode='tozero')
     fig.update_layout(legend_title_text='Płeć',width=1000,height=400)
     st.plotly_chart(fig)
    
