@@ -108,7 +108,8 @@ if sekcja == 'Strona główna':
     st.subheader('Źródło danych')
     st.write('Dane do analizy pobrane zostały ze strony Ministerstwa Cyfryzacji. Były one w postaci piętnastu plików formatu xlsx.')
     st.write('Link do strony: https://dane.gov.pl/pl/dataset/219,imiona-nadawane-dzieciom-w-polsce')
-    st.write('Dostęp z dnia 29.05.2022r.')
+    st.write('Dostęp z dnia 29.05.2022 r. - dane z lat 2000-2021')
+    st.write('Dostęp z dnia 03.02.2023 r. - dane z roku 2022')
     st.write('Dane z lat 2000–2012 zawierają imiona, których liczba wystąpień wynosi co najmniej 5. ' +
 	     'Od roku 2013 dane zawierają imiona, których liczba wystąpień jest większa od 1. ' + 
 	     'W związku z tym łączna liczba zarejestrowanych dzieci w rzeczywistości oznacza łączną liczbę zarejestrowanych dzieci o imionach występujących na liście, ' +
