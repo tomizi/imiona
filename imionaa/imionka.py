@@ -150,7 +150,7 @@ if sekcja == 'Strona główna':
 								     41, 205, 2, 3, 2, 2, 6,
 								     211, 2, 2, 24, 4, 11, 34, 380, 9, 15, 76, 2, 54, 39, 2, 2, 2, 18, 33, 153, 162375, 
 								     12, 2, 4, 47],
-			 "":[]
+			 "":[,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,]
 			})
     st.subheader('Imiona, które były nadawane zarówno chłopcom jak i dziewczynkom')
     st.dataframe(dziwne)
