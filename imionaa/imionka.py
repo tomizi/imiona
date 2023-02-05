@@ -15,7 +15,7 @@ st.set_page_config(page_title='Imiona nadawane dzieciom w Polsce - analiza', pag
 
 sekcja = st.sidebar.radio(
     'Wybierz sekcję:',
-    ('Strona główna','Analiza statystyczna','Analiza korespondencji')
+    ('Strona główna','Trendy','Litery w imionach', 'Najczęściej nadawane imiona','Analiza korespondencji')
  )
 
 
@@ -160,11 +160,11 @@ if sekcja == 'Strona główna':
 	
 
 	
-if sekcja == 'Analiza statystyczna':
+if sekcja == 'Trendy':
     new_title = '<b style="color:rgb(0, 80, 170); font-size: 62px;">Imiona nadawane dzieciom w Polsce - analiza</p>'
     st.markdown(new_title, unsafe_allow_html=True)
     st.markdown('---')
-    st.title('Wyniki analizy statystycznej')
+    st.title('Trendy')
     
     #łączna ilość urodzeń
     total_ur=im.pivot_table('Liczba', index='Rok', columns='Płeć', aggfunc=sum)	
@@ -262,7 +262,7 @@ if sekcja == 'Analiza statystyczna':
 	
 	
 	
-	
+if sekcja == 'Litery w imionach':	
     # PIERWSZA LITERA
 	#liczba dziewczynek
     st.header('Analiza pierwszej i ostatniej litery imienia')
@@ -332,7 +332,7 @@ if sekcja == 'Analiza statystyczna':
     
 
 
-
+if sekcja == 'Najczęściej nadawane imiona':
 	#Najczęsciej nadawane imiona dzieciom w Polsce
     st.subheader("Imiona najczęściej nadawane dzieciom w Polsce w latach 2000-2022")
     dowyboru=list(range(2000,2023)[::-1])
