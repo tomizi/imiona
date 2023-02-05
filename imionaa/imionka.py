@@ -104,7 +104,7 @@ if sekcja == 'Strona główna':
 		 'Niektórzy rodzice kierują się modą, inni rodzinną tradycją, kolejni łatwością do zdrobnienia. ' +
 		 'Są też tacy, którzy zwracają uwagę na oryginalność lub po prostu brzmienie imienia. ' +
 		'Niniejsza strona prezentuje trendy w popularności imion nadawanych dzieciom w Polsce w latach 2000-2022. ' +
-	    'Aplikację należy dostosować sobie do szerokości ekranu za pomocą kombinacji klawiszy Ctrl Shift + lub Ctrl Shift -')
+	    'Aplikację należy dostosować sobie do szerokości ekranu za pomocą kombinacji klawiszy Ctrl Shift + lub Ctrl Shift -.')
 
     st.subheader('Źródło danych')
     st.write('Dane do analizy pobrane zostały ze strony Ministerstwa Cyfryzacji. Były one w postaci piętnastu plików formatu xlsx.')
