@@ -140,10 +140,15 @@ if sekcja == 'Strona główna':
      #IMIONA JEDNOCZEŚNIE MĘSKIE I ŻEŃSKIE
     chłopcy=im[im.Płeć=='M']
     dziewczynki=im[im.Płeć=='K']
-    dziwne=pd.DataFrame({"Imię":['ADI','ALEX','ALEXIS','AMAL','AMELIA','AMIT','ANDREA','ANGEL','ARIEL','BAO AN','CHEN','DANIEL','EDEN','ELI','ELIA','EZRA',
-	    'FABIAN','GIA','IGOR','ILIA','ILLIA','IMAN','ISA','jhj','KAREN','LAUREN','LILIAN','MICHAL','MIKA','MILENA','MINH','MINH ANH', 
-	    'MORGAN','NICOLA','NIKITA','NIKOLA','NOA','NOAM','OLIVIA','OMER','ORI','PARIS','RAJA','RILEY','RONI','SASHA','SIMONE','SZYMON', 
-	    'TAL','THIEN AN','YARDEN','YUVAL']})
+    dziwne=pd.DataFrame({"Imię":['ADEL','ADI','ALEX','ALEXIS','AMAL','AMELIA','AMIT','ANDREA','ANGEL','ARIEL','BAO AN','CHEN','DANIEL','EDEN',
+				 'ELI','ELIA','EZRA','FABIAN','GIA','IGOR','ILIA','ILLIA','IMAN','ISA','KAREN','LAUREN','LILIAN','MICHAL','MIKA',
+				 'MILENA','MINH','MINH ANH','MORGAN','NICOLA','NIKITA','NIKOLA','NOA','NOAM','OLIVIA','OMER','ORI','PARIS','RAJA',
+				 'RILEY','RONI','SASHA','SIMONE','SZYMON','TAL','THIEN AN','YARDEN','YUVAL']
+			"Liczba wystąpień imienia jako imię żeńskie":[37,19,2,6,5,116606,6,331,5,6,3,2,2,2,3,9,2,2,5,2,8,2,90,2,141,29,56,5,178,45893,
+								      8,14,2,7936,63,71691,132,9,9431,3,4,7,4,2,77,26,18,2,10,2,2,20]
+			"Liczba wystąpień imienia jako imię męskie":[2,2,8811,2,2,2,32,149,20,400,2,2,32540,2,31,2,11,29196,2,73629,41,205,2,3,2,2,6,
+								     211,2,2,24,4,11,34,380,9,15,76,2,54,39,2,2,2,18,33,153,162375,12,2,4,47]
+			})
     st.subheader('Imiona, które były nadawane zarówno chłopcom jak i dziewczynkom')
     st.dataframe(dziwne)
 	
